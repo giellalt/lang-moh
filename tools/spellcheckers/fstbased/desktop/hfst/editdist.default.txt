@@ -1,7 +1,6 @@
 ## Exclusions:
 ~$
 ~%
-~'
 ~*
 ~+
 ~,
@@ -36,28 +35,35 @@
 
 ## Inclusions: this is the real alphabet definition:
 a
+á
+à
 b
 c
-č
 d
 e
+é
+è
 f
 g
 h
 i
-î
-ï
+í
+ì
 j
 k
 l
 m
 n
 o
+ó
+ò
 p
 r
 s
 t
 u
+ú
+ù
 v
 w
 x
@@ -76,6 +82,7 @@ z
 8
 9
 :
+'
 
 ## Transition pairs + weight - section separator:
 @@
