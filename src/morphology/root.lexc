@@ -20,118 +20,73 @@
 
 Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 
-!! !!Analysis symbols
-!  ----------------
-!! The morphological analyses of wordforms for the Mohawk
-!! language are presented in this system in terms of the following symbols.
-!! (It is highly suggested to follow existing standards when adding new tags).
+!! first attempt to model simplest form of mohawk verbs:
+!! personal prefix + root
 
-!! The parts-of-speech are:
- +N +A +Adv +V                                 !!≈
- +Pron +CS +CC +Adp +Po +Pr +Interj +Pcle +Num !!≈
+!! we will start with only I, you and he 
 
-!! The parts of speech are further split up into:
- +Prop +Pers +Dem +Interr +Refl +Recipr +Rel +Indef
+! for a list and explanation of morphological tags see
+!! http://giellatekno.uit.no/doc/lang/common/MorphologicalTags.html
+!! extra tages are listed below
 
-!! The Usage extents are marked using following tags:
- +Err/Orth   
- +Use/-Spell 
-
-!! The nominals are inflected in the following Case and Number
- +Sg +Du +Pl
- +Ess +Nom +Gen +Acc +Ill +Loc +Com +Com/Sh
-
-!! The possession is marked as such:
- +PxSg1 +PxSg2 +PxSg3 +PxDu1 +PxDu2 +PxDu3 +PxPl1 +PxPl2 +PxPl3
-!! The comparative forms are:
- +Comp +Superl
-!! Numerals are classified under:
- +Attr +Card
- +Ord 
-!! Verb moods are:
- +Ind +Prs +Prt +Pot +Cond +Imprt
-!! Verb personal forms are:
- +Sg1 +Sg2 +Sg3 +Du1 +Du2 +Du3 +Pl1 +Pl2 +Pl3
-!! Other verb forms are
- +Inf +Ger +ConNeg +ConNegII +Neg +ImprtII +PrsPrc +PrfPrc +Sup +VGen +VAbess
-
-! Abbreviated words are classified with:
- +ABBR +ACR 
-!! Special symbols are classified with:
-+CLB +PUNCT +LEFT +RIGHT
-!! The verbs are syntactically split according to transitivity:
- +TV +IV
-!! Special multiword units are analysed with:
- +Multi
-!! Non-dictionary words can be recognised with:
- +Guess
-
-!! Question and Focus particles:
- +Qst +Foc
++AgentSg1 !! I-> X
++AgentSg2  !! you-> X
++AgentSg3Mal !! he -> X
++AgentSg3Fem !! she/smb/they -> X
++AgentSg3Neuter !! it -> X
++AgentDu21 !! you and I -> X
++AgentDu31 !! smb and I -> X
++AgentDu2 !! you two -> X
++AgentDu3 !! two males or mixed -> X
++AgentDu3Fem !! two females -> X
++AgentPl2Sg1 !! you all and I -> X
++AgentPl3Sg1 !! they all and I -> X
++AgentPl2 !! you all
++AgentPl3 !! they all (male or mixed) -> X
++AgentPl3Fem !! they all (female) -> X
++PatSg1 !! X -> I
++PatSg2  !!  X -> you
++PatSg3Mal !! X -> he 
++PatSg3Fem !! X -> she/smb/they 
++PatSg3Neuter !! X -> it 
++PatDu21 !! X -> you and I
++PatDu31 !! X -> smb and I 
++PatDu2 !! X -> you two 
++PatDu3 !! X -> two males or mixed 
++PatDu3Fem !! X -> two females
++PatPl2Sg1 !! X -> you all and I 
++PatPl3Sg1 !! X -> they all and I 
++PatPl2 !! X -> you all
++PatPl3 !! X -> they all (male or mixed) 
++PatPl3Fem !! X -> they all (female) 
+!!! genders
++Mal 
++Fem 
++Neuter
++PronStart
++PronEnd 
 
 
-!! Semantics are classified with
- +Mal +Fem +Sur 
- +Plc 
- +Org
- +Obj
- +Ani
- +Hum
- +Plant
- +Group
- +Time 
- +Txt
- +Route
- +Measr 
- +Wthr
- +Build 
- +Edu
- +Veh
- +Clth
+Definitions
+    rootStart = "<ROOT-->"; !! marker of the start of the root stem
+    ppStart = "<PP-->"; !! marker of the beginning of the personal prefix
 
 
-!! Derivations are classified under the morphophonetic form of the suffix, the
-!! source and target part-of-speech.
- +V→N +V→V +V→A
- +Der/xxx
-
+!! type of personal pronouns used (red, blue purple)
+!!+Active+ 
+!!+Passive+ 
+!!+Relation+
 
 !! Morphophonology
 !  ---------------
 !! To represent phonologic variations in word forms we use the following
 !! symbols in the lexicon files:
- {aä} {oö} {uü}
-
-!! And following triggers to control variation
- {front} {back}
 
 !! !!Flag diacritics
 !! We have manually optimised the structure of our lexicon using following
 !! flag diacritics to restrict morhpological combinatorics - only allow compounds
 !! with verbs if the verb is further derived into a noun again:
- @P.NeedNoun.ON@    !!≈ | @CODE@ | (Dis)allow compounds with verbs unless nominalised
- @D.NeedNoun.ON@    !!≈ | @CODE@ | (Dis)allow compounds with verbs unless nominalised
- @C.NeedNoun@       !!≈ | @CODE@ | (Dis)allow compounds with verbs unless nominalised
-!! 
-!! For languages that allow compounding, the following flag diacritics are needed
-!! to control position-based compounding restrictions for nominals. Their use is
-!! handled automatically if combined with +CmpN/xxx tags. If not used, they will
-!! do no harm.
- @P.CmpFrst.FALSE@ !!≈ | @CODE@ | Require that words tagged as such only appear first
- @D.CmpPref.TRUE@  !!≈ | @CODE@ | Block such words from entering ENDLEX
- @P.CmpPref.FALSE@ !!≈ | @CODE@ | Block these words from making further compounds
- @D.CmpLast.TRUE@  !!≈ | @CODE@ | Block such words from entering R
- @D.CmpNone.TRUE@  !!≈ | @CODE@ | Combines with the next tag to prohibit compounding
- @U.CmpNone.FALSE@ !!≈ | @CODE@ | Combines with the prev tag to prohibit compounding
- @P.CmpOnly.TRUE@  !!≈ | @CODE@ | Sets a flag to indicate that the word has passed R
- @D.CmpOnly.FALSE@ !!≈ | @CODE@ | Disallow words coming directly from root.
-!! 
-!! Use the following flag diacritics to control downcasing of derived proper
-!! nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
-!! these flags. There exists a ready-made regex that will do the actual down-casing
-!! given the proper use of these flags.
- @U.Cap.Obl@        !!≈ | @CODE@ | Allowing downcasing of derived names: deatnulasj.
- @U.Cap.Opt@        !!≈ | @CODE@ | Allowing downcasing of derived names: deatnulasj.
+
 
 LEXICON Root
 !! The word forms in UNDEFINED language start from the lexeme roots of basic
@@ -141,6 +96,6 @@ LEXICON Root
 0   Adjectives  ;
 0   Pronouns    ;
 0   Numerals    ;
-0   Prefixes    ;
+! 0   Prefixes    ;
 
 ! vim: set ft=xfst-lexc:
