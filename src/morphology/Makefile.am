@@ -19,12 +19,12 @@
 HFST_LEXC_LOCAL_FLAGS=
 
 # Set this to name of lexc file containing Multichar_Symbols and LEXICON Root
-GT_LEXC_ROOT=$(srcdir)/root.lexc
+GT_LEXC_ROOT=$(srcdir)/moh-root.lexc
 
 # Set this to the names of all regular lexc source files:
 GT_LEXC_SRCS_L1_L2=\
-			 stems/verbs.lexc       \
-			 affixes/verbs.lexc
+			 stems/stems-verbs-moh.lexc       \
+			 affixes/affixes-verbs-moh.lexc
 #			 stems/adjectives.lexc    \
 #			 stems/nouns.lexc         \
 #			 stems/numerals.lexc      \

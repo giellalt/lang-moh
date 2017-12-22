@@ -1,0 +1,161 @@
+!! first attempt to model simplest form of mohawk verbs:
+!! personal prefix + root
+
+!! we will start with only I, you and he 
+
+! for a list and explanation of morphological tags see
+!! http://giellatekno.uit.no/doc/lang/common/MorphologicalTags.html
+!! extra tages are listed below
+Multichar_Symbols  +AgentSg1 !! I-> X
++AgentSg2  !! you-> X
++AgentSg3Mal !! he -> X
++AgentSg3Fem !! she/smb/they -> X
++AgentSg3Neuter !! it -> X
++AgentDu21 !! you and I -> X
++AgentDu31 !! smb and I -> X
++AgentDu2 !! you two -> X
++AgentDu3 !! two males or mixed -> X
++AgentDu3Fem !! two females -> X
++AgentPl2Sg1 !! you all and I -> X
++AgentPl3Sg1 !! they all and I -> X
++AgentPl2 !! you all
++AgentPl3 !! they all (male or mixed) -> X
++AgentPl3Fem !! they all (female) -> X
++PatSg1 !! X -> I
++PatSg2  !!  X -> you
++PatSg3Mal !! X -> he 
++PatSg3Fem !! X -> she/smb/they 
++PatSg3Neuter !! X -> it 
++PatDu21 !! X -> you and I
++PatDu31 !! X -> smb and I 
++PatDu2 !! X -> you two 
++PatDu3 !! X -> two males or mixed 
++PatDu3Fem !! X -> two females
++PatPl2Sg1 !! X -> you all and I 
++PatPl3Sg1 !! X -> they all and I 
++PatPl2 !! X -> you all
++PatPl3 !! X -> they all (male or mixed) 
++PatPl3Fem !! X -> they all (female) 
+!!! genders
++Mal 
++Fem 
++Neuter
++PronStart
++PronEnd 
+
+Definitions
+    rootStart = {<ROOT-->}; !! marker of the start of the root stem
+    ppStart = {<PP-->}; !! marker of the beginning of the personal prefix
+
+
+!! type of personal pronouns used (red, blue purple)
+!!+Active+ 
+!!+Passive+ 
+!!+Relation+
+
+LEXICON Root
+V   ;
+
+
+LEXICON V
+<0:ppStart> SimplePresent ;
+
+LEXICON SimplePresent
+BoundPronounActive   ; !! red prefixes f
++AgentSg3Neuter:0 BoundPronounPassive  ; !! blue prefixes
+ BoundPronounRelation   ; !! purple prefixes
+
+
+!!------------------ ACTIVE VERBS (RED PREFIXES) --------------
+LEXICON BoundPronounActive
++AgentSg1:ke EndActive   ;
++AgentSg2:se EndActive   ;
++AgentSg3Mal:ra EndActive   ;
++AgentSg3Fem:ye EndActive   ;
++AgentSg3Neuter:ka EndActive   ;
++AgentDu21:teni EndActive   ;
++AgentDu31:yakeni EndActive   ;
++AgentDu2:seni EndActive   ;
++AgentDu3:ni EndActive    ;
++AgentDu3Fem:keni EndActive   ;
++AgentPl2Sg1:tewa EndActive   ;
++AgentPl3Sg1:yakwa EndActive   ;
++AgentPl2:sewa EndActive   ;
++AgentPl3:rati EndActive   ;
++AgentPl3Fem:konti EndActive   ;
+
+LEXICON EndActive
++PatSg3Neuter+:0 VerbStem   ; !! put a neutral patient for all active verbs
+
+!!------------------ PASSIVE VERBS (BLUE PREFIXES) --------------
+LEXICON BoundPronounPassive
++PatSg1:wake EndPassive   ;
++PatSg2:sa EndPassive   ;
++PatSg3Mal:ro EndPassive   ;
++PatSg3Fem:yako EndPassive   ;
++PatSg3Neuter:yo EndPassive   ; 
++PatDu21:yonkeni EndPassive   ;
++PatDu31:yonkeni EndPassive   ; 
++PatDu2:seni EndPassive   ; 
++PatDu3:roti EndPassive   ;
++PatDu3Fem:yoti EndPassive   ;
++PatPl2Sg1:yonkwa EndPassive   ;
++PatPl3Sg1:yonkwa EndPassive   ;
++PatPl2:sewa EndPassive   ;
++PatPl3:roti EndPassive   ;
++PatPl3Fem:yoti EndPassive   ;
+
+LEXICON EndPassive
++:0 VerbStem   ; !! put a tag boundary marker to improve readability
+
+!!------------------ RELATION OR TRANSITIVE VERBS (PURPLE PREFIXES) --------------
+LEXICON BoundPronounRelation
++AgentSg1:0 RelationPronI   ;
++AgentSg2:0 RelationPronYou   ;
+
+LEXICON RelationPronI
++PatSg2:kon EndRelation   ;
++PatSg3Mal:ri EndRelation   ;
++PatSg3Fem:khe EndRelation   ;
+
+
+LEXICON RelationPronYou
++PatSg1:take EndRelation   ;
++PatSg3Mal:etshe EndRelation   ;
++PatSg3Fem:she EndRelation   ;
+
+
+LEXICON EndRelation
++:0 VerbStem   ; !! put a tag boundary marker to improve readability
+
+
+!! -----------------------VERBS ---------------------------------------
+
+LEXICON VerbStem
+
+
+<0:rootStart>   VerbRoots   ;
+
+
+LEXICON VerbRoots
+
+!! --------------some example c-stem verbs (verb stems starting with a constant)
+!!nòn%:we's   #; !! to like
+nòn:we's   #; !! to like
+norónhkwa  #; !! to love
+
+!! -------------verb stems starting with an "A"
+atonhkárya’ks  #; !! to be hungry (page 131)
+atera'swí:yo    #; !! to be lucky (page 131)
+atketsko    #; !!to get up, brian's list, page 2
+
+
+!! -------------verb stems starting with an "I"
+í:tenht   #; !! to be  poor (page 132)
+í:tahs #; !! to be sleeping
+!! -------------verb stems starting with an "E" or "EN"
+é:kahs #; !! to like the taste of something (page 131)
+entórha #; !! lazy (page 131)
+!! --------------verb stems starting with an "O" or "ON"
+onni #; !! to make smth, Brian's list
+on'wehskwen # ; !! to enjoy doing smth Brian's page 14

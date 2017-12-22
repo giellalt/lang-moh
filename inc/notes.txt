@@ -1,0 +1,48 @@
+i-- Building Giella moh 0.1:
+
+  -- Fst build tools: Xerox, Hfst or Foma - at least one must be installed
+  -- Xerox is default on, the others off unless they are the only one present --
+  * build Xerox fst's: yes
+  * build HFST fst's: yes
+  * build Foma fst's: no
+
+  -- basic packages (on by default): --
+  * analysers enabled: yes
+  * generators enabled: yes
+  * transcriptors enabled: yes
+  * syntactic tools enabled: yes
+  * yaml tests enabled: yes
+  * generated documentation enabled: no
+
+  -- proofing tools (off by default): --
+  * spellers (zhfst files) enabled: no
+    * desktop spellers:
+      * installable packages enabled: no
+      * foma speller enabled: no
+    * mobile spellers (off by default, even with spellers enabled):
+      * hfst speller enabled: no
+      * vfst speller enabled: no
+  * grammar checker enabled: no
+  * hyphenators:
+    * fst hyphenator enabled: no
+    * pattern hyphenator enabled (requires fst hyph): no
+
+  -- specialised fst's (off by default): --
+  * phonetic/IPA conversion enabled: no
+  * dictionary fst's enabled: no
+  * Oahpa transducers enabled: no
+    * L2 analyser: no
+    * downcase error analyser: no
+  * Apertium transducers enabled: no
+  * generate abbr.txt: no
+  * build tokenisers: no
+  * build glossing fst's: no
+  * build morphololgical segmenter: no
+
+For more ./configure options, run ./configure --help
+
+To build, test and install:
+    make
+    make check
+    make install
+
