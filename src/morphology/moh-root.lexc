@@ -1,0 +1,83 @@
+! Divvun & Giellatekno - open source grammars for Mohawk language
+! Copyright © 2015 The University of Tromsø & the Norwegian Sámi Parliament
+! http://giellatekno.uit.no & http://divvun.no
+!
+! This program is free software; you can redistribute and/or modify
+! this file under the terms of the GNU General Public License as published by
+! the Free Software Foundation, either version 3 of the License, or
+! (at your option) any later version. The GNU General Public License
+! is found at http://www.gnu.org/licenses/gpl.html. It is
+! also available in the file $GTHOME/LICENSE.txt.
+!
+! Other licensing options are available upon request, please contact
+! giellatekno@uit.no or feedback@divvun.no
+
+! ========================================================================== !
+! !!            !!!Mohawk morphological analyser                      !
+! ========================================================================== !
+!! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
+ 
+
+
+!! first attempt to model simplest form of mohawk verbs:
+!! personal prefix + root
+!! http://giellatekno.uit.no/doc/lang/common/MorphologicalTags.html
+!! extra tages are listed below
+
+Multichar_Symbols  !!≈ !!!@CODE@ definitions
++AgentSg1 !! I-> X
++AgentSg2  !! you-> X
++AgentSg3Mal !! he -> X
++AgentSg3Fem !! she/smb/they -> X
++AgentSg3Neuter !! it -> X
++AgentDu21 !! you and I -> X
++AgentDu31 !! smb and I -> X
++AgentDu2 !! you two -> X
++AgentDu3 !! two males or mixed -> X
++AgentDu3Fem !! two females -> X
++AgentPl2Sg1 !! you all and I -> X
++AgentPl3Sg1 !! they all and I -> X
++AgentPl2 !! you all
++AgentPl3 !! they all (male or mixed) -> X
++AgentPl3Fem !! they all (female) -> X
++PatSg1 !! X -> I
++PatSg2  !!  X -> you
++PatSg3Mal !! X -> he 
++PatSg3Fem !! X -> she/smb/they 
++PatSg3Neuter !! X -> it 
++PatDu21 !! X -> you and I
++PatDu31 !! X -> smb and I 
++PatDu2 !! X -> you two 
++PatDu3 !! X -> two males or mixed 
++PatDu3Fem !! X -> two females
++PatPl2Sg1 !! X -> you all and I 
++PatPl3Sg1 !! X -> they all and I 
++PatPl2 !! X -> you all
++PatPl3 !! X -> they all (male or mixed) 
++PatPl3Fem !! X -> they all (female) 
+!!! genders
++Mal 
++Fem 
++Neuter
++PronStart
++PronEnd 
+
+
+Definitions
+    rootStart = %<R%-%>; !!  boundary of the root morpheme (arrow point to the start); 
+    ppStart = %<PP%-%>; !! personal prefix boundary (arrow point to the start)
+    !!rootStart = W; !!  boundary of the root morpheme (arrow point to the start); 
+    !!ppStart = Z; !! personal prefix boundary (arrow point to the start)
+
+
+LEXICON Root
+!! The word forms in UNDEFINED language start from the lexeme roots of basic
+!! word classes, or optionally from prefixes:
+! 0   Nouns       ;
+0   Verbs       ;
+! 0   Adjectives  ;
+! 0   Pronouns    ;
+! 0   Numerals    ;
+! 0   Prefixes    ;
+
+! vim: set ft=xfst-lexc:
