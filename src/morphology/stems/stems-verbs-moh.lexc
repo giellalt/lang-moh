@@ -2,6 +2,10 @@
 !  -----
 !! Verbs in Mohawk language are actions.
 
+!! Red verbs are essentially non-transitive verbs used in Active Voice
+!! Blue verbs are essentially non-transitive verbs used in Passive Voice
+!! Purple verbs are transitive verbs
+
 !! -----------------------VERBS ---------------------------------------
 
 LEXICON VerbStem
@@ -13,24 +17,36 @@ LEXICON VerbStem
 LEXICON VerbRoots
 
 !! --------------some example c-stem verbs (verb stems starting with a constant)
-!!nòn%:we's   #; !! to like
-nòn%:we's   #; !! to like
-norónhkwa  #; !! to love
+nòn%:we's   RedVerbs; !! to like
+norónhkwa  RedVerbs; !! to love
+nòn%:we's   BlueVerbs; !! to like
+norónhkwa  BlueVerbs; !! to love
 
 !! -------------verb stems starting with an "A"
-atonhkárya’ks  #; !! to be hungry (page 131)
-atera'swí%:yo    #; !! to be lucky (page 131)
-atketsko    #; !!to get up, brian's list, page 2
+atonhkárya’ks  RedVerbs; !! to be hungry (page 131)
+atera'swí%:yo    BlueVerbs; !! to be lucky (page 131)
+atketsko    RedVerbs; !!to get up, brian's list, page 2
 
 
 !! -------------verb stems starting with an "I"
-í%:tenht   #; !! to be  poor (page 132)
-í%:tahs #; !! to be sleeping
+í%:tenht   BlueVerbs; !! to be  poor (page 132)
+í%:tahs BlueVerbs; !! to be sleeping
 !! -------------verb stems starting with an "E" or "EN"
-é%:kahs #; !! to like the taste of something (page 131)
-entórha #; !! lazy (page 131)
+é%:kahs BlueVerbs; !! to like the taste of something (page 131)
+entórha RedVerbs; !! lazy (page 131)
 !! --------------verb stems starting with an "O" or "ON"
-onni #; !! to make smth, Brian's list
-on'wehskwen # ; !! to enjoy doing smth Brian's page 14
+onni RedVerbs; !! to make smth, Brian's list
+on'wehskwen BlueVerbs ; !! to enjoy doing smth Brian's page 14
+
+
+LEXICON RedVerbs
+@U.VerbType.Red@    #;
+
+LEXICON BlueVerbs
+@U.VerbType.Blue@    #;
+
+LEXICON PurpleVerbs
+@U.VerbType.Blue@    #;
+
 
 ! vim: set ft=xfst-lexc:

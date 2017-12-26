@@ -25,56 +25,58 @@
 !! extra tages are listed below
 
 Multichar_Symbols  !!≈ !!!@CODE@ definitions
-+AgentSg1 !! I-> X
-+AgentSg2  !! you-> X
-+AgentSg3Mal !! he -> X
-+AgentSg3Fem !! she/smb/they -> X
-+AgentSg3Neuter !! it -> X
-+AgentDu21 !! you and I -> X
-+AgentDu31 !! smb and I -> X
-+AgentDu2 !! you two -> X
-+AgentDu3 !! two males or mixed -> X
-+AgentDu3Fem !! two females -> X
-+AgentPl2Sg1 !! you all and I -> X
-+AgentPl3Sg1 !! they all and I -> X
-+AgentPl2 !! you all
-+AgentPl3 !! they all (male or mixed) -> X
-+AgentPl3Fem !! they all (female) -> X
-+PatSg1 !! X -> I
-+PatSg2  !!  X -> you
-+PatSg3Mal !! X -> he 
-+PatSg3Fem !! X -> she/smb/they 
-+PatSg3Neuter !! X -> it 
-+PatDu21 !! X -> you and I
-+PatDu31 !! X -> smb and I 
-+PatDu2 !! X -> you two 
-+PatDu3 !! X -> two males or mixed 
-+PatDu3Fem !! X -> two females
-+PatPl2Sg1 !! X -> you all and I 
-+PatPl3Sg1 !! X -> they all and I 
-+PatPl2 !! X -> you all
-+PatPl3 !! X -> they all (male or mixed) 
-+PatPl3Fem !! X -> they all (female) 
-!!! genders
-+Mal 
-+Fem 
-+Neuter
-+PronStart
-+PronEnd 
+Verb+
+AgentSg1+ !! I-> X
+AgentSg2+  !! you-> X
+AgentSg3Mal+ !! he -> X
+AgentSg3Fem+ !! she/smb/they -> X
+AgentSg3Neuter+ !! it -> X
+AgentDu21+ !! you and I -> X
+AgentDu31+ !! smb and I -> X
+AgentDu2+ !! you two -> X
+AgentDu3+ !! two males or mixed -> X
+AgentDu3Fem+ !! two females -> X
+AgentPl2Sg1+ !! you all and I -> X
+AgentPl3Sg1+ !! they all and I -> X
+AgentPl2+ !! you all
+AgentPl3+ !! they all (male or mixed) -> X
+AgentPl3Fem+ !! they all (female) -> X
+PatSg1+ !! X -> I
+PatSg2+  !!  X -> you
+PatSg3Mal+ !! X -> he 
+PatSg3Fem+ !! X -> she/smb/they 
+PatSg3Neuter+ !! X -> it 
+PatDu21+ !! X -> you and I
+PatDu31+ !! X -> smb and I 
+PatDu2+ !! X -> you two 
+PatDu3+ !! X -> two males or mixed 
+PatDu3Fem+ !! X -> two females
+PatPl2Sg1+ !! X -> you all and I 
+PatPl3Sg1+ !! X -> they all and I 
+PatPl2+ !! X -> you all
+PatPl3+ !! X -> they all (male or mixed) 
+PatPl3Fem+ !! X -> they all (female) 
+Mal+  !!Male
+Fem+ !!Female
+Neuter+ !!Neuter
+Active+ !! Active voice, Red verbs
+Passive+ !! Passive voice, Blue verbs
+Transitive+ !! Transitive verbs, Purple verbs
+@U.VerbType.Red@
+@U.VerbType.Blue@
+@U.VerbType.Purple@
 
 
 Definitions
     rootStart = %<R%-%>; !!  boundary of the root morpheme (arrow point to the start); 
     ppStart = %<PP%-%>; !! personal prefix boundary (arrow point to the start)
-    !!rootStart = W; !!  boundary of the root morpheme (arrow point to the start); 
-    !!ppStart = Z; !! personal prefix boundary (arrow point to the start)
 
 
 LEXICON Root
 !! The word forms in UNDEFINED language start from the lexeme roots of basic
 !! word classes, or optionally from prefixes:
 ! 0   Nouns       ;
-0   Verbs       ;
+Verb+:0   Verbs       ;
 ! 0   Adjectives  ;
 ! 0   Pronouns    ;
 ! 0   Numerals    ;
