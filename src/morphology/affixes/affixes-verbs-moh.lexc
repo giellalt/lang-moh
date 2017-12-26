@@ -5,72 +5,81 @@ LEXICON Verbs
 <0:ppStart> SimplePresent ;
 
 LEXICON SimplePresent
-BoundPronounActive   ; !! red prefixes f
-+AgentSg3Neuter:0 BoundPronounPassive  ; !! blue prefixes
- BoundPronounRelation   ; !! purple prefixes
+Active+:0   RedPrefixes   ; !! red prefixes f
+Passive+AgentSg3Neuter+:0 BluePrefixes  ; !! blue prefixes
+Transitive:0    PurplePrefixes   ; !! purple prefixes
+
+LEXICON RedPrefixes
+@U.VerbType.Red@    BoundPronounActive;
+
+LEXICON BluePrefixes
+@U.VerbType.Blue@    BoundPronounPassive;
+
+LEXICON PurplePrefixes
+@U.VerbType.Purple@    BoundPronounRelation;
 
 
 !!------------------ ACTIVE VERBS (RED PREFIXES) --------------
 LEXICON BoundPronounActive
-+AgentSg1:ke EndActive   ;
-+AgentSg2:se EndActive   ;
-+AgentSg3Mal:ra EndActive   ;
-+AgentSg3Fem:ye EndActive   ;
-+AgentSg3Neuter:ka EndActive   ;
-+AgentDu21:teni EndActive   ;
-+AgentDu31:yakeni EndActive   ;
-+AgentDu2:seni EndActive   ;
-+AgentDu3:ni EndActive    ;
-+AgentDu3Fem:keni EndActive   ;
-+AgentPl2Sg1:tewa EndActive   ;
-+AgentPl3Sg1:yakwa EndActive   ;
-+AgentPl2:sewa EndActive   ;
-+AgentPl3:rati EndActive   ;
-+AgentPl3Fem:konti EndActive   ;
+AgentSg1+:ke EndActive   ;
+AgentSg2+:se EndActive   ;
+AgentSg3Mal+:ra EndActive   ;
+AgentSg3Fem+:ye EndActive   ;
+AgentSg3Neuter+:ka EndActive   ;
+AgentDu21+:teni EndActive   ;
+AgentDu31+:yakeni EndActive   ;
+AgentDu2+:seni EndActive   ;
+AgentDu3+:ni EndActive    ;
+AgentDu3Fem+:keni EndActive   ;
+AgentPl2Sg1+:tewa EndActive   ;
+AgentPl3Sg1+:yakwa EndActive   ;
+AgentPl2+:sewa EndActive   ;
+AgentPl3+:rati EndActive   ;
+AgentPl3Fem+:konti EndActive   ;
 
 LEXICON EndActive
-+PatSg3Neuter+:0 VerbStem   ; !! put a neutral patient for all active verbs
+PatSg3Neuter+:0 VerbStem   ; !! put a neutral patient for all active verbs
 
 !!------------------ PASSIVE VERBS (BLUE PREFIXES) --------------
 LEXICON BoundPronounPassive
-+PatSg1:wake EndPassive   ;
-+PatSg2:sa EndPassive   ;
-+PatSg3Mal:ro EndPassive   ;
-+PatSg3Fem:yako EndPassive   ;
-+PatSg3Neuter:yo EndPassive   ; 
-+PatDu21:yonkeni EndPassive   ;
-+PatDu31:yonkeni EndPassive   ; 
-+PatDu2:seni EndPassive   ; 
-+PatDu3:roti EndPassive   ;
-+PatDu3Fem:yoti EndPassive   ;
-+PatPl2Sg1:yonkwa EndPassive   ;
-+PatPl3Sg1:yonkwa EndPassive   ;
-+PatPl2:sewa EndPassive   ;
-+PatPl3:roti EndPassive   ;
-+PatPl3Fem:yoti EndPassive   ;
+PatSg1+:wake EndPassive   ;
+PatSg2+:sa EndPassive   ;
+PatSg3Mal+:ro EndPassive   ;
+PatSg3Fem+:yako EndPassive   ;
+PatSg3Neuter+:yo EndPassive   ; 
+PatDu21+:yonkeni EndPassive   ;
+PatDu31+:yonkeni EndPassive   ; 
+PatDu2+:seni EndPassive   ; 
+PatDu3+:roti EndPassive   ;
+PatDu3Fem+:yoti EndPassive   ;
+PatPl2Sg1+:yonkwa EndPassive   ;
+PatPl3Sg1+:yonkwa EndPassive   ;
+PatPl2+:sewa EndPassive   ;
+PatPl3+:roti EndPassive   ;
+PatPl3Fem+:yoti EndPassive   ;
 
 LEXICON EndPassive
-+:0 VerbStem   ; !! put a tag boundary marker to improve readability
+VerbStem   ; 
 
 !!------------------ RELATION OR TRANSITIVE VERBS (PURPLE PREFIXES) --------------
 LEXICON BoundPronounRelation
-+AgentSg1:0 RelationPronI   ;
-+AgentSg2:0 RelationPronYou   ;
+AgentSg1+:0 RelationPronI   ;
+AgentSg2+:0 RelationPronYou   ;
 
 LEXICON RelationPronI
-+PatSg2:kon EndRelation   ;
-+PatSg3Mal:ri EndRelation   ;
-+PatSg3Fem:khe EndRelation   ;
+PatSg2+:kon EndRelation   ;
+PatSg3Mal+:ri EndRelation   ;
+PatSg3Fem+:khe EndRelation   ;
 
 
 LEXICON RelationPronYou
-+PatSg1:take EndRelation   ;
-+PatSg3Mal:etshe EndRelation   ;
-+PatSg3Fem:she EndRelation   ;
+PatSg1+:take EndRelation   ;
+PatSg3Mal+:etshe EndRelation   ;
+PatSg3Fem+:she EndRelation   ;
 
 
 LEXICON EndRelation
-+:0 VerbStem   ; !! put a tag boundary marker to improve readability
+VerbStem   ; 
 
 
 ! vim: set ft=xfst-lexc:
