@@ -1,9 +1,9 @@
 !! Verb inflection
 !  ---------------
 
-LEXICON Verbs
-VerbPrefixes ;
-PronomPrefix ;
+!!LEXICON Verbs
+!!VerbPrefixes ;
+!!PronomPrefix ;
 
 
 LEXICON PronomPrefix
