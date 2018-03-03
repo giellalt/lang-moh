@@ -23,6 +23,10 @@ define perfMarker %^R%^;
 define habMarker %^H%^;
 define comMarker %^C%^;
 
+define futPref %^Fut%^;
+define condPref %^Cond%^;
+define pastPref %^Past%^;
+
 #
 #Rules for replacing c-stem forms of active (RED) bound pronouns with the correct form (be it A, E, I or O)
 #
@@ -259,4 +263,4 @@ define removeAll [rootBM | ppMarker | punctMarker | perfMarker | habMarker | com
 
 
 
-regex reWriteRed .o. reWriteBlue .o. reWritePurple;
+regex reWriteRed .o. reWriteBlue .o. reWritePurple .o. removeAll;

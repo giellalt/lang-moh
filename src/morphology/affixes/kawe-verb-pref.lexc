@@ -1,0 +1,31 @@
+!! Verbal prefixes
+
+LEXICON VerbPrefixes
+
+TemporalPrefix  ;
+
+LEXICON TemporalPrefix
+
+FuturePrefix    ;
+PastPrefix      ;
+CondPrefix  ;
+
+LEXICON FuturePrefix 
+<0:futPref "@U.Aspect.Punct@">   Future;
+
+LEXICON Future
+Fut+:en PronomPrefix;
+
+
+LEXICON CondPrefix
+<0:condPref "@U.Aspect.Punct@">   Conditional;
+
+LEXICON Conditional
+Cond+:ae    PronomPrefix;
+
+
+LEXICON PastPrefix
+<0:pastPref "@U.Aspect.Punct@">   DefinitePast;
+
+LEXICON DefinitePast
+DefPast+:wa%'    PronomPrefix;
