@@ -1,0 +1,492 @@
+! ========================================================================== !
+!             !!!Mohawk morphological analyser                      !
+! ========================================================================== !
+!! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
+ 
+
+
+!! first attempt to model simplest form of mohawk verbs:
+!! personal prefix + root
+!! http://giellatekno.uit.no/doc/lang/common/MorphologicalTags.html
+!! extra tages are listed below
+
+Multichar_Symbols  !!≈ !!!@CODE@ definitions
+Verb+
+AgentSg1+ !! I-> X
+AgentSg2+  !! you-> X
+AgentSg3Mal+ !! he -> X
+AgentSg3Fem+ !! she/smb/they -> X
+AgentSg3Neuter+ !! it -> X
+AgentDu21+ !! you and I -> X
+AgentDu31+ !! smb and I -> X
+AgentDu2+ !! you two -> X
+AgentDu3+ !! two males or mixed -> X
+AgentDu3Fem+ !! two females -> X
+AgentPl2Sg1+ !! you all and I -> X
+AgentPl3Sg1+ !! they all and I -> X
+AgentPl2+ !! you all
+AgentPl3+ !! they all (male or mixed) -> X
+AgentPl3Fem+ !! they all (female) -> X
+PatSg1+ !! X -> I
+PatSg2+  !!  X -> you
+PatSg3Mal+ !! X -> he 
+PatSg3Fem+ !! X -> she/smb/they 
+PatSg3Neuter+ !! X -> it 
+PatDu21+ !! X -> you and I
+PatDu31+ !! X -> smb and I 
+PatDu2+ !! X -> you two 
+PatDu3+ !! X -> two males or mixed 
+PatDu3Fem+ !! X -> two females
+PatPl2Sg1+ !! X -> you all and I 
+PatPl3Sg1+ !! X -> they all and I 
+PatPl2+ !! X -> you all
+PatPl3+ !! X -> they all (male or mixed) 
+PatPl3Fem+ !! X -> they all (female) 
+Mal+  !!Male
+Fem+ !!Female
+Neuter+ !!Neuter
+Active+ !! Active voice, Red verbs
+Passive+ !! Passive voice, Blue verbs
+Transitive+ !! Transitive verbs, Purple verbs
+Fut+
+DefPast+
+Cond+
++Habitual
++Perf
++Punct
++Command
+@U.VerbType.Red@
+@U.VerbType.Blue@
+@U.VerbType.Purple@
+@P.CC.One@ @R.CC.One@!! The following are verb conjugation classes, one through 9, plus Exceptions class
+@P.CC.Two@ @R.CC.Two@
+@P.CC.Three@ @R.CC.Three@
+@P.CC.Four@ @R.CC.Four@
+@P.CC.Five@ @R.CC.Five@
+@P.CC.Six@ @R.CC.Six@
+@P.CC.Seven@ @R.CC.Seven@
+@P.CC.Eight@ @R.CC.Eight@
+@P.CC.Nine@ @R.CC.Nine@
+@P.CC.Except@ @R.CC.Except@
+@U.Aspect.Command@
+@U.Aspect.Habitual@
+@U.Aspect.Punct@
+@U.Aspect.Perf@
+
+
+
+Definitions
+    ppStart = %^PP%-%^; !! start of personal prefix boundary  
+    rootStart = %^R%-%^; !!  start of the root morpheme  
+    habSuf = %^H%^; !! marks verbs the start of Habitual suffix
+    perfSuf = %^R%^; !! marks verbs the start of Perfective suffix
+    punctSuf = %^P%^; !! marks verbs the start of Habitual suffix
+    commandSuf = %^P%^; !! marks verbs the start of Command suffix (usually none)
+    futPref = %^Fut%^; !! marks verbs the start of Future prefix
+    condPref = %^Cond%^; !! marks verbs the start of Conditional prefix
+    pastPref = %^Past%^; !! marks verbs the start of Past prefix
+
+
+LEXICON Root
+!! The word forms in UNDEFINED language start from the lexeme roots of basic
+!! word classes, or optionally from prefixes:
+! 0   Nouns       ;
+Verb+:0   Verbs   ;
+! 0   Adjectives  ;
+! 0   Pronouns    ;
+! 0   Numerals    ;
+! 0   Prefixes    ;!! Entry to the lexicons responsible for forming Mohawk verbs
+
+LEXICON Verbs
+VerbPrefixes    ;
+PronomPrefix    ;!! Verbal prefixes
+
+LEXICON VerbPrefixes
+
+TemporalPrefix  ;
+
+LEXICON TemporalPrefix
+
+FuturePrefix    ;
+PastPrefix      ;
+CondPrefix  ;
+
+LEXICON FuturePrefix 
+<0:futPref "@U.Aspect.Punct@">   Future;
+
+LEXICON Future
+Fut+:en PronomPrefix;
+
+
+LEXICON CondPrefix
+<0:condPref "@U.Aspect.Punct@">   Conditional;
+
+LEXICON Conditional
+Cond+:ae    PronomPrefix;
+
+
+LEXICON PastPrefix
+<0:pastPref "@U.Aspect.Punct@">   DefinitePast;
+
+LEXICON DefinitePast
+DefPast+:wa%'    PronomPrefix;!! Verb inflection
+!  ---------------
+
+LEXICON Verbs
+VerbPrefixes ;
+PronomPrefix ;
+
+
+LEXICON PronomPrefix
+Active+:0   RedPrefixes   ; !! red prefixes f
+Passive+AgentSg3Neuter+:0 BluePrefixes  ; !! blue prefixes
+Transitive+:0    PurplePrefixes   ; !! purple prefixes
+
+LEXICON RedPrefixes
+@U.VerbType.Red@    ActivePronoun;
+
+LEXICON BluePrefixes
+@U.VerbType.Blue@    PassivePronoun;
+
+LEXICON PurplePrefixes
+@U.VerbType.Purple@    TransitivePronoun;
+
+LEXICON ActivePronoun
+<0:ppStart> BoundPronounActive ;
+
+LEXICON PassivePronoun
+<0:ppStart> BoundPronounPassive ;
+
+LEXICON TransitivePronoun
+<0:ppStart> BoundPronounRelation ;
+
+
+!!------------------ ACTIVE VERBS (RED PREFIXES) --------------
+LEXICON BoundPronounActive
+AgentSg1+:ke EndActive   ;
+AgentSg2+:se EndActive   ;
+AgentSg3Mal+:ra EndActive   ;
+AgentSg3Fem+:ye EndActive   ;
+AgentSg3Neuter+:ka EndActive   ;
+AgentDu21+:teni EndActive   ;
+AgentDu31+:yakeni EndActive   ;
+AgentDu2+:seni EndActive   ;
+AgentDu3+:hni EndActive    ;
+AgentDu3Fem+:keni EndActive   ;
+AgentPl2Sg1+:tewa EndActive   ;
+AgentPl3Sg1+:yakwa EndActive   ;
+AgentPl2+:sewa EndActive   ;
+AgentPl3+:rati EndActive   ;
+AgentPl3Fem+:konti EndActive   ;
+
+LEXICON EndActive
+PatSg3Neuter+:0 VerbStem   ; !! put a neutral patient for all active verbs
+
+!!------------------ PASSIVE VERBS (BLUE PREFIXES) --------------
+LEXICON BoundPronounPassive
+PatSg1+:wake EndPassive   ;
+PatSg2+:sa EndPassive   ;
+PatSg3Mal+:ro EndPassive   ;
+PatSg3Fem+:yako EndPassive   ;
+PatSg3Neuter+:yo EndPassive   ; 
+PatDu21+:yonkeni EndPassive   ;
+PatDu31+:yonkeni EndPassive   ; 
+PatDu2+:seni EndPassive   ; 
+PatDu3+:roti EndPassive   ;
+PatDu3Fem+:yoti EndPassive   ;
+PatPl2Sg1+:yonkwa EndPassive   ;
+PatPl3Sg1+:yonkwa EndPassive   ;
+PatPl2+:sewa EndPassive   ;
+PatPl3+:roti EndPassive   ;
+PatPl3Fem+:yoti EndPassive   ;
+
+LEXICON EndPassive
+VerbStem   ; 
+
+!!------------------ RELATION OR TRANSITIVE VERBS (PURPLE PREFIXES) --------------
+LEXICON BoundPronounRelation
+AgentSg1+:0 RelationPronI   ;
+AgentSg2+:0 RelationPronYou   ;
+AgentSg3Mal+:0 RelationPronHe   ;
+AgentSg3Fem+:0 RelationPronShe   ;
+AgentDu21+:0 RelationPronYouI   ;
+AgentDu31+:0 RelationPronSmbI   ;
+AgentDu2+:0 RelationPronYou2   ;
+AgentDu3+:0 Relation2Ms   ;
+AgentDu3Fem+:0 Relation2Fs   ;
+AgentPl3Sg1+:0 RelationYouAllI ;
+AgentPl3Sg1+:0 RelationTheyAllI ;
+AgentPl2+:0 RelationYouAll ;
+AgentPl3+:0 RelationTheyMs   ;
+AgentPl3Fem+:0 RelationTheyFs   ;
+
+LEXICON RelationPronI
+PatSg2+:kon EndRelation   ;
+PatSg3Mal+:ri EndRelation   ;
+PatSg3Fem+:khe EndRelation   ;
+PatDu2+:keni EndRelation   ;
+PatPl2+:kwa EndRelation   ;
+PatPl3+:khe EndRelation   ;
+PatPl3Fem+:khe EndRelation   ;
+
+
+LEXICON RelationPronYou
+PatSg1+:take EndRelation   ;
+PatSg3Mal+:etshe EndRelation   ;
+PatSg3Fem+:she EndRelation   ;
+PatDu31+:takeni EndRelation   ;
+PatPl3Sg1+:takwa EndRelation   ;
+PatPl3+:she EndRelation   ;
+PatPl3Fem+:she EndRelation   ;
+
+LEXICON RelationPronHe
+PatSg1+:rake EndRelation   ;
+PatSg2+:ya EndRelation   ;
+PatSg3Mal+:ro EndRelation   ;
+PatSg3Fem+:shako EndRelation   ;
+PatDu21+:shonkeni EndPassive   ;
+PatDu31+:shonkeni EndRelation   ;
+PatDu2+:etshiseni EndRelation   ;
+PatPl2Sg1+:shonkwa EndRelation   ;
+PatPl3Sg1+:shonkwa EndRelation   ;
+PatPl2+:etshisewa EndRelation   ;
+PatPl3+:shako EndRelation   ;
+PatPl3Fem+:shako EndRelation   ;
+
+LEXICON RelationPronShe
+PatSg1+:yonke EndRelation   ;
+PatSg2+:yesa EndRelation   ;
+PatSg3Mal+:ronwa EndRelation   ;
+PatSg3Fem+:yontate EndRelation   ;
+PatSg3Neuter+:konwa EndRelation   ;
+PatDu21+:yonkhi EndPassive   ;
+PatDu31+:yonkhi EndRelation   ;
+PatDu2+:yetshi EndRelation   ;
+PatPl2Sg1+:yonkhi EndRelation   ;
+PatPl3Sg1+:yonkhi EndRelation   ;
+PatPl2+:yetshi EndRelation   ;
+PatPl3+:ronwati EndRelation   ;
+PatPl3Fem+:konwati EndRelation   ;
+
+LEXICON RelationPronYouI
+PatSg3Mal+:etshiteni EndRelation   ;
+PatSg3Fem+:yethi EndRelation   ;
+PatPl3+:yethi EndRelation   ;
+PatPl3Fem+:yethi EndRelation   ;
+
+LEXICON RelationPronSmbI
+PatSg2+:keni EndRelation   ;
+PatSg3Mal+:shakeni EndRelation   ;
+PatSg3Fem+:yakhi EndRelation   ;
+PatDu2+:kwa EndRelation   ;
+PatPl2+:kwa EndRelation   ;
+PatPl3+:yakhi EndRelation   ;
+PatPl3Fem+:yakhi EndRelation   ;
+
+LEXICON RelationPronYou2
+PatSg1+:takeni EndRelation   ;
+PatSg3Mal+:etshiseni EndRelation   ;
+PatSg3Fem+:yetshi EndRelation   ;
+PatDu31+:takwa EndRelation   ;
+PatPl3Sg1+:takwa EndRelation   ;
+PatPl3+:yetshi EndRelation   ;
+PatPl3Fem+:yetshi EndRelation   ;
+
+LEXICON Relation2Ms
+PatSg1+:yonke EndRelation   ;
+PatSg2+:yesa EndRelation   ;
+PatSg3Mal+:ronwa EndRelation   ;
+PatSg3Fem+:shakoti EndRelation   ;
+PatDu21+:yonkhi EndPassive   ;
+PatDu31+:yonkhi EndRelation   ;
+PatDu2+:yetshi EndRelation   ;
+PatPl2Sg1+:yonkhi EndRelation   ;
+PatPl3Sg1+:yonkhi EndRelation   ;
+PatPl2+:yetshi EndRelation   ;
+PatPl3+:ronwati EndRelation   ;
+PatPl3Fem+:konwati EndRelation   ;
+
+LEXICON Relation2Fs
+PatSg1+:yonke EndRelation   ;
+PatSg2+:yesa EndRelation   ;
+PatSg3Mal+:ronwa EndRelation   ;
+PatSg3Fem+:yakoti EndRelation   ;
+PatDu21+:yonkhi EndPassive   ;
+PatDu31+:yonkhi EndRelation   ;
+PatDu2+:yetshi EndRelation   ;
+PatPl2Sg1+:yonkhi EndRelation   ;
+PatPl3Sg1+:yonkhi EndRelation   ;
+PatPl2+:yetshi EndRelation   ;
+PatPl3+:ronwati EndRelation   ;
+PatPl3Fem+:konwati EndRelation   ;
+
+LEXICON RelationYouAllI
+PatSg3Mal+:etshitewa EndRelation   ;
+PatSg3Fem+:yethi EndRelation   ;
+PatPl3+:yethi EndRelation   ;
+PatPl3Fem+:yethi EndRelation   ;
+
+LEXICON RelationTheyAllI
+PatSg2+:kwa EndRelation   ;
+PatSg3Mal+:shakwa EndRelation   ;
+PatSg3Fem+:yakhi EndRelation   ;
+PatDu2+:kwa EndRelation   ;
+PatPl2+:kwa EndRelation   ;
+PatPl3+:yakhi EndRelation   ;
+PatPl3Fem+:yakhi EndRelation   ;
+
+LEXICON RelationYouAll
+PatSg1+:takwa EndRelation   ;
+PatSg3Mal+:etshesewa EndRelation   ;
+PatSg3Fem+:yetshi EndRelation   ;
+PatDu31+:takwa EndRelation   ;
+PatPl3Sg1+:takwa EndRelation   ;
+PatPl3+:yetshi EndRelation   ;
+PatPl3Fem+:yetshi EndRelation   ;
+
+LEXICON RelationTheyMs  
+PatSg1+:yonke EndRelation   ;
+PatSg2+:yesa EndRelation   ;
+PatSg3Mal+:ronwa EndRelation   ;
+PatSg3Fem+:shakoti EndRelation   ;
+PatDu21+:yonkhi EndPassive   ;
+PatDu31+:yonkhi EndRelation   ;
+PatDu2+:yetshi EndRelation   ;
+PatPl2Sg1+:yonkhi EndRelation   ;
+PatPl3Sg1+:yonkhi EndRelation   ;
+PatPl2+:yetshi EndRelation   ;
+
+
+LEXICON RelationTheyFs  
+PatSg1+:yonke EndRelation   ;
+PatSg2+:yesa EndRelation   ;
+PatSg3Mal+:ronwa EndRelation   ;
+PatSg3Fem+:yakoti EndRelation   ;
+PatDu21+:yonkhi EndPassive   ;
+PatDu31+:yonkhi EndRelation   ;
+PatDu2+:yetshi EndRelation   ;
+PatPl2Sg1+:yonkhi EndRelation   ;
+PatPl3Sg1+:yonkhi EndRelation   ;
+PatPl2+:yetshi EndRelation   ;
+
+
+LEXICON EndRelation
+VerbStem   ; !! Verbs
+!  -----
+!! Verbs in Mohawk language are actions.
+!! -----------------------VERBS ---------------------------------------
+
+LEXICON VerbStem
+<0:rootStart>   VerbRoots   ;
+
+LEXICON VerbRoots
+
+ !! to hear smth, p. 11
+< {athonte}:{athón:te'n} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{athonte}:{athón:te's} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{athonte}:{athón:te'ne'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{athonte}:{athonté:'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+
+<{ehyahron} "@P.CC.One@" "@U.VerbType.Red@" >   VerbSuffixes; !! to raise, grow, p 1
+
+!! to sleep, p. 12
+< {itahw}:{itahw} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{itahw}:{itahs} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{itahw}:{itahwe'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{itahw}:{itá:'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+
+
+! to like the taste, p.13
+< {ekahw}:{ekahw} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{ekahw}:{ekahs} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{ekahw}:{ekahwe'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{ekahw}:{eka'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+ 
+!<{itehr} "@P.CC.Two@" "@U.VerbType.Purple@" >   VerbSuffixes; !! to pity smb, p. 21
+
+< {itehr}:{í:tehr} "@P.CC.Except@" "@U.VerbType.Purple@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{itehr}:{itèn:ras} "@P.CC.Except@" "@U.VerbType.Purple@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{itehr}:{í:tenhre'} "@P.CC.Except@" "@U.VerbType.Purple@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{itehr}:{itèn:ron} "@P.CC.Except@" "@U.VerbType.Purple@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+!! to pile, to stack smth
+< {i'tenhyot}:{i'tenhyó:ten} "@P.CC.Except@" "@U.VerbType.Red@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{i'tenhyot}:{i'tenhyó:tha} "@P.CC.Except@" "@U.VerbType.Red@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{i'tenhyot}:{i'tenhyó:ten'} "@P.CC.Except@" "@U.VerbType.Red@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{i'tenhyot}:{'tèn:yote} "@P.CC.Except@" "@U.VerbType.Red@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+
+
+<{ken} "@P.CC.One@" "@U.VerbType.Purple@" >   VerbSuffixes; !! to see smb, p. 18
+
+<{khonni} "@P.CC.One@" "@U.VerbType.Red@" >   VerbSuffixes; !! to cook, p 1
+
+<{onni} "@P.CC.One@" "@U.VerbType.Red@" >   VerbSuffixes; !! to make smth, p. 5
+
+!! rohrok, to watch smb, p. 19
+< {rohrok}:{aterò:rok} "@P.CC.Except@" "@U.VerbType.Purple@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{rohrok}:{aterò:roks} "@P.CC.Except@" "@U.VerbType.Purple@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{rohrok}:{aterò:roke'} "@P.CC.Except@" "@U.VerbType.Purple@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{rohrok}:{aterò:ron} "@P.CC.Except@" "@U.VerbType.Purple@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect; 
+
+
+!! to work, p. 10
+< {yo'ten}:{yo'ten} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{yo'ten}:{yo'ten's} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{yo'ten}:{yo'ten'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{yo'ten}:{yo'tén:'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+!!
+!! Verbal suffixes
+
+
+LEXICON VerbSuffixes
+AspectualSuff;
+
+
+LEXICON AspectualSuff
+CommandAspect     ;
+HabitualAspect    ;
+PerfectiveAspect     ;
+PunctualAspect    ;
+
+LEXICON CommandAspect
+<0:commandSuf "@U.Aspect.Command@">  Command;
+
+LEXICON Command
++Command:0 #;
+
+LEXICON HabitualAspect
+<0:habSuf "@U.Aspect.Habitual@">  Habitual;
+
+LEXICON Habitual
+< %+Habitual:s "@R.CC.One@" > #;
+< %+Habitual:{'s} "@R.CC.Two@" > #;
+< %+Habitual:{ha} "@R.CC.Four@" > #;
+< %+Habitual:{s} "@R.CC.Eight@" > #;
+
+
+LEXICON PerfectiveAspect
+<0:perfSuf "@U.Aspect.Perf@">  Perfect;
+
+LEXICON Perfect
+< %+Perf:0 "@R.CC.One@" > #;
+< %+Perf:{'on} "@R.CC.Two@" > #;
+< %+Perf:{e} "@R.CC.Four@" > #;
+< %+Perf:{on} "@R.CC.Eight@" > #;
+
+
+LEXICON PunctualAspect
+<0:punctSuf "@U.Aspect.Punct@">  Punctual;
+
+LEXICON Punctual
+< %+Punct:{'} "@R.CC.One@" > #;
+< %+Punct:{'} "@R.CC.Two@" > #;
+< %+Punct:{en'} "@R.CC.Four@" > #;
+< %+Punct:{e'} "@R.CC.Eight@" > #;
+
+LEXICON EndAspect
+#;

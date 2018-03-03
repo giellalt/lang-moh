@@ -1,0 +1,99 @@
+#
+#Rules for replacing c-stem forms of active (RED) bound pronouns with the correct form (be it A, E, I or O)
+#
+#
+
+
+#Agent I (ke)
+define keCore  {ke}-> k || ppMarker _ rootBM [ a | e | i | o ] ; 
+define keExc {ke} -> k || ppMarker _ rootBM [ h | y | k ] ; 
+
+
+
+
+# agent you (se)
+define seCore  {se} -> {s} || ppMarker _ rootBM [a | e | o] ,,
+{se} -> {ts} || ppMarker _ rootBM [i] ,,
+{se} -> {it} || ppMarker _ rootBM {hs};
+
+define seExc {se} -> s || ppMarker _ rootBM [ h | y | k ] ;
+define seExcPrefix {se}  -> {hse} || [?+ (verbverbTypeFG) ppMarker] _ rootBM,,
+    s -> {hs} || [?+ (verbverbTypeFG) ppMarker] _ rootBM,,
+    {ts} -> {hs} || [?+ (verbverbTypeFG) ppMarker] _ rootBM,,
+    {it} -> {t} || [?+ (verbverbTypeFG) ppMarker] _ rootBM;
+
+
+
+# agent he (ra)
+define raCore {ra} -> {r} || ppMarker _ rootBM [a | e | o] ,,
+{ra} -> {ren} || ppMarker _ rootBM [i];
+
+define raExc {ra} -> {ha} || [?+ (verbTypeFG) ppMarker] _ [t i ]^{0,1} rootBM ,,
+{ron} -> {hon} || [?+ (verbTypeFG) ppMarker] _ [n]^{0,1} rootBM ,,
+r -> {hr} || [?+ (verbTypeFG) ppMarker] _ rootBM [e | o];
+
+#agent she (ye)
+define yeCore {ye} -> {yon} || ppMarker _ rootBM [a],,
+{ye} -> {yak} || ppMarker _ rootBM [e | o];
+
+#agent it (ka)
+define kaCore {ka} -> {w} || ppMarker _ rootBM [a | e ],,
+{ka} -> {ken} || ppMarker _ rootBM [i],,
+{ka} -> {y} || ppMarker _ rootBM [o];
+
+# agent you and I (teni)
+define teniCore {teni}-> {ty} || ppMarker _ rootBM [a ] ,,
+{teni}-> {ten} || ppMarker _ rootBM [i | e | o];
+
+# agent smb and I (yakeni)
+define yakeniCore {yakeni}-> {yaken} || ppMarker _ rootBM [ i | e | o] ,,
+{yakeni}-> {yaky} || ppMarker _ rootBM [a] ;
+
+# agent you two (seni)
+define seniCore {seni}-> {sen} || ppMarker _ rootBM [ i | e | o] ,,
+{seni}-> {tsy} || ppMarker _ rootBM [a] ;
+
+# agent 2 males (ni)
+define hniCore {hni}-> {hn} || ppMarker _ rootBM [ i | e | o] ,,
+{hni}-> {hy} || ppMarker _ rootBM [a] ;
+
+define hniExc h -> 0 || [ .#. (verbTypeFG) ppMarker] _ [n [i]^{0,1}] | y rootBM;
+
+# agent 2 females (keni)
+define keniCore  {keni}-> {ken} || ppMarker _ rootBM [ i | e | o] ,,
+{keni}-> {ky} || ppMarker _ rootBM [a] ;
+
+# agent you all and I (tewa)
+define tewaCore {tewa}-> {tew} || ppMarker _ rootBM [ a | e] ,,
+{tewa}-> {tewen} || ppMarker _ rootBM [i],,
+{tewa}-> {ty} || ppMarker _ rootBM [o] ;
+
+# agent they and I (yakwa)
+define yakwaCore {yakwa}-> {yakw} || ppMarker _ rootBM [ a | e] ,,
+{yakwa}-> {yakwen} || ppMarker _ rootBM [i],,
+{yakwa}-> {yaky} || ppMarker _ rootBM [o] ;
+
+# agent all of you (sewa)
+define sewaCore {sewa}-> {sew} || ppMarker _ rootBM [ a | e] ,,
+{sewa}-> {sewen} || ppMarker _ rootBM [i],,
+{sewa}-> {tsy} || ppMarker _ rootBM [o] ;
+
+# agent they males/mixed (rati)
+define ratiCore {rati}-> {ron} || ppMarker _ rootBM [ a ] ,,
+{rati}-> {ronn} || ppMarker _ rootBM [i | e | o] ;
+
+# agent they females (konti)
+define kontiCore {konti}-> {kon} || ppMarker _ rootBM [ a ] ,,
+{konti}-> {konn} || ppMarker _ rootBM [i | e | o] ;
+
+define removeRM  rootBM -> "^" ;
+define removePP ppMarker -> "^";
+
+
+define coreRed keCore .o. seCore .o. raCore .o. yeCore .o. teniCore .o. yakeniCore .o. seniCore .o. hniCore .o. keniCore .o. tewaCore .o. yakwaCore .o. sewaCore .o. ratiCore .o. kontiCore .o. kaCore;
+
+define exceptRed keExc .o. seExc .o. seExcPrefix .o. raExc .o. hniExc;
+
+define reWriteRed coreRed .o. exceptRed ;
+
+push reWriteRed

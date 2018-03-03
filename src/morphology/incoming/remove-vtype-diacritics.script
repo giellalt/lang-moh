@@ -1,0 +1,9 @@
+# a script to remove some of the flag diacritics before working on the morpheme boundary between the personal pronoun and the root
+
+#in particular it remove diacritis pertaining to the verb type (Red, Blue or Purple)
+
+define typeFG "@U.VerbType."[{Red}|{Blue}|{Purple}]"@";
+
+define removeTypeFGs typeFG -> "FG";
+
+push removeTypeFGs

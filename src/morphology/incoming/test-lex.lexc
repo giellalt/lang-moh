@@ -1,0 +1,15 @@
+Multichar_Symbols Verb+ 1P+ 3P+
+
+LEXICON Root
+
+Verb+:0 Verbs;
+
+LEXICON Verbs
+
+1P+:ke  Stems;
+3P+:ra  Stems;
+
+LEXICON Stems
+
+nonwes  #;
+onni    #;

@@ -1,0 +1,27 @@
+# define ccClassFG "@" [P|R] ".CC." [{One}|{Two}|{Three}|{Four}|{Five}|{Six}|{Seven}|{Eight}|{Nine}] "@" ;
+# 
+# define verbTypeFG "@U.VerbType."[{Red}|{Blue}|{Purple}]"@";
+# 
+# define habAspect "@U.Aspect."{Habitual}"@";
+# 
+# define habMarker %^H%^;
+# 
+# define rootMarker %^R%-%^; # root boundary marker
+
+source rules-variables.script
+
+define hASeq ccClassFG verbTypeFG habMarker habAspect; 
+define punctSeq ccClassFG verbTypeFG punctMarker punctAspect;  
+
+regex punctSeq -> {*};
+
+#regex hASeq -> {*};
+
+#define tmp;
+
+#push tmp
+
+#define itehrHab {'s} -> {as} || rootBM {itehr} hASeq _ ;
+define itehrPunct {'} -> {e'} || rootBM {itehr} punctSeq _ ;
+
+push itehrPunct

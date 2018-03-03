@@ -1,0 +1,18 @@
+# rules for finalizing habitual aspect endings
+
+#these definitions must be the same as defined in the root lexicon in kawe-root.lexc
+
+define habS %^HAB%-S%^; # intermediate realization of 's' habitual suffix
+define habA %^HAB%-A%^; # intermediate realization of the habitual suffix 'a'
+
+define habOS habS -> s;
+define habOA habA -> a;
+
+
+define removeHabOS habS -> 0;
+define removeHabOA hab0A -> 0;
+
+
+define reWriteHabitual habOS .o. habOA .o. removeHabOS .o. removeHabOA;
+
+push reWriteHabitual

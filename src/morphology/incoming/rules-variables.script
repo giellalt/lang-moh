@@ -1,0 +1,23 @@
+#this script contains variables used by all alternation rules
+# it must be run before any of the rules
+
+define ppMarker %^PP%-%^; # marks the start of the personal prefix
+define rootBM %^R%-%^; # root boundary marker
+
+define verbTypeFG "@U.VerbType."[{Red}|{Blue}|{Purple}]"@"; # captures flag diacritis marking verb type
+
+#conjugation classes of verbs
+define ccClassFG "@" [P|R] ".CC." [{One}|{Two}|{Three}|{Four}|{Five}|{Six}|{Seven}|{Eight}|{Nine}] "@" ;
+
+
+define habAspect "@U.Aspect."{Habitual}"@";
+define commandAspect "@U.Aspect."{Command}"@";
+define punctAspect "@U.Aspect."{Punct}"@";
+define perfAspect "@U.Aspect."{Perf}"@";
+
+
+define punctMarker %^P%^;
+define perfMarker %^R%^;
+define habMarker %^H%^;
+define comMarker %^C%^;
+
