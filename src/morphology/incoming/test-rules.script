@@ -1,0 +1,31 @@
+#
+#Rules for replacing c-stem forms of active (RED) bound pronouns with the correct form (be it A, E, I or O)
+#
+#
+
+
+#these definitions must be the same as defined in the root lexicon in moh-root.lexc
+
+define rootBMarker %^R%-%^; # root boundary marker
+define pronMarker %^PP%-%^; # marks the start of the personal prefix
+#define rootBMarker "^"; # root boundary marker
+#define pronMarker "*"; # marks the start of the personal prefix
+
+# agent I (ke)
+
+
+#define keC  e-> 0 || "*" k _ "^" [ a | e | i | o ] ;
+
+#define keC  {ke}-> k || pronMarker_rootBMarker [ a | e | i | o ] ;
+
+define keC  {ke}-> k || _ [ a | e | i | o ] ;
+define cap k -> K ||  _  [ e | o];
+
+define removeR  rootBMarker -> 0 ;
+define removeP pronMarker -> 0;
+
+
+#define reWrite keC .o. removeR .o. removeP;
+define reWrite keC .o. cap;
+
+push reWrite

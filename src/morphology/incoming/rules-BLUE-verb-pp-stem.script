@@ -1,0 +1,55 @@
+#rules for replacing passive (blue) personal pronouns from their canonical c-verb forms into the one matching the following morpheme
+
+#correspond to the tables on pages 3-6 of Unit 1
+
+#Patient I (wake)
+define wakeCore  {wake}-> {wak} || ppMarker _ rootBM [ a | e | i | o ] ; 
+define wakeExc {wake} -> {wak} || ppMarker _ rootBM [ h | y | k ] ; 
+
+# Patient you (sa)
+define saCore  {sa} -> {s} || ppMarker _ rootBM [a | e | o] ;
+define saCoreI [ ppMarker {sa} rootBM i] ->  ppMarker {sen} rootBM;
+
+# Patient he (ro)
+define roAI [ ppMarker {ro} rootBM [a | i]] -> ppMarker {ro} rootBM;
+define roE {ro} -> {raw} || ppMarker _ rootBM [e] ;
+define roO {ro} -> {ra} || ppMarker _ rootBM [o] ;
+
+# Patient she (yako)
+define yakoAI [ ppMarker {yako} rootBM [a | i]] -> ppMarker {yako} rootBM;
+define yakoE {yako} -> {yakaw} || ppMarker _ rootBM [e] ;
+define yakoO {yako} -> {yaka} || ppMarker _ rootBM [o] ;
+
+# Patient it (yo)
+define yoAI [ ppMarker {yo} rootBM [a | i]] -> ppMarker {yo} rootBM;
+define yoE {yo} -> {yaw} || ppMarker _ rootBM [e] ;
+define yoO {yo} -> {ya} || ppMarker _ rootBM [o] ;
+
+#Patient both of us (yonkeni)
+define yonkeniCore  {yonkeni}-> {yonky} || ppMarker _ rootBM [ a ] ,,
+{yonkeni}-> {yonken} || ppMarker _ rootBM [ i | e | o ]; 
+
+#patient plural (M + F)
+define rotiCore {roti} -> {ron} || ppMarker _ rootBM [ a | e | o ];
+define rotiI {roti} -> {rot} || ppMarker _ rootBM [ i ];
+
+#patient plural females
+define yotiCore {yoti} -> {yon} || ppMarker _ rootBM [ a | e | o ];
+define yotiI {yoti} -> {yot} || ppMarker _ rootBM [ i ];
+
+#patient all of us (they and I or you all and I), yonkwa
+define yonkwaAE {yonkwa} -> {yonkw} || ppMarker _ rootBM [ a | e  ];
+define yonkwaO {yonkwa} -> {yonky} || ppMarker _ rootBM [o];
+define yonkwaI [ ppMarker {yakwa} rootBM [i]] -> ppMarker {yonkwen} rootBM;
+
+
+define removeRM  rootBM -> "^" ;
+define removePP ppMarker -> "^";
+
+define coreBlue wakeCore .o. saCore .o. saCoreI .o. roAI .o. roE .o. roO .o. yakoAI .o. yakoE .o. yakoO .o. yoAI .o. yoE .o. yoO .o. yonkeniCore .o. rotiCore .o. rotiI .o. yotiCore .o. yotiI .o. yonkwaAE .o. yonkwaO .o. yonkwaI;
+
+define exceptBlue wakeExc ;
+
+define reWriteBlue coreBlue .o. exceptBlue ;
+
+push reWriteBlue

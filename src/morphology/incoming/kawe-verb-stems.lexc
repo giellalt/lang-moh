@@ -1,0 +1,35 @@
+!! Verbs
+!  -----
+!! Verbs in Mohawk language are actions.
+!! -----------------------VERBS ---------------------------------------
+
+LEXICON VerbStem
+<0:rootStart>   VerbRoots   ;
+
+
+
+LEXICON VerbRoots
+
+<{athonte} "@P.CC.Two@" "@U.VerbType.Blue@" >   VerbSuffixes; !! to hear smth, p. 11
+
+<{ehyahron} "@P.CC.One@" "@U.VerbType.Red@" >   VerbSuffixes; !! to raise, grow, p 1
+
+<{itahw} "@P.CC.Eight@" "@U.VerbType.Blue@" >   VerbSuffixes; !! to sleep, p. 12
+
+<{ekahw} "@P.CC.Eight@" "@U.VerbType.Blue@" >   VerbSuffixes; !! to like the taste, p.13
+ 
+<{itehr} "@P.CC.Two@" "@U.VerbType.Purple@" >   VerbSuffixes; !! to pity smb, p. 21
+ 
+<{i'tehhyot} "@P.CC.Four@" "@U.VerbType.Blue@" >   VerbSuffixes; !! to pile, to stack smth
+
+<{ken} "@P.CC.One@" "@U.VerbType.Purple@" >   VerbSuffixes; !! to see smb, p. 18
+
+<{khonni} "@P.CC.One@" "@U.VerbType.Red@" >   VerbSuffixes; !! to cook, p 1
+
+<{onni} "@P.CC.One@" "@U.VerbType.Red@" >   VerbSuffixes; !! to make smth, p. 5
+
+<{rohrok} "@P.CC.Two@" "@U.VerbType.Purple@" >   VerbSuffixes; !! to watch smb, p. 19
+
+<{yo'ten} "@P.CC.Two@" "@U.VerbType.Blue@" >   VerbSuffixes; !! to work, p. 10
+
+

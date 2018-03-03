@@ -1,0 +1,37 @@
+#exceptions of aspectual verbal suffixes
+
+
+#define itehrHab {'s} -> {as} || rootBM {itehr} habMarker _ ;
+#define itehrPunct {'} -> {e'} || rootBM {itehr} punctMarker _ ; 
+#define itehrPerf {'on} -> {on} || rootBM {itehr} perfMarker _ ; 
+
+#-itehr 
+define itehrHab {'s} -> {as} || rootBM {itehr} habMarker _ ,,
+    {itehr} -> {itenr} || rootBM _ [ habMarker];
+    
+define itehrPunct {'} -> {e'} || rootBM {itehr} punctMarker _ ,,
+    {itehr} -> {itenhr} || rootBM _ punctMarker; 
+    
+    
+define itehrPerf {'on} -> {on} || rootBM {itehr} perfMarker _ ,,
+     {itehr} -> {itenr} || rootBM _ [perfMarker]; 
+
+define itehrAsp itehrHab .o. itehrPunct .o. itehrPerf;
+
+
+#-rohrok
+define rohrokHab {'s} -> {s} || rootBM {rohrok} habMarker _ ,,
+    {rohrok} -> {rorok} || rootBM _ [ habMarker];
+
+define rohrokPerf {'on} -> {on} || rootBM {rohrok} perfMarker _ ,,
+     {rohrok} -> {ror} || rootBM _ [perfMarker]; 
+    
+define rohrokPunct {'} -> {e'} || rootBM {rohrok} punctMarker _ ,,
+    {rohrok} -> {rorok} || rootBM _  punctMarker;
+
+define rohrokAsp rohrokHab .o. rohrokPunct .o. rohrokPerf;
+
+
+define aspAll itehrAsp .o. rohrokAsp;
+push aspAll
+

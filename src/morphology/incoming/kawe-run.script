@@ -1,0 +1,25 @@
+read lexc kawe-all.lexc
+define mohLexicon;
+
+set flag-is-epsilon ON
+
+source rules-variables.script
+source rules-RED-verb-pp-stem.script
+source rules-BLUE-verb-pp-stem.script
+source rules-PURPLE-verb-pp-stem.script
+source rules-remove-markup.script
+
+define mohGrammar mohLexicon .o. reWriteRed .o. reWriteBlue .o. reWritePurple;
+
+
+regex mohGrammar;
+
+clear stack
+push mohGrammar
+save stack binaries/kawe-28-02-2018.fomabin
+
+define mohCleanGrammar mohLexicon .o. reWriteRed .o. reWriteBlue .o. reWritePurple .o. removeAll;
+regex mohCleanGrammar;
+clear stack
+push mohCleanGrammar
+save stack binaries/kawe-28-02-2018-nomarkup.fomabin

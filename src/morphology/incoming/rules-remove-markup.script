@@ -1,0 +1,20 @@
+#this script removes markup inserted by the lexicon 
+# it may optionally be run after applying all rules
+
+define ppMarker %^PP%-%^; # marks the start of the personal prefix
+define rootBM %^R%-%^; # root boundary marker
+define punctMarker %^P%^;
+define perfMarker %^R%^;
+define habMarker %^H%^;
+define comMarker %^C%^;
+
+define futPref %^Fut%^; 
+define   condPref %^Cond%^; 
+define pastPref %^Past%^; 
+
+
+
+define removeAll [rootBM | ppMarker | punctMarker | perfMarker | habMarker | comMarker | futPref | condPref | pastPref] -> 0;
+
+push removeAll
+

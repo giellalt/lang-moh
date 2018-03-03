@@ -1,0 +1,51 @@
+!!
+!! Verbal suffixes
+
+
+LEXICON VerbSuffixes
+AspectualSuff;
+
+
+LEXICON AspectualSuff
+CommandAspect     ;
+HabitualAspect    ;
+PerfectiveAspect     ;
+PunctualAspect    ;
+
+LEXICON CommandAspect
+<0:commandSuf "@U.Aspect.Command@">  Command;
+
+LEXICON Command
++Command:0 #;
+
+LEXICON HabitualAspect
+<0:habSuf "@U.Aspect.Habitual@">  Habitual;
+
+LEXICON Habitual
+< %+Habitual:s "@R.CC.One@" > #;
+< %+Habitual:{'s} "@R.CC.Two@" > #;
+< %+Habitual:{ha} "@R.CC.Four@" > #;
+< %+Habitual:{s} "@R.CC.Eight@" > #;
+
+
+LEXICON PerfectiveAspect
+<0:perfSuf "@U.Aspect.Perf@">  Perfect;
+
+LEXICON Perfect
+< %+Perf:0 "@R.CC.One@" > #;
+< %+Perf:{'on} "@R.CC.Two@" > #;
+< %+Perf:{e} "@R.CC.Four@" > #;
+< %+Perf:{on} "@R.CC.Eight@" > #;
+
+
+LEXICON PunctualAspect
+<0:punctSuf "@U.Aspect.Punct@">  Punctual;
+
+LEXICON Punctual
+< %+Punct:{'} "@R.CC.One@" > #;
+< %+Punct:{'} "@R.CC.Two@" > #;
+< %+Punct:{en'} "@R.CC.Four@" > #;
+< %+Punct:{e'} "@R.CC.Eight@" > #;
+
+LEXICON EndAspect
+#;

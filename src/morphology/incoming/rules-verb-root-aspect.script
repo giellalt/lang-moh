@@ -1,0 +1,18 @@
+# re-write rules that correct the multiple exceptions occurring at the morpheme boundary between verb root and aspectual suffixes
+
+define habSeq ccClassFG verbTypeFG habMarker habAspect;
+define punctSeq ccClassFG verbTypeFG punctMarker punctAspect; 
+
+
+define itehrHab {'s} -> {as} || rootBM {itehr} habSeq _ ;
+define itehrPunct {'} -> {e'} || rootBM {itehr} punctSeq _ ;
+
+define itehrAsp itehrHab .o. itehrPunct;
+
+#define allRootAspect itehrHab .o. itehrPunct;
+#regex allRootAspect;
+
+#define allRootAspect {itehr} -> {ITEHR};
+define allRootAspect [...] -> {***} || _ verbTypeFG;
+
+push allRootAspect

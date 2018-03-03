@@ -1,0 +1,81 @@
+#rules for replacing "transitive" (purple) personal pronouns from their canonical c-verb forms into the one matching the following morpheme
+
+#correspond to the tables on pages 7-8 of Unit 1
+
+# me->you (kon)
+define konCore  {kon}-> {kony} || ppMarker _ rootBM [ a | e | o ] ; 
+define konI [ ppMarker {kon} rootBM [i]] -> ppMarker {kon} rootBM;
+
+#me -> him (ri)
+define riCore {ri}-> {riy} || ppMarker _ rootBM [ a | e | o ] ; 
+define riI {ri}-> {r} || ppMarker _ rootBM [ i ];
+
+#me -> her/them (khe)
+define kheCore  {khe}-> {khey} || ppMarker _ rootBM [ a | e | o ] ; 
+define kheI [ ppMarker {khe} rootBM [i]] -> ppMarker {khe} rootBM;
+
+#me -> you two (keni)
+define keniCore {keni}-> {ken} || ppMarker _ rootBM [ i | e | o ] ; 
+define keniA {keni}-> {ky} || ppMarker _ rootBM [ a ];
+
+#me -> you all; they & I -> you (kwa)
+define kwaCore  {kwa}-> {kw} || ppMarker _ rootBM [ a | e  ] ; 
+define kwaI [ ppMarker {kwa} rootBM [i]] -> ppMarker {kwen} rootBM;
+define kwaO  {kwa}-> {ky} || ppMarker _ rootBM [ o  ] ; 
+
+#you -> me (take)
+define takeCore {take}-> {tak} || ppMarker _ rootBM [ i | e | o | h | y] ; 
+define takeA {take}-> {takw} || ppMarker _ rootBM [ a ];
+
+#you -> him (etshe)
+define etsheCore {etshe}-> {etsh} || ppMarker _ rootBM [ a| i | e | o | h | y] ;
+
+
+
+#you -> her, them (she)
+define sheCore  {she}-> {shey} || ppMarker _ rootBM [ a | e | o ] ; 
+define sheI [ ppMarker {she} rootBM [i]] -> ppMarker {she} rootBM;
+define prefShe {she} -> {hshe} || [?+ (verbverbTypeFG) ppMarker] _ rootBM;
+
+#you -> them and I; you all -> me (takwa)
+define takwaCore  {takwa}-> {taky} || ppMarker _ rootBM [ a | o  ] ; 
+define takwaI [ ppMarker {takwa} rootBM [i]] -> ppMarker {takwen} rootBM;
+define takwaE  {takwa}-> {takw} || ppMarker _ rootBM [ e  ] ; 
+
+#you and I -> him (etshiteni)
+define etshiteniCore {etshiteni}-> {etshiten} || ppMarker _ rootBM [  i | e | o ] ;
+define etshiteniA {etshiteni}-> {etshity} || ppMarker _ rootBM [  a ] ;
+
+#us -> her, them (yethi)
+define yethiCore  {yethi}-> {yethiy} || ppMarker _ rootBM [ a | e | o ] ; 
+define yethiI [ ppMarker {yethi} rootBM [i]] -> ppMarker {yeth} rootBM;
+
+#you two -> me (takeni)
+define takeniCore {takeni}-> {taken} || ppMarker _ rootBM [ i | e | o ] ; 
+define takeniA {takeni}-> {taky} || ppMarker _ rootBM [ a ];
+
+#you two -> him (etshiseni)
+define etshiseniCore {etshiseni}-> {etshisen} || ppMarker _ rootBM [  i | e | o ] ;
+define etshiseniA {etshiseni}-> {etshitsy} || ppMarker _ rootBM [  a ] ;
+
+#you all and I -> him (etshitewa)
+define etshitewaCore  {etshitewa}-> {etshitew} || ppMarker _ rootBM [ a | e | o ] ; 
+define etshitewaI [ ppMarker {etshitewa} rootBM [i]] -> ppMarker {etshitewen} rootBM;
+
+#you all -> him (etshisewa)
+define etshisewaCore  {etshisewa}-> {etshisew} || ppMarker _ rootBM [ a | e | o ] ; 
+define etshisewaI [ ppMarker {etshisewa} rootBM [i]] -> ppMarker {etshisewen} rootBM;
+
+
+define corePurple konCore .o. konI .o. riCore .o. riI .o. kheCore .o. kheI .o. keniCore .o. keniA .o. kwaCore .o. kwaI .o. kwaO .o. takeCore .o. takeA .o. etsheCore .o. sheCore .o. sheI .o. prefShe .o. takwaCore .o. takwaI .o. takwaE .o. etshiteniCore.o. etshiteniA .o. yethiCore .o. yethiI .o. takeniCore .o. takeniA .o. etshiseniCore.o. etshiseniA .o. etshitewaCore .o. etshitewaI .o. etshisewaCore .o. etshisewaI;
+
+
+
+
+
+#define exceptPurple konExc ;
+
+define reWritePurple corePurple ;
+
+push reWritePurple
+
