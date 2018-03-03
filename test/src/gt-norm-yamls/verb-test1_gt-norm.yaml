@@ -1,0 +1,17 @@
+Config:
+  hfst:
+    Gen: ../../../src/generator-gt-norm.hfst
+    Morph: ../../../src/analyser-gt-norm.hfst
+  foma:
+    Gen: ../../../src/generator-gt-norm.foma
+    Morph: ../../../src/analyser-gt-norm.foma
+    App: lookup
+
+Tests:
+
+  Verb - onni: # verb I, stem -ie, root vowel -åe-
+    Verb+Active+AgentSg3Mal+PatSg3Neuter+onni: raonni
+    Verb+Active+AgentSg3Fem+PatSg3Neuter+onni: yeonni
+        
+    
+ 

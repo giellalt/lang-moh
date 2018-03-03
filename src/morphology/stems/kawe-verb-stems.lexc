@@ -1,0 +1,68 @@
+!! Verbs
+!  -----
+!! Verbs in Mohawk language are actions.
+!! -----------------------VERBS ---------------------------------------
+
+LEXICON VerbStem
+<0:rootStart>   VerbRoots   ;
+
+LEXICON VerbRoots
+
+ !! to hear smth, p. 11
+< {athonte}:{athón:te'n} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{athonte}:{athón:te's} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{athonte}:{athón:te'ne'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{athonte}:{athonté:'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+
+<{ehyahron} "@P.CC.One@" "@U.VerbType.Red@" >   VerbSuffixes; !! to raise, grow, p 1
+
+!! to sleep, p. 12
+< {itahw}:{itahw} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{itahw}:{itahs} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{itahw}:{itahwe'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{itahw}:{itá:'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+
+
+! to like the taste, p.13
+< {ekahw}:{ekahw} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{ekahw}:{ekahs} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{ekahw}:{ekahwe'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{ekahw}:{eka'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+ 
+!<{itehr} "@P.CC.Two@" "@U.VerbType.Purple@" >   VerbSuffixes; !! to pity smb, p. 21
+
+< {itehr}:{í:tehr} "@P.CC.Except@" "@U.VerbType.Purple@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{itehr}:{itèn:ras} "@P.CC.Except@" "@U.VerbType.Purple@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{itehr}:{í:tenhre'} "@P.CC.Except@" "@U.VerbType.Purple@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{itehr}:{itèn:ron} "@P.CC.Except@" "@U.VerbType.Purple@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+!! to pile, to stack smth
+< {i'tenhyot}:{i'tenhyó:ten} "@P.CC.Except@" "@U.VerbType.Red@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{i'tenhyot}:{i'tenhyó:tha} "@P.CC.Except@" "@U.VerbType.Red@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{i'tenhyot}:{i'tenhyó:ten'} "@P.CC.Except@" "@U.VerbType.Red@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{i'tenhyot}:{'tèn:yote} "@P.CC.Except@" "@U.VerbType.Red@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+
+
+
+<{ken} "@P.CC.One@" "@U.VerbType.Purple@" >   VerbSuffixes; !! to see smb, p. 18
+
+<{khonni} "@P.CC.One@" "@U.VerbType.Red@" >   VerbSuffixes; !! to cook, p 1
+
+<{onni} "@P.CC.One@" "@U.VerbType.Red@" >   VerbSuffixes; !! to make smth, p. 5
+
+!! rohrok, to watch smb, p. 19
+< {rohrok}:{aterò:rok} "@P.CC.Except@" "@U.VerbType.Purple@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{rohrok}:{aterò:roks} "@P.CC.Except@" "@U.VerbType.Purple@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{rohrok}:{aterò:roke'} "@P.CC.Except@" "@U.VerbType.Purple@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{rohrok}:{aterò:ron} "@P.CC.Except@" "@U.VerbType.Purple@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect; 
+
+
+!! to work, p. 10
+< {yo'ten}:{yo'ten} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" %+Command:0 >   EndAspect;
+<{yo'ten}:{yo'ten's} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{yo'ten}:{yo'ten'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@U.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{yo'ten}:{yo'tén:'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+

@@ -1,0 +1,99 @@
+! ========================================================================== !
+!             !!!Mohawk morphological analyser                      !
+! ========================================================================== !
+!! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
+ 
+
+
+!! first attempt to model simplest form of mohawk verbs:
+!! personal prefix + root
+!! http://giellatekno.uit.no/doc/lang/common/MorphologicalTags.html
+!! extra tages are listed below
+
+Multichar_Symbols  !!≈ !!!@CODE@ definitions
+Verb+
+AgentSg1+ !! I-> X
+AgentSg2+  !! you-> X
+AgentSg3Mal+ !! he -> X
+AgentSg3Fem+ !! she/smb/they -> X
+AgentSg3Neuter+ !! it -> X
+AgentDu21+ !! you and I -> X
+AgentDu31+ !! smb and I -> X
+AgentDu2+ !! you two -> X
+AgentDu3+ !! two males or mixed -> X
+AgentDu3Fem+ !! two females -> X
+AgentPl2Sg1+ !! you all and I -> X
+AgentPl3Sg1+ !! they all and I -> X
+AgentPl2+ !! you all
+AgentPl3+ !! they all (male or mixed) -> X
+AgentPl3Fem+ !! they all (female) -> X
+PatSg1+ !! X -> I
+PatSg2+  !!  X -> you
+PatSg3Mal+ !! X -> he 
+PatSg3Fem+ !! X -> she/smb/they 
+PatSg3Neuter+ !! X -> it 
+PatDu21+ !! X -> you and I
+PatDu31+ !! X -> smb and I 
+PatDu2+ !! X -> you two 
+PatDu3+ !! X -> two males or mixed 
+PatDu3Fem+ !! X -> two females
+PatPl2Sg1+ !! X -> you all and I 
+PatPl3Sg1+ !! X -> they all and I 
+PatPl2+ !! X -> you all
+PatPl3+ !! X -> they all (male or mixed) 
+PatPl3Fem+ !! X -> they all (female) 
+Mal+  !!Male
+Fem+ !!Female
+Neuter+ !!Neuter
+Active+ !! Active voice, Red verbs
+Passive+ !! Passive voice, Blue verbs
+Transitive+ !! Transitive verbs, Purple verbs
+Fut+
+DefPast+
+Cond+
++Habitual
++Perf
++Punct
++Command
+@U.VerbType.Red@
+@U.VerbType.Blue@
+@U.VerbType.Purple@
+@P.CC.One@ @R.CC.One@!! The following are verb conjugation classes, one through 9, plus Exceptions class
+@P.CC.Two@ @R.CC.Two@
+@P.CC.Three@ @R.CC.Three@
+@P.CC.Four@ @R.CC.Four@
+@P.CC.Five@ @R.CC.Five@
+@P.CC.Six@ @R.CC.Six@
+@P.CC.Seven@ @R.CC.Seven@
+@P.CC.Eight@ @R.CC.Eight@
+@P.CC.Nine@ @R.CC.Nine@
+@P.CC.Except@ @R.CC.Except@
+@U.Aspect.Command@
+@U.Aspect.Habitual@
+@U.Aspect.Punct@
+@P.Aspect.Punct@ @R.Aspect.Punct@
+@U.Aspect.Perf@
+
+
+
+Definitions
+    ppStart = %^PP%-%^; !! start of personal prefix boundary  
+    rootStart = %^R%-%^; !!  start of the root morpheme  
+    habSuf = %^H%^; !! marks verbs the start of Habitual suffix
+    perfSuf = %^R%^; !! marks verbs the start of Perfective suffix
+    punctSuf = %^P%^; !! marks verbs the start of Habitual suffix
+    commandSuf = %^P%^; !! marks verbs the start of Command suffix (usually none)
+    futPref = %^Fut%^; !! marks verbs the start of Future prefix
+    condPref = %^Cond%^; !! marks verbs the start of Conditional prefix
+    pastPref = %^Past%^; !! marks verbs the start of Past prefix
+
+
+LEXICON Root
+!! The word forms in UNDEFINED language start from the lexeme roots of basic
+!! word classes, or optionally from prefixes:
+! 0   Nouns       ;
+Verb+:0   Verbs   ;
+! 0   Adjectives  ;
+! 0   Pronouns    ;
+! 0   Numerals    ;
+! 0   Prefixes    ;
