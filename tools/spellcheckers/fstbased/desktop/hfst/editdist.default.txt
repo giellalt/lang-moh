@@ -11,7 +11,6 @@
 ~3
 ~4
 ~5
-~6
 ~7
 ~8
 ~9
@@ -26,11 +25,10 @@
 ~¼
 ~½
 ~¾
-~‒
-~–
-~—
-~―
-~’
+# ~‒
+# ~–
+# ~—
+# ~―
 ~€
 
 ## Inclusions: this is the real alphabet definition:
@@ -71,6 +69,9 @@ y
 z
 -
 .
+:
+'
+’
 0
 1
 2
@@ -81,14 +82,16 @@ z
 7
 8
 9
-:
-'
 
 ## Transition pairs + weight - section separator:
 @@
 
 ## Transition pair specifications + weight:
 a	á	0.4
+a	à	0.4
+á	à	0.6
+á	à	0.6
+r	h	1
 
 ## Swaps:
 ## Change dh into hd with the weight 0.5:
