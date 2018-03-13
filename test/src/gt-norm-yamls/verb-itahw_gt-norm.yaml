@@ -1,0 +1,41 @@
+Config:
+  hfst:
+    Gen: ../../../src/generator-gt-norm.hfst
+    Morph: ../../../src/analyser-gt-norm.hfst
+  foma:
+    Gen: ../../../src/generator-gt-norm.foma
+    Morph: ../../../src/analyser-gt-norm.foma
+    App: lookup
+
+Tests:
+  
+  Verb - itahw - ok : # -m animate noun, net AEW NA2
+    Verb+Passive+AgentSg3Neuter+PatSg1+itahw+Habitual: wakitahs
+    Verb+Passive+AgentSg3Neuter+PatSg2+itahw+Habitual: sentahs
+    Verb+Passive+AgentSg3Neuter+PatSg3Mal+itahw+Habitual: rotahs
+    Verb+Passive+AgentSg3Neuter+PatSg3Fem+itahw+Habitual: yakotahs
+    Verb+Passive+AgentSg3Neuter+PatSg3Neuter+itahw+Habitual: yotahs
+    Verb+Passive+AgentSg3Neuter+PatDu21+itahw+Habitual: yonkenitahs
+    Verb+Passive+AgentSg3Neuter+PatDu31+itahw+Habitual: yonkenitahs
+    Verb+Passive+AgentSg3Neuter+PatDu3+itahw+Habitual: rotitahs
+    Verb+Passive+AgentSg3Neuter+PatDu3Fem+itahw+Habitual: yotitahs
+    Verb+Passive+AgentSg3Neuter+PatPl2Sg1+itahw+Habitual: yonkwaitahs
+    Verb+Passive+AgentSg3Neuter+PatPl3Sg1+itahw+Habitual: yonkwaitahs
+    Verb+Passive+AgentSg3Neuter+PatPl2+itahw+Habitual: sewenitahs
+    Verb+Passive+AgentSg3Neuter+PatPl3+itahw+Habitual: rotitahs
+    Verb+Passive+AgentSg3Neuter+PatPl3Fem+itahw+Habitual: yotitahs
+    Verb+DefPast+Passive+AgentSg3Neuter+PatSg1+itahw+Punct: wa'wakitahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatSg2+itahw+Punct: wa'sentahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatSg3Mal+itahw+Punct: wa'rotahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatSg3Fem+itahw+Punct: wa'yakotahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatSg3Neuter+itahw+Punct: wa'yotahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatDu21+itahw+Punct: wa'yonkenitahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatDu31+itahw+Punct: wa'yonkenitahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatDu3+itahw+Punct: wa'rotitahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatDu3Fem+itahw+Punct: wa'yotitahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatPl2Sg1+itahw+Punct: wa'yonkwaitahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatPl3Sg1+itahw+Punct: wa'yonkwaitahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatPl2+itahw+Punct: wa'sewenitahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatPl3+itahw+Punct: wa'rotitahwe'
+    Verb+DefPast+Passive+AgentSg3Neuter+PatPl3Fem+itahw+Punct: wa'yotitahwe'
+     
