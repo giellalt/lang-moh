@@ -3,7 +3,11 @@
 
 
 LEXICON VerbSuffixes
-AspectualSuff;
+<"@D.RequireTe@" "@D.RequireNi@"> AspectualSuff;
+
+!! special Lexicon for Red verbs taking on Blue prefixes in PerfectiveAspect
+LEXICON VerbSuffixesPerfect
+<0:perfSuf "@U.Aspect.Perf@" "@D.RequireTe@" "@D.RequireNi@" "@R.VerbType.RedPerfect@"> Perfect;
 
 
 LEXICON AspectualSuff
@@ -13,7 +17,7 @@ PerfectiveAspect     ;
 PunctualAspect    ;
 
 LEXICON CommandAspect
-<0:commandSuf "@U.Aspect.Command@">  Command;
+<0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" >  Command;
 
 LEXICON Command
 +Command:0 #;
@@ -25,27 +29,30 @@ LEXICON Habitual
 < %+Habitual:s "@R.CC.One@" > #;
 < %+Habitual:{'s} "@R.CC.Two@" > #;
 < %+Habitual:{ha} "@R.CC.Four@" > #;
+< %+Habitual:{ha} "@R.CC.Six@" > #;
 < %+Habitual:{s} "@R.CC.Eight@" > #;
 
 
 LEXICON PerfectiveAspect
-<0:perfSuf "@U.Aspect.Perf@">  Perfect;
+<0:perfSuf "@U.Aspect.Perf@" "@D.VerbType.Red@">  Perfect;
 
 LEXICON Perfect
 < %+Perf:0 "@R.CC.One@" > #;
 < %+Perf:{'on} "@R.CC.Two@" > #;
 < %+Perf:{e} "@R.CC.Four@" > #;
+< %+Perf:{en} "@R.CC.Six@" > #;
 < %+Perf:{on} "@R.CC.Eight@" > #;
 
 
 LEXICON PunctualAspect
-<0:punctSuf "@U.Aspect.Punct@">  Punctual;
+<0:punctSuf "@R.Aspect.Punct@">  Punctual;
 
 LEXICON Punctual
 < %+Punct:{'} "@R.CC.One@" > #;
 < %+Punct:{'} "@R.CC.Two@" > #;
 < %+Punct:{en'} "@R.CC.Four@" > #;
+< %+Punct:{e'} "@R.CC.Six@" > #;
 < %+Punct:{e'} "@R.CC.Eight@" > #;
 
 LEXICON EndAspect
-#;
+ <"@D.RequireTe@" "@D.RequireNi@"> #;

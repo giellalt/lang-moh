@@ -2,13 +2,30 @@
 
 LEXICON VerbPrefixes
 
-TemporalPrefix  ;
+ TemporalPrefix  ;
+<0:[teMarker {te}] "@P.RequireTe.On@"> TePrefix  ; !! this is a verb with the dualistic te-prefix
+<0:[niMarker {ni}] "@P.RequireNi.On@"> TemporalPrefix  ; !! this is a verb with the quantitative ni-prefix
+
+LEXICON TePrefix    
+
+FuturePrefix    ;
+CondPrefix  ;
+PronomPrefix    ;
 
 LEXICON TemporalPrefix
 
 FuturePrefix    ;
 PastPrefix      ;
+PastTePrefix      ; !! Punctual Past for te-verbs: wa + te + pron + verb
 CondPrefix  ;
+PronomPrefix    ;
+
+LEXICON PastTePrefix
+<0:pastPref "@U.Aspect.Punct@" >   DefiniteTePast;
+
+LEXICON DefiniteTePast
+< DefPast%+:[{wa'} teMarker {te}] "@P.RequireTe.On@"> PronomPrefix    ;
+
 
 LEXICON FuturePrefix 
 <0:futPref "@U.Aspect.Punct@">   Future;
@@ -21,11 +38,11 @@ LEXICON CondPrefix
 <0:condPref "@U.Aspect.Punct@">   Conditional;
 
 LEXICON Conditional
-Cond+:ae    PronomPrefix;
+Cond+:a    PronomPrefix;
 
 
 LEXICON PastPrefix
-<0:pastPref "@U.Aspect.Punct@">   DefinitePast;
+<0:pastPref "@U.Aspect.Punct@" "@D.RequireTe@">   DefinitePast;
 
 LEXICON DefinitePast
-DefPast+:wa%'    PronomPrefix;
+DefPast+:wa    PronomPrefix;
