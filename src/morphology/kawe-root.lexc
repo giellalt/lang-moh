@@ -51,13 +51,16 @@ Transitive+ !! Transitive verbs, Purple verbs
 Fut+
 DefPast+
 Cond+
+Te+ !! dualistic prefix integral to some verbs
 +Habitual
 +Perf
 +Punct
 +Command
 @U.VerbType.Red@
+@U.VerbType.RedPerfect@  @R.VerbType.RedPerfect@ !! a special pseudo-type to allow red verbs take blue prefixes in Perfective aspect
 @U.VerbType.Blue@
 @U.VerbType.Purple@
+@D.VerbType.Red@ !! disallow red prefixes in Perfective aspect
 @P.CC.One@ @R.CC.One@!! The following are verb conjugation classes, one through 9, plus Exceptions class
 @P.CC.Two@ @R.CC.Two@
 @P.CC.Three@ @R.CC.Three@
@@ -73,6 +76,9 @@ Cond+
 @U.Aspect.Punct@
 @P.Aspect.Punct@ @R.Aspect.Punct@
 @U.Aspect.Perf@
+@P.RequireTe.On@ @R.RequireTe.On@ @C.RequireTe@ @D.RequireTe@ @N.RequireTe.On@
+@P.RequireNi.On@ @R.RequireNi.On@ @C.RequireNi@ @D.RequireNi@ 
+@P.Command.On@ @R.Command.On@
 
 
 
@@ -82,10 +88,13 @@ Definitions
     habSuf = %^H%^; !! marks verbs the start of Habitual suffix
     perfSuf = %^R%^; !! marks verbs the start of Perfective suffix
     punctSuf = %^P%^; !! marks verbs the start of Habitual suffix
-    commandSuf = %^P%^; !! marks verbs the start of Command suffix (usually none)
+    commandSuf = %^C%^; !! marks verbs the start of Command suffix (usually none)
     futPref = %^Fut%^; !! marks verbs the start of Future prefix
     condPref = %^Cond%^; !! marks verbs the start of Conditional prefix
     pastPref = %^Past%^; !! marks verbs the start of Past prefix
+    hiddenH = %^hh%^; !! marks hidden h that only appears in certain circumstances
+    teMarker = %^TE%^; !! marks the te- part of te-verbs
+    niMarker = %^NI%^; !! marks the te- part of ni-verbs
 
 
 LEXICON Root
@@ -97,3 +106,5 @@ Verb+:0   Verbs   ;
 ! 0   Pronouns    ;
 ! 0   Numerals    ;
 ! 0   Prefixes    ;
+
+

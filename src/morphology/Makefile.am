@@ -22,12 +22,17 @@ HFST_LEXC_LOCAL_FLAGS=
 GT_LEXC_ROOT=$(srcdir)/kawe-root.lexc
 
 # Set this to the names of all regular lexc source files:
-GT_LEXC_SRCS_L1_L2=\
-			 stems/kawe-verb-stems.lexc       \
-			 affixes/kawe-verbs.lexc \
-			 affixes/kawe-verb-pref.lexc \
-			 affixes/kawe-verb-pron-pref.lexc \
-			 affixes/kawe-verb-suff.lexc
+GT_LEXC_SRCS_L1_L2=affixes/kawe-verbs.lexc  \
+			affixes/kawe-verb-pref.lexc \
+			affixes/kawe-verb-pron-pref.lexc \
+			stems/stems-gen.lexc \
+			affixes/kawe-verb-suff.lexc
+# stems/kawe-verb-stems.lexc       \
+# 			 affixes/kawe-verbs.lexc \
+# 			 affixes/kawe-verb-pref.lexc \
+# 			 affixes/kawe-verb-pron-pref.lexc \
+# 			 affixes/kawe-verb-suff.lexc
+
 #			 stems/adjectives.lexc    \
 #			 stems/nouns.lexc         \
 #			 stems/numerals.lexc      \

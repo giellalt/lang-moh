@@ -1,24 +1,26 @@
 !! Verb inflection
 !  ---------------
 
-!!LEXICON Verbs
-!!VerbPrefixes ;
-!!PronomPrefix ;
-
 
 LEXICON PronomPrefix
-Active+:0   RedPrefixes   ; !! red prefixes f
+Active+:0   RedPrefixes   ; !! red prefixes 
+Passive+AgentSg3Neuter+:0   RedPerfectPrefixes   ; !! red turn blue prefixes in Perfective aspect
 Passive+AgentSg3Neuter+:0 BluePrefixes  ; !! blue prefixes
 Transitive+:0    PurplePrefixes   ; !! purple prefixes
 
 LEXICON RedPrefixes
 @U.VerbType.Red@    ActivePronoun;
 
+LEXICON RedPerfectPrefixes 
+@U.VerbType.RedPerfect@    PassivePronoun;
+
 LEXICON BluePrefixes
 @U.VerbType.Blue@    PassivePronoun;
 
 LEXICON PurplePrefixes
 @U.VerbType.Purple@    TransitivePronoun;
+
+
 
 LEXICON ActivePronoun
 <0:ppStart> BoundPronounActive ;
@@ -30,21 +32,23 @@ LEXICON TransitivePronoun
 <0:ppStart> BoundPronounRelation ;
 
 
+
+
 !!------------------ ACTIVE VERBS (RED PREFIXES) --------------
 LEXICON BoundPronounActive
 AgentSg1+:ke EndActive   ;
-AgentSg2+:se EndActive   ;
+<AgentSg2%+:{se} "@P.Command.On@" > EndActive   ;
 AgentSg3Mal+:ra EndActive   ;
 AgentSg3Fem+:ye EndActive   ;
 AgentSg3Neuter+:ka EndActive   ;
 AgentDu21+:teni EndActive   ;
 AgentDu31+:yakeni EndActive   ;
-AgentDu2+:seni EndActive   ;
-AgentDu3+:hni EndActive    ;
+<AgentDu2%+:{seni} "@P.Command.On@"> EndActive   ;
+<AgentDu3%+:[hiddenH {ni} ]> EndActive    ;
 AgentDu3Fem+:keni EndActive   ;
 AgentPl2Sg1+:tewa EndActive   ;
 AgentPl3Sg1+:yakwa EndActive   ;
-AgentPl2+:sewa EndActive   ;
+<AgentPl2%+:{sewa} "@P.Command.On@" > EndActive   ;
 AgentPl3+:rati EndActive   ;
 AgentPl3Fem+:konti EndActive   ;
 
@@ -54,18 +58,18 @@ PatSg3Neuter+:0 VerbStem   ; !! put a neutral patient for all active verbs
 !!------------------ PASSIVE VERBS (BLUE PREFIXES) --------------
 LEXICON BoundPronounPassive
 PatSg1+:wake EndPassive   ;
-PatSg2+:sa EndPassive   ;
+<PatSg2%+:{sa} "@P.Command.On@"> EndPassive   ;
 PatSg3Mal+:ro EndPassive   ;
 PatSg3Fem+:yako EndPassive   ;
 PatSg3Neuter+:yo EndPassive   ; 
 PatDu21+:yonkeni EndPassive   ;
 PatDu31+:yonkeni EndPassive   ; 
-PatDu2+:seni EndPassive   ; 
+<PatDu2%+:{seni} "@P.Command.On@"> EndPassive   ; 
 PatDu3+:roti EndPassive   ;
 PatDu3Fem+:yoti EndPassive   ;
 PatPl2Sg1+:yonkwa EndPassive   ;
 PatPl3Sg1+:yonkwa EndPassive   ;
-PatPl2+:sewa EndPassive   ;
+<PatPl2%+:{sewa} "@P.Command.On@"> EndPassive   ;
 PatPl3+:roti EndPassive   ;
 PatPl3Fem+:yoti EndPassive   ;
 
@@ -75,17 +79,17 @@ VerbStem   ;
 !!------------------ RELATION OR TRANSITIVE VERBS (PURPLE PREFIXES) --------------
 LEXICON BoundPronounRelation
 AgentSg1+:0 RelationPronI   ;
-AgentSg2+:0 RelationPronYou   ;
+<AgentSg2%+:0 "@P.Command.On@"> RelationPronYou   ;
 AgentSg3Mal+:0 RelationPronHe   ;
 AgentSg3Fem+:0 RelationPronShe   ;
-AgentDu21+:0 RelationPronYouI   ;
+<AgentDu21%+:0 "@P.Command.On@"> RelationPronYouI   ;
 AgentDu31+:0 RelationPronSmbI   ;
-AgentDu2+:0 RelationPronYou2   ;
+<AgentDu2%+:0 "@P.Command.On@"> RelationPronYou2   ;
 AgentDu3+:0 Relation2Ms   ;
 AgentDu3Fem+:0 Relation2Fs   ;
-AgentPl2Sg1+:0 RelationYouAllI ;
+<AgentPl2Sg1%+:0 "@P.Command.On@"> RelationYouAllI   ;
 AgentPl3Sg1+:0 RelationTheyAllI ;
-AgentPl2+:0 RelationYouAll ;
+<AgentPl2%+:0 "@P.Command.On@"> RelationYouAll   ;
 AgentPl3+:0 RelationTheyMs   ;
 AgentPl3Fem+:0 RelationTheyFs   ;
 
@@ -94,6 +98,8 @@ PatSg2+:kon EndRelation   ;
 PatSg3Mal+:ri EndRelation   ;
 PatSg3Fem+:khe EndRelation   ;
 PatDu2+:keni EndRelation   ;
+PatDu3+:khe EndRelation   ;
+PatDu3Fem+:khe EndRelation   ;
 PatPl2+:kwa EndRelation   ;
 PatPl3+:khe EndRelation   ;
 PatPl3Fem+:khe EndRelation   ;
@@ -102,25 +108,29 @@ PatPl3Fem+:khe EndRelation   ;
 LEXICON RelationPronYou
 PatSg1+:take EndRelation   ;
 PatSg3Mal+:etshe EndRelation   ;
-PatSg3Fem+:she EndRelation   ;
+<PatSg3Fem%+:[hiddenH {she} ]> EndRelation    ;
 PatDu31+:takeni EndRelation   ;
+<PatDu3%+:[hiddenH {she} ]> EndRelation    ;
+<PatDu3Fem%+:[hiddenH {she} ]> EndRelation    ;
 PatPl3Sg1+:takwa EndRelation   ;
-PatPl3+:she EndRelation   ;
-PatPl3Fem+:she EndRelation   ;
+<PatPl3%+:[hiddenH {she} ]> EndRelation    ;
+<PatPl3Fem%+:[hiddenH {she} ]> EndRelation    ;
 
 LEXICON RelationPronHe
 PatSg1+:rake EndRelation   ;
-PatSg2+:ya EndRelation   ;
+<PatSg2%+:[hiddenH {ya} ]> EndRelation    ;
 PatSg3Mal+:ro EndRelation   ;
-PatSg3Fem+:shako EndRelation   ;
-PatDu21+:shonkeni EndPassive   ;
-PatDu31+:shonkeni EndRelation   ;
+<PatSg3Fem%+:[hiddenH {shako} ]> EndRelation    ;
+<PatDu21%+:[hiddenH {shonkeni} ]> EndRelation    ;
+<PatDu31%+:[hiddenH {shonkeni} ]> EndRelation    ;
 PatDu2+:etshiseni EndRelation   ;
-PatPl2Sg1+:shonkwa EndRelation   ;
-PatPl3Sg1+:shonkwa EndRelation   ;
+<PatDu3%+:[hiddenH {shako} ]> EndRelation    ;
+<PatDu3Fem%+:[hiddenH {shako} ]> EndRelation    ;
+<PatPl2Sg1%+:[hiddenH {shonkwa} ]> EndRelation    ;
+<PatPl3Sg1%+:[hiddenH {shonkwa} ]> EndRelation    ;
 PatPl2+:etshisewa EndRelation   ;
-PatPl3+:shako EndRelation   ;
-PatPl3Fem+:shako EndRelation   ;
+<PatPl3%+:[hiddenH {shako} ]> EndRelation    ;
+<PatPl3Fem%+:[hiddenH {shako} ]> EndRelation    ;
 
 LEXICON RelationPronShe
 PatSg1+:yonke EndRelation   ;
@@ -131,6 +141,8 @@ PatSg3Neuter+:konwa EndRelation   ;
 PatDu21+:yonkhi EndPassive   ;
 PatDu31+:yonkhi EndRelation   ;
 PatDu2+:yetshi EndRelation   ;
+PatDu3+:ronwati EndRelation   ;
+PatDu3Fem+:konwati EndRelation   ;
 PatPl2Sg1+:yonkhi EndRelation   ;
 PatPl3Sg1+:yonkhi EndRelation   ;
 PatPl2+:yetshi EndRelation   ;
@@ -140,14 +152,18 @@ PatPl3Fem+:konwati EndRelation   ;
 LEXICON RelationPronYouI
 PatSg3Mal+:etshiteni EndRelation   ;
 PatSg3Fem+:yethi EndRelation   ;
+PatDu3+:yethi EndRelation   ;
+PatDu3Fem+:yethi EndRelation   ;
 PatPl3+:yethi EndRelation   ;
 PatPl3Fem+:yethi EndRelation   ;
 
 LEXICON RelationPronSmbI
 PatSg2+:keni EndRelation   ;
-PatSg3Mal+:shakeni EndRelation   ;
+<PatSg3Mal%+:[hiddenH {shakeni} ]> EndRelation    ;
 PatSg3Fem+:yakhi EndRelation   ;
 PatDu2+:kwa EndRelation   ;
+PatDu3+:yakhi EndRelation   ;
+PatDu3Fem+:yakhi EndRelation   ;
 PatPl2+:kwa EndRelation   ;
 PatPl3+:yakhi EndRelation   ;
 PatPl3Fem+:yakhi EndRelation   ;
@@ -157,6 +173,8 @@ PatSg1+:takeni EndRelation   ;
 PatSg3Mal+:etshiseni EndRelation   ;
 PatSg3Fem+:yetshi EndRelation   ;
 PatDu31+:takwa EndRelation   ;
+PatDu3+:yetshi EndRelation   ;
+PatDu3Fem+:yetshi EndRelation   ;
 PatPl3Sg1+:takwa EndRelation   ;
 PatPl3+:yetshi EndRelation   ;
 PatPl3Fem+:yetshi EndRelation   ;
@@ -169,6 +187,8 @@ PatSg3Fem+:shakoti EndRelation   ;
 PatDu21+:yonkhi EndPassive   ;
 PatDu31+:yonkhi EndRelation   ;
 PatDu2+:yetshi EndRelation   ;
+PatDu3+:ronwati EndRelation   ;
+PatDu3Fem+:konwati EndRelation   ;
 PatPl2Sg1+:yonkhi EndRelation   ;
 PatPl3Sg1+:yonkhi EndRelation   ;
 PatPl2+:yetshi EndRelation   ;
@@ -183,6 +203,8 @@ PatSg3Fem+:yakoti EndRelation   ;
 PatDu21+:yonkhi EndPassive   ;
 PatDu31+:yonkhi EndRelation   ;
 PatDu2+:yetshi EndRelation   ;
+PatDu3+:ronwati EndRelation   ;
+PatDu3Fem+:konwati EndRelation   ;
 PatPl2Sg1+:yonkhi EndRelation   ;
 PatPl3Sg1+:yonkhi EndRelation   ;
 PatPl2+:yetshi EndRelation   ;
@@ -192,23 +214,29 @@ PatPl3Fem+:konwati EndRelation   ;
 LEXICON RelationYouAllI
 PatSg3Mal+:etshitewa EndRelation   ;
 PatSg3Fem+:yethi EndRelation   ;
+PatDu3+:yethi EndRelation   ;
+PatDu3Fem+:yethi EndRelation   ;
 PatPl3+:yethi EndRelation   ;
 PatPl3Fem+:yethi EndRelation   ;
 
 LEXICON RelationTheyAllI
 PatSg2+:kwa EndRelation   ;
-PatSg3Mal+:shakwa EndRelation   ;
+<PatSg3Mal%+:[hiddenH {shakwa} ]> EndRelation    ;
 PatSg3Fem+:yakhi EndRelation   ;
 PatDu2+:kwa EndRelation   ;
+PatDu3+:yakhi EndRelation   ;
+PatDu3Fem+:yakhi EndRelation   ;
 PatPl2+:kwa EndRelation   ;
 PatPl3+:yakhi EndRelation   ;
 PatPl3Fem+:yakhi EndRelation   ;
 
 LEXICON RelationYouAll
 PatSg1+:takwa EndRelation   ;
-PatSg3Mal+:etshesewa EndRelation   ;
+PatSg3Mal+:etshisewa EndRelation   ;
 PatSg3Fem+:yetshi EndRelation   ;
 PatDu31+:takwa EndRelation   ;
+PatDu3+:yetshi EndRelation   ;
+PatDu3Fem+:yetshi EndRelation   ;
 PatPl3Sg1+:takwa EndRelation   ;
 PatPl3+:yetshi EndRelation   ;
 PatPl3Fem+:yetshi EndRelation   ;
@@ -217,7 +245,8 @@ LEXICON RelationTheyMs
 PatSg1+:yonke EndRelation   ;
 PatSg2+:yesa EndRelation   ;
 PatSg3Mal+:ronwa EndRelation   ;
-PatSg3Fem+:shakoti EndRelation   ;
+<PatSg3Fem%+:[hiddenH {shakoti} ]> EndRelation    ;
+PatSg3Fem+:konwa EndRelation   ;
 PatDu21+:yonkhi EndPassive   ;
 PatDu31+:yonkhi EndRelation   ;
 PatDu2+:yetshi EndRelation   ;
