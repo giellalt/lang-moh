@@ -9,80 +9,84 @@ LEXICON VerbStem
 LEXICON VerbRoots
 
 !!hear 11
-<{athonte}:{athonte'n} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{athonte}:{athonte'n} "@P.CC.Except@" "@U.VerbType.Blue@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{athonte}:{athonte's} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{athonte}:{athonte'ne'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{athonte}:{athonte'on} "@P.CC.Except@" "@U.VerbType.Blue@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{athonte}:{athonte'ne'} "@P.CC.Except@" "@U.VerbType.Blue@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{athonte}:{athonte'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 <{atketsko}"@P.CC.Seven@" "@U.VerbType.Red@" > VerbSuffixes; !!get up 2
 <{atketsko}"@P.CC.Seven@" "@U.VerbType.RedPerfect@" >  VerbSuffixesPerfect; !!get up 2
 !!want; need smth 16
-<{atonhwentsyoni}:{atonhwentsyohs} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
-<{atonhwentsyoni}:{atonhwentsyonis} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{atonhwentsyoni}:{atonhwentsyohse'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{atonhwentsyoni}:{atonhwentsyoni} "@P.CC.Except@" "@U.VerbType.Blue@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{atonhwentsyoni}:{atonhwentsyohs} "@P.CC.Except@" "@U.VerbType.Blue@" "@R.RequireTe.On@" "@C.RequireTe@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{atonhwentsyoni}:{atonhwentsyonis} "@P.CC.Except@" "@U.VerbType.Blue@" "@R.RequireTe.On@" "@C.RequireTe@" 0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{atonhwentsyoni}:{atonhwentsyohse'} "@P.CC.Except@" "@U.VerbType.Blue@" "@R.RequireTe.On@" "@C.RequireTe@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{atonhwentsyoni}:{atonhwentsyoni} "@P.CC.Except@" "@U.VerbType.Blue@" "@R.RequireTe.On@" "@C.RequireTe@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 <{atskahon}"@P.CC.One@" "@U.VerbType.Red@" "@R.RequireTe.On@" "@C.RequireTe@"> VerbSuffixes; !!dine 7
 <{atskahon}"@P.CC.One@" "@U.VerbType.RedPerfect@" "@R.RequireTe.On@" "@C.RequireTe@">  VerbSuffixesPerfect; !!dine 7
 <{atyer}"@P.CC.Six@" "@U.VerbType.Red@" "@R.RequireNi.On@" "@C.RequireNi@"> VerbSuffixes; !!do 9
 <{atyer}"@P.CC.Six@" "@U.VerbType.RedPerfect@" "@R.RequireNi.On@" "@C.RequireNi@">  VerbSuffixesPerfect; !!do 9
 !!remind smb 23
-<{ehyahrahkwen}:{ehyahrahkwen} "@P.CC.Except@" "@U.VerbType.Purple@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{ehyahrahkwen}:{ehyahrahkwen} "@P.CC.Except@" "@U.VerbType.Purple@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{ehyahrahkwen}:{ehyahrahkwennis} "@P.CC.Except@" "@U.VerbType.Purple@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{ehyahrahkwen}:{ehyahrahkwen'} "@P.CC.Except@" "@U.VerbType.Purple@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{ehyahrahkwen}:{ehyahrahkwenni} "@P.CC.Except@" "@U.VerbType.Purple@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{ehyahrahkwen}:{ehyahrahkwen'} "@P.CC.Except@" "@U.VerbType.Purple@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{ehyahrahkwen}:{ehyahrahkwenni} "@P.CC.Except@" "@U.VerbType.Purple@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 <{ehyahron}"@P.CC.One@" "@U.VerbType.Red@" > VerbSuffixes; !!raise; grow 4
 <{ehyahron}"@P.CC.One@" "@U.VerbType.RedPerfect@" >  VerbSuffixesPerfect; !!raise; grow 4
 !!like the taste 13
-<{ekahw}:{ekahw} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{ekahw}:{ekahw} "@P.CC.Except@" "@U.VerbType.Blue@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{ekahw}:{ekahs} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{ekahw}:{ekahwe'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{ekahw}:{eka'on} "@P.CC.Except@" "@U.VerbType.Blue@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{ekahw}:{ekahwe'} "@P.CC.Except@" "@U.VerbType.Blue@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{ekahw}:{eka'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 !!hurry 15
-<{hsterihen}:{hsterihen} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
-<{hsterihen}:{hsterihen's} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{hsterihen}:{hsterihen'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{hsterihen}:{hsterihen'on} "@P.CC.Except@" "@U.VerbType.Blue@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{hsterihen}:{hsterihen} "@P.CC.Except@" "@U.VerbType.Blue@" "@R.RequireTe.On@" "@C.RequireTe@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{hsterihen}:{hsterihen's} "@P.CC.Except@" "@U.VerbType.Blue@" "@R.RequireTe.On@" "@C.RequireTe@" 0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{hsterihen}:{hsterihen'} "@P.CC.Except@" "@U.VerbType.Blue@" "@R.RequireTe.On@" "@C.RequireTe@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{hsterihen}:{hsterihen'on} "@P.CC.Except@" "@U.VerbType.Blue@" "@R.RequireTe.On@" "@C.RequireTe@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 !!sleep 12
-<{itahw}:{itahw} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{itahw}:{itahw} "@P.CC.Except@" "@U.VerbType.Blue@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{itahw}:{itahs} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{itahw}:{itahwe'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{itahw}:{ita'on} "@P.CC.Except@" "@U.VerbType.Blue@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{itahw}:{itahwe'} "@P.CC.Except@" "@U.VerbType.Blue@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{itahw}:{ita'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 !!pity smb 21
-<{itehr}:{itenhr} "@P.CC.Except@" "@U.VerbType.Purple@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{itehr}:{itenhr} "@P.CC.Except@" "@U.VerbType.Purple@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{itehr}:{itenras} "@P.CC.Except@" "@U.VerbType.Purple@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{itehr}:{itenhre'} "@P.CC.Except@" "@U.VerbType.Purple@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{itehr}:{itenron} "@P.CC.Except@" "@U.VerbType.Purple@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{itehr}:{itenhre'} "@P.CC.Except@" "@U.VerbType.Purple@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{itehr}:{itenron} "@P.CC.Except@" "@U.VerbType.Purple@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 !!pile; to stack smth 3
-<{i'tenhyot}:{i'tenhnyoten} "@P.CC.Except@" "@U.VerbType.Red@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{i'tenhyot}:{i'tenhnyoten} "@P.CC.Except@" "@U.VerbType.Red@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{i'tenhyot}:{i'tenhnyotha} "@P.CC.Except@" "@U.VerbType.Red@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{i'tenhyot}:{i'tenhnyoten'} "@P.CC.Except@" "@U.VerbType.Red@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{i'tenhyot}:{tenyote} "@P.CC.Except@" "@U.VerbType.RedPerfect@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{i'tenhyot}:{i'tenhnyoten'} "@P.CC.Except@" "@U.VerbType.Red@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{i'tenhyot}:{i'tenyote} "@P.CC.Except@" "@U.VerbType.RedPerfect@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 <{ken}"@P.CC.One@" "@U.VerbType.Purple@" > VerbSuffixes; !!see smb 18
 <{khonni}"@P.CC.One@" "@U.VerbType.Red@" > VerbSuffixes; !!cook 1
 <{khonni}"@P.CC.One@" "@U.VerbType.RedPerfect@" >  VerbSuffixesPerfect; !!cook 1
-<{nonhweratons}"@P.CC.One@" "@U.VerbType.Purple@" "@R.RequireTe.On@" "@C.RequireTe@"> VerbSuffixes; !!greet; to acknowledge 28
+!!greet; to acknowledge 28
+<{nonhweratons}:{nonhweraton} "@P.CC.Except@" "@U.VerbType.Purple@" "@R.RequireTe.On@" "@C.RequireTe@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{nonhweratons}:{nonhweratons} "@P.CC.Except@" "@U.VerbType.Purple@" "@R.RequireTe.On@" "@C.RequireTe@" 0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
+<{nonhweratons}:{nonhweraton'} "@P.CC.Except@" "@U.VerbType.Purple@" "@R.RequireTe.On@" "@C.RequireTe@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{nonhweratons}:{nonhweraton} "@P.CC.Except@" "@U.VerbType.Purple@" "@R.RequireTe.On@" "@C.RequireTe@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 <{nonnyahkw}"@P.CC.Three@" "@U.VerbType.Red@" "@R.RequireTe.On@" "@C.RequireTe@"> VerbSuffixes; !!dance 6
 <{nonnyahkw}"@P.CC.Three@" "@U.VerbType.RedPerfect@" "@R.RequireTe.On@" "@C.RequireTe@">  VerbSuffixesPerfect; !!dance 6
 <{onni}"@P.CC.One@" "@U.VerbType.Red@" > VerbSuffixes; !!make smth 5
 <{onni}"@P.CC.One@" "@U.VerbType.RedPerfect@" >  VerbSuffixesPerfect; !!make smth 5
 !!enjoy doing smth. 14
-<{on'wehskwen}:{on'wehskwen} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{on'wehskwen}:{on'wehskwen} "@P.CC.Except@" "@U.VerbType.Blue@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{on'wehskwen}:{on'wehskwanis} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{on'wehskwen}:{on'wehskwen'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{on'wehskwen}:{on'wehskwani} "@P.CC.Except@" "@U.VerbType.Blue@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{on'wehskwen}:{on'wehskwen'} "@P.CC.Except@" "@U.VerbType.Blue@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{on'wehskwen}:{on'wehskwani} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 !!make smth. for smb. 26
-<{onnyenni}:{onnyen} "@P.CC.Except@" "@U.VerbType.Purple@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{onnyenni}:{onnyen} "@P.CC.Except@" "@U.VerbType.Purple@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{onnyenni}:{onnyennis} "@P.CC.Except@" "@U.VerbType.Purple@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{onnyenni}:{onnyen'} "@P.CC.Except@" "@U.VerbType.Purple@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{onnyenni}:{onnyenni} "@P.CC.Except@" "@U.VerbType.Purple@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{onnyenni}:{onnyen'} "@P.CC.Except@" "@U.VerbType.Purple@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{onnyenni}:{onnyenni} "@P.CC.Except@" "@U.VerbType.Purple@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 !!watch smb 19
-<{rohrok}:{aterorok} "@P.CC.Except@" "@U.VerbType.Purple@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{rohrok}:{aterorok} "@P.CC.Except@" "@U.VerbType.Purple@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{rohrok}:{ateroroks} "@P.CC.Except@" "@U.VerbType.Purple@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{rohrok}:{ateroroke'} "@P.CC.Except@" "@U.VerbType.Purple@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{rohrok}:{ateroron} "@P.CC.Except@" "@U.VerbType.Purple@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{rohrok}:{ateroroke'} "@P.CC.Except@" "@U.VerbType.Purple@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{rohrok}:{ateroron} "@P.CC.Except@" "@U.VerbType.Purple@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
 <{yer}"@P.CC.Six@" "@U.VerbType.Red@" "@R.RequireNi.On@" "@C.RequireNi@"> VerbSuffixes; !!do smth with smth specific 8
 <{yer}"@P.CC.Six@" "@U.VerbType.RedPerfect@" "@R.RequireNi.On@" "@C.RequireNi@">  VerbSuffixesPerfect; !!do smth with smth specific 8
 !!work 10
-<{yo'ten}:{yo'ten} "@P.CC.Except@" "@U.VerbType.Blue@" 0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
+<{yo'ten}:{yo'ten} "@P.CC.Except@" "@U.VerbType.Blue@"  0:commandSuf "@U.Aspect.Command@" "@R.Command.On@" %+Command:0 >   EndAspect;
 <{yo'ten}:{yo'ten's} "@P.CC.Except@" "@U.VerbType.Blue@"  0:habSuf "@U.Aspect.Habitual@" %+Habitual:0>   EndAspect; 
-<{yo'ten}:{yo'ten'} "@P.CC.Except@" "@U.VerbType.Blue@"  0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
-<{yo'ten}:{yo'ten'on} "@P.CC.Except@" "@U.VerbType.Blue@" 0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
+<{yo'ten}:{yo'ten'} "@P.CC.Except@" "@U.VerbType.Blue@"   0:punctSuf "@R.Aspect.Punct@" %+Punct:0 >   EndAspect; 
+<{yo'ten}:{yo'ten'on} "@P.CC.Except@" "@U.VerbType.Blue@"  0:perfSuf "@U.Aspect.Perf@" %+Perf:0 >   EndAspect;
