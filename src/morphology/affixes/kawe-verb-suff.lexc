@@ -28,6 +28,7 @@ LEXICON HabitualAspect
 LEXICON Habitual
 < %+Habitual:s "@R.CC.One@" > #;
 < %+Habitual:{'s} "@R.CC.Two@" > #;
+< %+Habitual:{a} "@R.CC.Three@" > #;
 < %+Habitual:{ha} "@R.CC.Four@" > #;
 < %+Habitual:{ha} "@R.CC.Six@" > #;
 < %+Habitual:{s} "@R.CC.Eight@" > #;
@@ -39,6 +40,7 @@ LEXICON PerfectiveAspect
 LEXICON Perfect
 < %+Perf:0 "@R.CC.One@" > #;
 < %+Perf:{'on} "@R.CC.Two@" > #;
+< %+Perf:{'en} "@R.CC.Three@" > #;
 < %+Perf:{e} "@R.CC.Four@" > #;
 < %+Perf:{en} "@R.CC.Six@" > #;
 < %+Perf:{on} "@R.CC.Eight@" > #;
@@ -50,6 +52,7 @@ LEXICON PunctualAspect
 LEXICON Punctual
 < %+Punct:{'} "@R.CC.One@" > #;
 < %+Punct:{'} "@R.CC.Two@" > #;
+< %+Punct:{e'} "@R.CC.Three@" > #;
 < %+Punct:{en'} "@R.CC.Four@" > #;
 < %+Punct:{e'} "@R.CC.Six@" > #;
 < %+Punct:{e'} "@R.CC.Eight@" > #;
