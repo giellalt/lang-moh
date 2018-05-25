@@ -1,6 +1,8 @@
 #this script contains variables used by all alternation rules
 # it must be run before any of the rules
 
+set flag-is-epsilon ON
+
 define ppMarker %^PP%-%^; # marks the start of the personal prefix
 define rootBM %^R%-%^; # root boundary marker
 
@@ -468,7 +470,6 @@ define enCore enE;
 
 
 
-#regex reWriteRed .o. reWriteBlue .o. reWritePurple .o. commonPronPrefRules .o. 
- #   waCore .o. aCore .o. enCore .o. semPrefCore .o. removeAll;
+#regex [lexicon .o. reWriteRed .o. reWriteBlue .o. reWritePurple .o. commonPronPrefRules .o. waCore .o. aCore .o. enCore .o. semPrefCore .o. removeAll];
 
- regex reWriteRed .o. reWriteBlue .o. removeAll;
+regex reWriteRed .o. reWriteBlue .o. removeAll;

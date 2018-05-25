@@ -1,0 +1,28 @@
+Config:
+  hfst:
+    Gen: ../../../src/generator-gt-norm.hfst
+    Morph: ../../../src/analyser-gt-norm.hfst
+  foma:
+    Gen: ../../../src/generator-gt-norm.foma
+    Morph: ../../../src/analyser-gt-norm.foma
+    App: lookup
+
+Tests:
+  
+  Verb - onni - ok : #
+    Verb+Active+AgentSg1+PatSg3Neuter+onni+Habitual: konnis
+    Verb+Active+AgentSg2+PatSg3Neuter+onni+Habitual: sonnis
+    Verb+Active+AgentSg3Mal+PatSg3Neuter+onni+Habitual: ronnis
+    Verb+Active+AgentSg3Fem+PatSg3Neuter+onni+Habitual: yakonnis
+    Verb+Active+AgentSg3Mal+PatSg3Neuter+onni+Habitual: ronnis
+    Verb+Active+AgentSg3Neuter+PatSg3Neuter+onni+Habitual: yonnis
+    Verb+Active+AgentDu21+PatSg3Neuter+onni+Habitual: tenonnis
+    Verb+Active+AgentDu31+PatSg3Neuter+onni+Habitual: yakenonnis
+    Verb+Active+AgentDu2+PatSg3Neuter+onni+Habitual: senonnis
+    Verb+Active+AgentDu3+PatSg3Neuter+onni+Habitual: nonnis
+    Verb+Active+AgentDu3Fem+PatSg3Neuter+onni+Habitual: kenonnis
+    Verb+Active+AgentPl2Sg1+PatSg3Neuter+onni+Habitual: tyonnis
+    Verb+Active+AgentPl3Sg1+PatSg3Neuter+onni+Habitual: yakyonnis
+    Verb+Active+AgentPl2+PatSg3Neuter+onni+Habitual: tsyonnis
+    Verb+Active+AgentPl3+PatSg3Neuter+onni+Habitual: ronnonnis
+    Verb+Active+AgentPl3Fem+PatSg3Neuter+onni+Habitual: konnonnis
