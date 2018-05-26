@@ -1,10 +1,3 @@
-
-set flag-is-epsilon ON 
-
-
-define FD %@ ?+  %@;
-define eraseFlags FD >@ 0;
-
 #this script contains variables used by all alternation rules
 # it must be run before any of the rules
 
@@ -18,10 +11,6 @@ define verbTypeFG "#"; # captures flag diacritis marking verb type
 define ccClassFG "@" [P|R] ".CC." [{One}|{Two}|{Three}|{Four}|{Five}|{Six}|{Seven}|{Eight}|{Nine}] "@" ;
 
 
-#define habAspect "@U.Aspect."{Habitual}"@";
-#define commandAspect "@U.Aspect."{Command}"@";
-#define punctAspect "@U.Aspect."{Punct}"@";
-#define perfAspect "@U.Aspect."{Perf}"@";
 
 
 define punctMarker %^P%^;
@@ -43,11 +32,7 @@ define vowel [ a | e | o | u | i | nasalVowel | accVowel];
 define consonant [ h | k | n| r | s | t | w | y | {kw} | {ts} | {wh}];
 define wordChar [vowel | consonant | %' | %`];
 
-define fg "@"?+"@";
-#define removeFG [fg] >@ 0;
-#define removeFG "@"?+"@" >@ 0;
 
-define removeFG U -> FF;
 
 #Rules for replacing c-stem forms of active (RED) bound pronouns with the correct form (be it A, E, I or O)
 #
@@ -73,18 +58,17 @@ define sToSe [..] -> e || ppMarker s _ rootBM [ {khonni} ] ;
 
 # agent he (ra)
 define raCore {ra} -> {r} || ppMarker _ rootBM [a | e | o] ,,
-[ppMarker {ra} rootBM i] -> [ppMarker {ren} rootBM i];
+{ra} -> {ren} || ppMarker _ rootBM [i];
 
 define raExc r -> {hr} || [wordChar+ ppMarker] _ rootBM [e | o];
 
 #agent she (ye)
-define yeCore [ppMarker {ye} rootBM a] -> [ppMarker {yon} rootBM] ,,
-[ppMarker {ye} rootBM i] -> [ppMarker {ye} rootBM] ,,
+define yeCore {ye} -> {yon} || ppMarker _ rootBM [a],,
 {ye} -> {yak} || ppMarker _ rootBM [e | o];
 
 #agent it (ka)
 define kaCore {ka} -> {w} || ppMarker _ rootBM [a | e ],,
-[ppMarker {ka} rootBM i] -> [ppMarker {ken} rootBM],,
+{ka} -> {ken} || ppMarker _ rootBM [i],,
 {ka} -> {y} || ppMarker _ rootBM [o];
 
 # agent you and I (teni)
@@ -113,32 +97,32 @@ define keniCore  {keni}-> {ken} || ppMarker _ rootBM [ i | e | o] ,,
 
 # agent you all and I (tewa)
 define tewaCore {tewa}-> {tew} || ppMarker _ rootBM [ a | e] ,,
-[ppMarker {tewa} rootBM i ] -> [ppMarker {tewen} rootBM ],,
+{tewa}-> {tewen} || ppMarker _ rootBM [i],,
 {tewa}-> {ty} || ppMarker _ rootBM [o] ;
 
 # agent they and I (yakwa)
 define yakwaCore {yakwa}-> {yakw} || ppMarker _ rootBM [ a | e] ,,
-[ppMarker {yakwa} rootBM i ] -> [ppMarker {yakwen} rootBM ],,
+{yakwa}-> {yakwen} || ppMarker _ rootBM [i],,
 {yakwa}-> {yaky} || ppMarker _ rootBM [o] ;
 
 # agent all of you (sewa)
 define sewaCore {sewa}-> {sew} || ppMarker _ rootBM [ a | e] ,,
-[ppMarker {sewa} rootBM i ] -> [ppMarker {sewen} rootBM ],,
+{sewa}-> {sewen} || ppMarker _ rootBM [i],,
 {sewa}-> {tsy} || ppMarker _ rootBM [o] ;
 
 # agent they males/mixed (rati)
-define ratiCore [ppMarker {rati} rootBM a] -> [ppMarker {ron} rootBM] ,,
+define ratiCore {rati}-> {ron} || ppMarker _ rootBM [ a ] ,,
 {rati}-> {ronn} || ppMarker _ rootBM [ e | o] ,,
 {rati}-> {rat} || ppMarker _ rootBM [ i ];
 
 # agent they females (konti)
-define kontiCore [ppMarker {konti} rootBM a] -> [ppMarker {kon} rootBM],,
+define kontiCore {konti}-> {kon} || ppMarker _ rootBM [ a ] ,,
 {konti}-> {konn} || ppMarker _ rootBM [ e | o] ,,
 {konti}-> {kont} || ppMarker _ rootBM [ i ];
 
-
 define replaceLetter ? -> 0 || ppMarker [ {ren} | {yon} | {tewen} | {yakwen} | {sewen} | {ron} ] rootBM _ ;
 define replaceLetterYe i -> 0 || ppMarker {ye} rootBM _ ;
+define replaceLetterKon a -> 0 || ppMarker {kon} rootBM _ ;
 define replaceLetterKen i -> 0 || ppMarker {kon} rootBM _ ;
 
 
@@ -147,11 +131,11 @@ define coreRed keCore .o. seCore .o. raCore .o. yeCore .o. teniCore .o.
 yakeniCore .o. seniCore .o. hniCore .o. keniCore .o. tewaCore .o. 
 yakwaCore .o. sewaCore .o. ratiCore .o. kontiCore .o. kaCore;
 
-define exceptRed  seExc .o. seExcPrefix .o. sToSe .o. raExc ;
+define exceptRed  seExc .o. seExcPrefix .o. sToSe .o. raExc .o. replaceLetter .o. replaceLetterYe .o. replaceLetterKon .o. replaceLetterKen;
 
 define reWriteRed coreRed .o. exceptRed ;
 
-
+push reWriteRed
 #rules for replacing passive (blue) personal pronouns from their canonical c-verb forms into the one matching the following morpheme
 
 #correspond to the tables on pages 3-6 of Unit 1
@@ -206,7 +190,7 @@ define exceptBlue wakeExc ;
 
 define reWriteBlue coreBlue .o. exceptBlue ;
 
-
+push reWriteBlue
 #rules for replacing "transitive" (purple) personal pronouns from their canonical c-verb forms into the one matching the following morpheme
 
 #correspond to the tables on pages 7-8 of Unit 1
@@ -236,7 +220,7 @@ define keniA {eni}-> {y} || ppMarker ({ta}) k _ rootBM [ a ];
 #you all -> him (etshisewa)
 #he -> us all (shonkwa)
 #they and I -> him (shakwa)
-define kwaPP [{kw} | {takw} | {etshitew} | {etshisew} | (hiddenH){shonkw} | (hiddenH){shakw}];
+define kwaPP [{kw} | {takw} | {etshitew} | {etshisew} | {shonkw} | {shakw}];
 define kwaCore a -> 0 || ppMarker kwaPP _ rootBM [ a | e  ] ; 
 define kwaI [{a} rootBM [i]] -> [ {en} rootBM ] || kwaPP _ ;
 define kwaO  a -> y || ppMarker kwaPP _ rootBM [ o  ] ; 
@@ -253,18 +237,15 @@ define etsheCore {etshe}-> {etsh} || ppMarker _ rootBM [ a| i | e | o | h | y] ;
 
 
 #you -> her, them (she)
-define sheCore  {she}-> {shey} || ppMarker (hiddenH) _ rootBM [ a | e | o ] ; 
+define sheCore  {she}-> {shey} || ppMarker _ rootBM [ a | e | o ] ; 
 define sheI i -> 0 || ppMarker (hiddenH) {she} rootBM _ ;
 
 #you and I -> him (etshiteni)
+#you 2 -> him (etshiseni)
 #he -> us 2 (shonkeni)
 #smb and I -> him (shakeni)
-define etshiteniCore i -> 0 || ppMarker  [ {etshiten}  | (hiddenH) {shonken} | (hiddenH) {shaken}] _ rootBM [  i | e | o ] ;
-define etshiteniA {eni}-> {y} || ppMarker [{etshit} | (hiddenH){shonk} | (hiddenH){shak}] _ rootBM [  a ] ;
-
-#you 2 -> him (etshiseni)
-define etshiseniCore i -> 0 || ppMarker  {etshisen}  _ rootBM [  i | e | o ] ;
-define etshiseniA {seni}-> {tsy} || ppMarker  {etshi}  _ rootBM [  a ] ;
+define etshiteniCore i -> 0 || ppMarker  [ {etshiten} | {etshisen} | (hiddenH) {shonken} | (hiddenH) {shaken}] _ rootBM [  i | e | o ] ;
+define etshiteniA {eni}-> {y} || ppMarker [{etshit} | {etshis} | (hiddenH){shonk} | (hiddenH){shak}] _ rootBM [  a ] ;
 
 #he -> me (rake), 
 #they -> me (yonke)
@@ -324,7 +305,6 @@ riCore .o. riI .o.
 kheCore .o. kheI .o. 
 keniCore .o. keniA .o.
 etshiteniCore .o. etshiteniA .o.
-etshiseniCore .o. etshiseniA .o.
 kwaCore .o. kwaI .o. kwaO .o. 
 takeCore .o. takeA .o. 
 etsheCore .o. 
@@ -341,6 +321,7 @@ yetCore .o. yetI;
 
 define reWritePurple corePurple ;
 
+push reWritePurple
 
 
 # phonological alternations common to all pronominal prefixes
@@ -356,6 +337,9 @@ define taGen {ta} -> {hs} ||  wordChar+ ppMarker _ k;
 define rToHR r -> {hr} || wordChar+ ppMarker _ e;
 define rToH r-> h || wordChar+ ppMarker _ ;
 
+
+#{ra} -> {ha} || [?+ (verbTypeFG) ppMarker] _ [t i ]^{0,1} rootBM ,,
+#{ron} -> {hon} || [?+ (verbTypeFG) ppMarker] _ [n]^{0,1} rootBM ,, 
 
 
 #insert hidden h where needed
@@ -374,7 +358,7 @@ define commonPronPrefRules  taHs .o. taGen .o.
                             keKCons .o. weakEK .o. 
                             rToHR .o. rToH .o.
                             removeHH .o. modifyHH ;
-
+push commonPronPrefRules
 #this script removes markup inserted by the lexicon 
 # it may optionally be run after applying all rules
 
@@ -382,10 +366,13 @@ define commonPronPrefRules  taHs .o. taGen .o.
 define removeAll [rootBM | ppMarker | punctMarker | perfMarker | habMarker | comMarker | futPref | condPref | defPast | hiddenH
     | teMarker | niMarker] -> 0;
 
-
+push removeAll
 
 
 #rules for phonological alternations of the prefix 'wa' used in punctual past (definitive)
+
+#define konCore  {kon}-> {kony} || ppMarker _ rootBM [ a | e | o ] ; 
+#define konI [ ppMarker {kon} rootBM [i]] -> ppMarker {kon} rootBM;
 
 #wa + k 
 define waK [..] -> {'} || defPast {wa} _ ppMarker {k};
@@ -409,7 +396,7 @@ define waEtshe e -> {'} || defPast {wa} ppMarker _ {tsh};
 
 define waCore waK .o. waSe .o. waY .o. waWake .o. onkA .o. waEtshe;
 
-
+push waCore
 #rules for phonological alternations of the prefix 'wa' used in punctual conditionals (indefinite)
 
 # a + t, s -> ae
@@ -429,7 +416,7 @@ define aW [ppMarker w rootBM a] -> [ppMarker rootBM o n] || condMarker {a} _ ;
 
 define aCore aTS .o. aEtshe .o. aWaka .o. aWake .o. aW;
 
-
+push aCore
 
 
 #rules that specify phonological alternations for 
@@ -469,7 +456,7 @@ define niWaK [niMarker {ni} defPast w [a| e]] -> niMarker {n} defPast {a'} || _ 
 define semPrefCore teVowel .o. waAndTe .o. waTeExcept .o. niVowel .o. niWaY .o. niWaReg .o. niWaS ;
 #.o. niWaStep1 .o. niWaStep2 .o. niWaExcept;
 
-
+push semPrefCore
 
 
 #wa + k 
@@ -477,8 +464,9 @@ define enE e -> 0 || futMarker {en} ppMarker _ ;
 
 define enCore enE;
 
+push enCore
 
+#regex reWriteRed .o. reWriteBlue .o. reWritePurple .o. commonPronPrefRules .o. 
+#    waCore .o. aCore .o. enCore .o. semPrefCore .o. removeAll;
 
-regex eraseFlags .o. reWriteRed .o. reWriteBlue .o. reWritePurple .o. commonPronPrefRules .o. 
-    waCore .o. aCore .o. enCore .o. semPrefCore .o. removeAll;
-
+read regex removeAll;
