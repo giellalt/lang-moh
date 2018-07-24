@@ -380,7 +380,7 @@ define commonPronPrefRules  taHs .o. taGen .o.
 
 
 define removeAll [rootBM | ppMarker | punctMarker | perfMarker | habMarker | comMarker | futPref | condPref | defPast | hiddenH
-    | teMarker | niMarker] -> 0;
+    | teMarker | niMarker | condMarker | futMarker] -> 0;
 
 
 
