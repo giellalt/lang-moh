@@ -65,6 +65,7 @@ Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 +Neuter
 +PronStart
 +PronEnd 
++Symbol !!≈ * @CODE@ = independent symbols in the text stream, like £, €, ©
 
 
 Definitions
