@@ -9,8 +9,9 @@ Config:
 
 Tests:
 
-  Verb - onni: # verb I, stem -ie, root vowel -åe-
-    Verb+Active+AgentSg3Mal+PatSg3Neuter+onni: raonni
+  Verb - onni: # fst indicates Passive analysis for raonni.
+#    Verb+Active+AgentSg3Mal+PatSg3Neuter+onni: raonni
+    Verb+Passive+AgentSg3Neuter+PatSg3Mal+onni+Perf: raonni
     Verb+Active+AgentSg3Fem+PatSg3Neuter+onni: yeonni
         
     
