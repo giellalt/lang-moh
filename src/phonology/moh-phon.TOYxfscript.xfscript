@@ -1,3 +1,0 @@
-define RmPP [ %<PP%-%> -> 0 ] ;
-define RmROOT [ %<R%-%> -> 0 ];
-regex [ RmPP .o. RmROOT ] ;
