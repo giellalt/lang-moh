@@ -1,0 +1,478 @@
+#this script contains variables used by all alternation rules
+# it must be run before any of the rules
+
+define ppMarker %^PP%-%^; # marks the start of the personal prefix
+define rootBM %^R%-%^; # root boundary marker
+
+#define verbTypeFG "@U.VerbType."[{Red}|{Blue}|{Purple}]"@"; # captures flag diacritis marking verb type
+define verbTypeFG "#"; # captures flag diacritis marking verb type
+
+#conjugation classes of verbs
+define ccClassFG "@" [P|R] ".CC." [{One}|{Two}|{Three}|{Four}|{Five}|{Six}|{Seven}|{Eight}|{Nine}] "@" ;
+
+
+#define habAspect "@U.Aspect."{Habitual}"@";
+#define commandAspect "@U.Aspect."{Command}"@";
+#define punctAspect "@U.Aspect."{Punct}"@";
+#define perfAspect "@U.Aspect."{Perf}"@";
+
+
+define punctMarker %^P%^;
+define perfMarker %^R%^;
+define habMarker %^H%^;
+define comMarker %^C%^;
+
+define hiddenH %^hh%^;
+define teMarker %^TE%^;
+define niMarker %^NI%^;
+
+define defPast %^Past%^;
+define condMarker %^Cond%^;
+define futMarker %^Fut%^;
+
+define nasalVowel [ {on} | {en}];
+define accVowel [á | à | é | è | í | ì | ó | ò | ú | ù | %:];
+define vowel [ a | e | o | u | i | nasalVowel | accVowel]; 
+define consonant [ h | k | n| r | s | t | w | y | {kw} | {ts} | {wh}];
+define wordChar [vowel | consonant | %' | %`];
+
+define fg "@"?+"@";
+#define removeFG [fg] >@ 0;
+#define removeFG "@"?+"@" >@ 0;
+
+define removeFG U -> FF;
+
+#Rules for replacing c-stem forms of active (RED) bound pronouns with the correct form (be it A, E, I or O)
+#
+#
+
+
+#Agent I (ke)
+define keCore  {ke}-> k || ppMarker _ rootBM [ a | e | i | o | h | y ] ; 
+
+# agent you (se)
+define seCore  {se} -> {s} || ppMarker _ rootBM [a | e | o] ,,
+{se} -> {ts} || ppMarker _ rootBM [i] ,,
+{se} -> {it} || ppMarker _ rootBM {hs};
+
+define seExc {se} -> s || ppMarker _ rootBM [ h | y ] ;
+define seExcPrefix {se}  -> {hse} || [?+ (verbverbTypeFG) ppMarker] _ rootBM,,
+    s -> {hs} || [?+ (verbverbTypeFG) ppMarker] _ rootBM,,
+    {ts} -> {hs} || [?+ (verbverbTypeFG) ppMarker] _ rootBM,,
+    {it} -> {t} || [?+ (verbverbTypeFG) ppMarker] _ rootBM;
+define sToSe [..] -> e || ppMarker s _ rootBM [ {khonni} ] ; 
+
+
+
+# agent he (ra)
+define raCore {ra} -> {r} || ppMarker _ rootBM [a | e | o] ,,
+[ppMarker {ra} rootBM i] -> [ppMarker {ren} rootBM i];
+
+define raExc r -> {hr} || [wordChar+ ppMarker] _ rootBM [e | o];
+
+#agent she (ye)
+define yeCore [ppMarker {ye} rootBM a] -> [ppMarker {yon} rootBM] ,,
+[ppMarker {ye} rootBM i] -> [ppMarker {ye} rootBM] ,,
+{ye} -> {yak} || ppMarker _ rootBM [e | o];
+
+#agent it (ka)
+define kaCore {ka} -> {w} || ppMarker _ rootBM [a | e ],,
+[ppMarker {ka} rootBM i] -> [ppMarker {ken} rootBM],,
+{ka} -> {y} || ppMarker _ rootBM [o];
+
+# agent you and I (teni)
+define teniCore {teni}-> {ty} || ppMarker _ rootBM [a ] ,,
+{teni}-> {ten} || ppMarker _ rootBM [i | e | o];
+
+# agent smb and I (yakeni)
+define yakeniCore {yakeni}-> {yaken} || ppMarker _ rootBM [ i | e | o] ,,
+{yakeni}-> {yaky} || ppMarker _ rootBM [a] ;
+
+# agent you two (seni)
+define seniCore {seni}-> {sen} || ppMarker _ rootBM [ i | e | o] ,,
+{seni}-> {tsy} || ppMarker _ rootBM [a] ;
+
+# agent 2 males (ni)
+#define hniCore {hni}-> {hn} || ppMarker _ rootBM [ i | e | o] ,,
+#{hni}-> {hy} || ppMarker _ rootBM [a] ;
+#define hniExc h -> 0 || [ .#. (verbTypeFG) ppMarker] _ [n [i]^{0,1}] | y rootBM;
+
+define hniCore {ni}-> {n} || ppMarker hiddenH _ rootBM [i | e | o],,
+{ni}-> {y} || ppMarker hiddenH _ rootBM [a] ;
+
+# agent 2 females (keni)
+define keniCore  {keni}-> {ken} || ppMarker _ rootBM [ i | e | o] ,,
+{keni}-> {ky} || ppMarker _ rootBM [a] ;
+
+# agent you all and I (tewa)
+define tewaCore {tewa}-> {tew} || ppMarker _ rootBM [ a | e] ,,
+[ppMarker {tewa} rootBM i ] -> [ppMarker {tewen} rootBM ],,
+{tewa}-> {ty} || ppMarker _ rootBM [o] ;
+
+# agent they and I (yakwa)
+define yakwaCore {yakwa}-> {yakw} || ppMarker _ rootBM [ a | e] ,,
+[ppMarker {yakwa} rootBM i ] -> [ppMarker {yakwen} rootBM ],,
+{yakwa}-> {yaky} || ppMarker _ rootBM [o] ;
+
+# agent all of you (sewa)
+define sewaCore {sewa}-> {sew} || ppMarker _ rootBM [ a | e] ,,
+[ppMarker {sewa} rootBM i ] -> [ppMarker {sewen} rootBM ],,
+{sewa}-> {tsy} || ppMarker _ rootBM [o] ;
+
+# agent they males/mixed (rati)
+define ratiCore [ppMarker {rati} rootBM a] -> [ppMarker {ron} rootBM] ,,
+{rati}-> {ronn} || ppMarker _ rootBM [ e | o] ,,
+{rati}-> {rat} || ppMarker _ rootBM [ i ];
+
+# agent they females (konti)
+define kontiCore [ppMarker {konti} rootBM a] -> [ppMarker {kon} rootBM],,
+{konti}-> {konn} || ppMarker _ rootBM [ e | o] ,,
+{konti}-> {kont} || ppMarker _ rootBM [ i ];
+
+
+define replaceLetter ? -> 0 || ppMarker [ {ren} | {yon} | {tewen} | {yakwen} | {sewen} | {ron} ] rootBM _ ;
+define replaceLetterYe i -> 0 || ppMarker {ye} rootBM _ ;
+define replaceLetterKen i -> 0 || ppMarker {kon} rootBM _ ;
+
+
+
+define coreRed keCore .o. seCore .o. raCore .o. yeCore .o. teniCore .o. 
+yakeniCore .o. seniCore .o. hniCore .o. keniCore .o. tewaCore .o. 
+yakwaCore .o. sewaCore .o. ratiCore .o. kontiCore .o. kaCore;
+
+define exceptRed  seExc .o. seExcPrefix .o. sToSe .o. raExc ;
+
+define reWriteRed coreRed .o. exceptRed ;
+
+
+#rules for replacing passive (blue) personal pronouns from their canonical c-verb forms into the one matching the following morpheme
+
+#correspond to the tables on pages 3-6 of Unit 1
+
+#Patient I (wake)
+define wakeCore  {wake}-> {wak} || ppMarker _ rootBM [ a | e | i | o ] ; 
+define wakeExc {wake} -> {wak} || ppMarker _ rootBM [ h | y ] ; 
+
+# Patient you (sa)
+define saCore  {sa} -> {s} || ppMarker _ rootBM [a | e | o] ;
+define saCoreI [ ppMarker {sa} rootBM i] ->  ppMarker {sen} rootBM;
+
+# Patient he (ro)
+define roAI [ ppMarker {ro} rootBM [a | i]] -> ppMarker {ro} rootBM;
+define roE {ro} -> {raw} || ppMarker _ rootBM [e] ;
+define roO {ro} -> {ra} || ppMarker _ rootBM [o] ;
+
+# Patient she (yako)
+define yakoAI [ ppMarker {yako} rootBM [a | i]] -> ppMarker {yako} rootBM;
+define yakoE {yako} -> {yakaw} || ppMarker _ rootBM [e] ;
+define yakoO {yako} -> {yaka} || ppMarker _ rootBM [o] ;
+
+# Patient it (yo)
+define yoAI [ ppMarker {yo} rootBM [a | i]] -> ppMarker {yo} rootBM;
+define yoE {yo} -> {yaw} || ppMarker _ rootBM [e] ;
+define yoO {yo} -> {ya} || ppMarker _ rootBM [o] ;
+
+#Patient both of us (yonkeni)
+define yonkeniCore  {yonkeni}-> {yonky} || ppMarker _ rootBM [ a ] ,,
+{yonkeni}-> {yonken} || ppMarker _ rootBM [ i | e | o ]; 
+
+#patient plural (M + F)
+define rotiCore {roti} -> {ron} || ppMarker _ rootBM [ a | e | o ];
+define rotiI {roti} -> {rot} || ppMarker _ rootBM [ i ];
+
+#patient plural females
+define yotiCore {yoti} -> {yon} || ppMarker _ rootBM [ a | e | o ];
+define yotiI {yoti} -> {yot} || ppMarker _ rootBM [ i ];
+
+#patient all of us (they and I or you all and I), yonkwa
+define yonkwaAE {yonkwa} -> {yonkw} || ppMarker _ rootBM [ a | e  ];
+define yonkwaO {yonkwa} -> {yonky} || ppMarker _ rootBM [o];
+define yonkwaI [ ppMarker {yakwa} rootBM [i]] -> ppMarker {yonkwen} rootBM;
+
+
+define removeRM  rootBM -> "^" ;
+define removePP ppMarker -> "^";
+
+define coreBlue wakeCore .o. saCore .o. saCoreI .o. roAI .o. roE .o. roO .o. yakoAI .o. yakoE .o. yakoO .o. yoAI .o. yoE .o. yoO .o. yonkeniCore .o. rotiCore .o. rotiI .o. yotiCore .o. yotiI .o. yonkwaAE .o. yonkwaO .o. yonkwaI;
+
+define exceptBlue wakeExc ;
+
+define reWriteBlue coreBlue .o. exceptBlue ;
+
+
+#rules for replacing "transitive" (purple) personal pronouns from their canonical c-verb forms into the one matching the following morpheme
+
+#correspond to the tables on pages 7-8 of Unit 1
+
+# me->you (kon)
+define konCore  {kon}-> {kony} || ppMarker _ rootBM [ a | e | o ] ; 
+define konI [ ppMarker {kon} rootBM [i]] -> ppMarker {kon} rootBM;
+
+#me -> him (ri)
+define riCore {ri}-> {riy} || ppMarker _ rootBM [ a | e | o ] ; 
+define riI {ri}-> {r} || ppMarker _ rootBM [ i ];
+
+#me -> her/them (khe)
+define kheCore  {khe}-> {khey} || ppMarker _ rootBM [ a | e | o ] ; 
+define kheI [ ppMarker {khe} rootBM [i]] -> ppMarker {khe} rootBM;
+
+#me -> you two (keni)
+# you 2 -> me (takeni)
+define keniCore i -> 0 || ppMarker ({ta}) {ken} _ rootBM [ i | e | o ] ; 
+define keniA {eni}-> {y} || ppMarker ({ta}) k _ rootBM [ a ];
+
+
+
+#me -> you all; they & I -> you (kwa)
+#you -> them and I; you all -> me (takwa)
+#you all and I -> him (etshitewa)
+#you all -> him (etshisewa)
+#he -> us all (shonkwa)
+#they and I -> him (shakwa)
+define kwaPP [{kw} | {takw} | {etshitew} | {etshisew} | (hiddenH){shonkw} | (hiddenH){shakw}];
+define kwaCore a -> 0 || ppMarker kwaPP _ rootBM [ a | e  ] ; 
+define kwaI [{a} rootBM [i]] -> [ {en} rootBM ] || kwaPP _ ;
+define kwaO  a -> y || ppMarker kwaPP _ rootBM [ o  ] ; 
+
+
+#you -> me (take)
+define takeCore {take}-> {tak} || ppMarker _ rootBM [ i | e | o | h | y] ; 
+define takeA {take}-> {takw} || ppMarker _ rootBM [ a ];
+
+#you -> him (etshe)
+define etsheCore {etshe}-> {etsh} || ppMarker _ rootBM [ a| i | e | o | h | y] ;
+
+
+
+
+#you -> her, them (she)
+define sheCore  {she}-> {shey} || ppMarker (hiddenH) _ rootBM [ a | e | o ] ; 
+define sheI i -> 0 || ppMarker (hiddenH) {she} rootBM _ ;
+
+#you and I -> him (etshiteni)
+#he -> us 2 (shonkeni)
+#smb and I -> him (shakeni)
+define etshiteniCore i -> 0 || ppMarker  [ {etshiten}  | (hiddenH) {shonken} | (hiddenH) {shaken}] _ rootBM [  i | e | o ] ;
+define etshiteniA {eni}-> {y} || ppMarker [{etshit} | (hiddenH){shonk} | (hiddenH){shak}] _ rootBM [  a ] ;
+
+#you 2 -> him (etshiseni)
+define etshiseniCore i -> 0 || ppMarker  {etshisen}  _ rootBM [  i | e | o ] ;
+define etshiseniA {seni}-> {tsy} || ppMarker  {etshi}  _ rootBM [  a ] ;
+
+#he -> me (rake), 
+#they -> me (yonke)
+define rakePP [{rak} | {yonk} ];
+define rakeCore e -> 0 || ppMarker rakePP _ rootBM [ i | o | h | y  ] ; 
+define rakeAI e -> w || ppMarker rakePP _ rootBM [ a | e  ] ; 
+
+#he -> you (ya)
+define yaCore  {ya}-> {yay} || ppMarker hiddenH _ rootBM [ e | o ] ; 
+define yaA  {ya}-> {y} || ppMarker hiddenH _ rootBM [ a ] ; 
+define yaI [hiddenH {ya} rootBM i] -> [ hiddenH {yen} rootBM ] ;
+
+#he->he (ro) : covered in rules-BLUE
+
+#he -> her, them (shako)
+define shakoAI [a | i] -> 0 || ppMarker (hiddenH) {shako} rootBM _ ;
+define shakoE  {shako}-> {shakaw} || ppMarker (hiddenH) _ rootBM [ e ] ; 
+define shakoO  {shako}-> {shaka} || ppMarker (hiddenH) _ rootBM [ o ] ; 
+
+
+#she, smb, they -> him (ronwa)
+#she, smb, they -> her (konwa)
+#she, smb, they -> you (yesa)
+define ronwaPP [{ronw} | {konw} | {yes}];
+define ronwaCore a -> 0 || ppMarker ronwaPP _ rootBM [ a | e  ] ; 
+define ronwaI [{a} rootBM [i]] -> [ {en} rootBM ] || ronwaPP _ ;
+define ronwaO  a -> {ay} || ppMarker ronwaPP _ rootBM [ o  ] ; 
+
+#she or them -> she or them (yontate)
+define yontateCore e -> 0 || ppMarker {yontat} _ rootBM [ a | i | e | o | h | y  ] ; 
+
+#she or they -> them males (ronwati)
+#she or they -> them females (konwati)
+define ronwatiAO {ti} -> {n} || ppMarker [{ronwa} | {konwa} ] _ rootBM [ a | o ] ; 
+define ronwatiEI {i} -> 0 || ppMarker [{ronwat} | {konwat} ] _ rootBM [ i | e ] ; 
+
+# they males -> her (shakoti)
+# they females -> her (yakoti)
+define shakotiAO {ti} -> {n} || ppMarker [{yako} | [ (hiddenH) {shako}] ] _ rootBM [ a | o ] ; 
+define shakotiEI {i} -> 0 || ppMarker [{yakot} | [ (hiddenH) {shakot}] ] _ rootBM [ i | e ] ; 
+
+
+
+
+#you (all) and I  -> her or them (yethi)
+#they -> you two (all) (yetshi)
+#they (smb) and I  -> her or them (yakhi)
+#they   -> you and I(yonkhi)
+define yetPP [{yeth} | {yetsh} | {yakh} | {yonkh}];
+define yetCore [..] -> y || ppMarker yetPP i _ rootBM [ a | e  | o] ; 
+define yetI i -> 0 || ppMarker yetPP _ rootBM [ i ]; 
+
+
+
+define corePurple konCore .o. konI .o. 
+riCore .o. riI .o. 
+kheCore .o. kheI .o. 
+keniCore .o. keniA .o.
+etshiteniCore .o. etshiteniA .o.
+etshiseniCore .o. etshiseniA .o.
+kwaCore .o. kwaI .o. kwaO .o. 
+takeCore .o. takeA .o. 
+etsheCore .o. 
+sheCore .o. sheI .o.
+ronwaCore .o. ronwaI .o. ronwaO .o.
+rakeCore .o. rakeAI .o.
+yaCore .o. yaI .o. yaA .o.
+shakoAI .o. shakoE .o. shakoO .o.
+shakotiAO .o. shakotiEI .o.
+yontateCore .o.
+ronwatiAO .o. ronwatiEI .o.
+yetCore .o. yetI;
+
+
+define reWritePurple corePurple ;
+
+
+
+# phonological alternations common to all pronominal prefixes
+
+
+# prefix + take, takwa, takeni + root starting with h,k,y,t = hske, hskwa, hskeni
+define taHs {ta} -> {hse} || wordChar+ ppMarker _ [{ke}] rootBM [ k | h | y | t];
+
+# prefix + take, takwa, takeni = hske, hskwa, hskeni
+define taGen {ta} -> {hs} ||  wordChar+ ppMarker _ k;
+
+# r in pron prefixes becomes h if prefixed
+define rToHR r -> {hr} || wordChar+ ppMarker _ e;
+define rToH r-> h || wordChar+ ppMarker _ ;
+
+
+
+#insert hidden h where needed
+define removeHH hiddenH -> 0 || .#. ppMarker _ ;
+define modifyHH hiddenH -> h ||  wordChar+ ppMarker _ ;
+
+#  pronoun ke + k-verb + vowel -> k
+# e.g. take + ken = takken
+define keKCons e -> 0 || ppMarker ?+ k _ rootBM k \[h | k | t] ; 
+
+
+define weakEK  e -> 0 || ppMarker [{etsh} | {yontat}]_ rootBM k \[h | k | t];
+
+
+define commonPronPrefRules  taHs .o. taGen .o.
+                            keKCons .o. weakEK .o. 
+                            rToHR .o. rToH .o.
+                            removeHH .o. modifyHH ;
+
+#this script removes markup inserted by the lexicon 
+# it may optionally be run after applying all rules
+
+
+define removeAll [rootBM | ppMarker | punctMarker | perfMarker | habMarker | comMarker | futPref | condPref | defPast | hiddenH
+    | teMarker | niMarker] -> 0;
+
+
+
+
+#rules for phonological alternations of the prefix 'wa' used in punctual past (definitive)
+
+#wa + k 
+define waK [..] -> {'} || defPast {wa} _ ppMarker {k};
+
+#wa + te or s or ty or tsy
+define tePref [{te} | {s} | {ty} | {tsy}];
+define waSe a -> e || defPast {w} _ ppMarker tePref ;
+
+#wa + y
+define waY y -> {'} || defPast {wa} ppMarker _ ;
+
+#wa+wak
+define waWake [defPast {wa} ppMarker {wak}] -> [defPast ppMarker {onk}];
+define onkA [..] -> w || [defPast ppMarker {onk}] _ rootBM a;
+
+#wa+etshe 
+define waEtshe e -> {'} || defPast {wa} ppMarker _ {tsh};
+
+#define waTak {ta} -> hs || defPast {wa} ppMarker _ k;
+#define waHs hs -> hse || defPast {wa} ppMarker _ k rootBM [ k | h | y | t];
+
+define waCore waK .o. waSe .o. waY .o. waWake .o. onkA .o. waEtshe;
+
+
+#rules for phonological alternations of the prefix 'wa' used in punctual conditionals (indefinite)
+
+# a + t, s -> ae
+define aTS a -> {ae} || condMarker _ ppMarker [t | s];
+
+# a + etsh -> atsh
+define aEtshe e -> 0 || condMarker {a} ppMarker _ {tsh};
+
+#a + wak+a -> aonkw+a
+define aWaka {wak} -> {onkw} || condMarker {a} ppMarker _ rootBM a;
+
+#a + wak + (!a) -> onk 
+define aWake {wak} -> {onk} || condMarker {a} ppMarker _ rootBM (\a);
+
+# a + ^PP^w + ^Root^ a
+define aW [ppMarker w rootBM a] -> [ppMarker rootBM o n] || condMarker {a} _ ;
+
+define aCore aTS .o. aEtshe .o. aWaka .o. aWake .o. aW;
+
+
+
+
+#rules that specify phonological alternations for 
+#the semantic prefixes of verbs:
+# te- and ni- for now
+
+#te prefix can be followed by either conditional or future prefix, or the pronom prefix
+define nextPref [condMarker | futMarker | ppMarker ];
+
+define teVowel e -> 0 || teMarker t _ nextPref [a | e];
+
+#wa' + te -> wa't except when followed by t, s, wa, kh, hs
+define sVariant [ t | s | {w} | {kh} | {hs}];
+define waAndTe e -> 0 || defPast {wa}(') teMarker t _ ppMarker;
+define waTeExcept [..] -> e || defPast {wa}(') teMarker t _ ppMarker sVariant;
+
+
+
+#now ni prefixes
+define nextPrefNi [condMarker | futMarker | defPast | ppMarker ];
+define niVowel i -> 0 || niMarker n _ nextPrefNi [a | e];
+
+#ni + wake = nonke
+#define niWake niMarker {ni} ppMarker {wak} -> niMarker {n} ppMarker {onk};
+
+define niWaStep1  i -> 0 || niMarker n _ defPast {wa};
+define niWaStep2  w -> 0 || niMarker n defPast _ a;
+#when ni + wa + (t,s, hs, wa, khe) = ne
+define niWaExcept a -> e || niMarker n defPast _ ppMarker [ t | s ];
+
+define niWaY y -> ' || niMarker {ni} defPast {wa} ppMarker _ ;
+define niWaReg [niMarker {ni} defPast {wa}] -> niMarker {n} defPast {a} || _ (')ppMarker (?[ t|s ]);
+define niWaS [niMarker {ni} defPast w [a| e]] -> niMarker {n} defPast {e} || _ ppMarker [t | s];
+define niWaK [niMarker {ni} defPast w [a| e]] -> niMarker {n} defPast {a'} || _ ppMarker k;
+
+
+define semPrefCore teVowel .o. waAndTe .o. waTeExcept .o. niVowel .o. niWaY .o. niWaReg .o. niWaS ;
+#.o. niWaStep1 .o. niWaStep2 .o. niWaExcept;
+
+
+
+
+#wa + k 
+define enE e -> 0 || futMarker {en} ppMarker _ ;
+
+define enCore enE;
+
+
+
+#regex removeFG .o. reWriteRed .o. reWriteBlue .o. reWritePurple .o. commonPronPrefRules .o. 
+#    waCore .o. aCore .o. enCore .o. semPrefCore .o. removeAll;
+
+regex removeFG;
