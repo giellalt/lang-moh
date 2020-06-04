@@ -1,0 +1,9 @@
+name = "Mohawk"
+version = "@SPELLERVERSION@"
+
+[macos]
+system_pkg_id = "no.divvun.MacDivvun.moh"
+
+[windows]
+system_product_code = "F6472F5F-18F7-465E-A966-7C7386AA0818"
+msoffice_product_code = "E4FF2D06-DF1E-4AD1-B2CF-4EBAD9C32B0A"
