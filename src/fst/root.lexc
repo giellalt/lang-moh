@@ -18,7 +18,7 @@
 !! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
  
 
-Multichar_Symbols  !!≈ !!!Definitions for @CODE@
+Multichar_Symbols  !!≈ # Definitions for @CODE@
 
 !! first attempt to model simplest form of mohawk verbs:
 !! personal prefix + root
@@ -83,7 +83,7 @@ Definitions
 !! To represent phonologic variations in word forms we use the following
 !! symbols in the lexicon files:
 
-!! !!Flag diacritics
+!! ## Flag diacritics
 !! We have manually optimised the structure of our lexicon using following
 !! flag diacritics to restrict morhpological combinatorics - only allow compounds
 !! with verbs if the verb is further derived into a noun again:

@@ -24,7 +24,7 @@
 !! https://giellalt.uit.no/lang/common/MorphologicalTags.html
 !! extra tages are listed below
 
-Multichar_Symbols  !!≈ !!!@CODE@ definitions
+Multichar_Symbols  !!≈ # @CODE@ definitions
 Verb+
 AgentSg1+ !! I-> X
 AgentSg2+  !! you-> X
