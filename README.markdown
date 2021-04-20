@@ -10,8 +10,8 @@ authors named in the AUTHORS file are available to grant other licencing
 choices.
 
 [![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-moh)](https://github.com/giellalt/lang-moh/issues)
-[![Build Status](https://github.com/giellalt/lang-moh/workflows/Build%20Speller%20Archives%20and%20Bundles/badge.svg)](https://github.com/giellalt/lang-moh/actions)
-[![License](https://img.shields.io/github/license/giellalt/template-lang-moh)](https://raw.githubusercontent.com/giellalt/lang-moh/develop/LICENSE)
+[![Build Status](https://github.com/giellalt/lang-moh/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-moh/actions)
+[![License](https://img.shields.io/github/license/giellalt/lang-moh)](https://raw.githubusercontent.com/giellalt/lang-moh/develop/LICENSE)
 
 Install proofing tools and [keyboards](https://github.com/giellalt/keyboard-moh)
 for the Mohawk language by using the [Divvun Installer](http://divvun.no)
