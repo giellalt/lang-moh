@@ -25,7 +25,7 @@ you all
 they all (male or mixed) -> X
 they all (female) -> X
 X -> I
- X -> you
+X -> you
 X -> he 
 X -> she/smb/they 
 X -> it 
@@ -44,10 +44,12 @@ Passive voice, Blue verbs
 Transitive verbs, Purple verbs
 
 
- boundary of the root morpheme (arrow point to the start); 
+boundary of the root morpheme (arrow point to the start); 
 personal prefix boundary (arrow point to the start)
 
 
 The word forms in UNDEFINED language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/moh-root.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/moh-root.lexc)</small>

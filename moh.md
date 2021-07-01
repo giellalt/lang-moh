@@ -199,7 +199,7 @@
 * Sets for verbs
 
 
-    - V is all readings with a V tag in them, REAL-V should
+- V is all readings with a V tag in them, REAL-V should
 be the ones without an N tag following the V.  
 The REAL-V set thus awaits a fix to the preprocess V ... N bug.
 
@@ -605,16 +605,21 @@ These were the set types.
 
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/cg3/functions.cg3](http://github.com/giellalt/lang-moh/blob/main/../src/cg3/functions.cg3)</small>
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
 
 
+ # Definitions for Multichar_Symbols
 
 first attempt to model simplest form of mohawk verbs:
 personal prefix + root
+
+we will start with only I, you and he 
+
 https://giellalt.uit.no/lang/common/MorphologicalTags.html
 extra tages are listed below
 
- # Multichar_Symbols definitions
 I-> X
 you-> X
 he -> X
@@ -631,7 +636,7 @@ you all
 they all (male or mixed) -> X
 they all (female) -> X
 X -> I
- X -> you
+X -> you
 X -> he 
 X -> she/smb/they 
 X -> it 
@@ -645,135 +650,37 @@ X -> they all and I
 X -> you all
 X -> they all (male or mixed) 
 X -> they all (female) 
-Active voice, Red verbs
-Passive voice, Blue verbs
-Transitive verbs, Purple verbs
-dualistic prefix integral to some verbs
-a special pseudo-type to allow red verbs take blue prefixes in Perfective aspect
-disallow red prefixes in Perfective aspect
-The following are verb conjugation classes, one through 9, plus Exceptions class
+ * +Symbol = independent symbols in the text stream, like £, €, ©
 
 
-
-start of personal prefix boundary  
- start of the root morpheme  
-marks verbs the start of Habitual suffix
-marks verbs the start of Perfective suffix
-marks verbs the start of Habitual suffix
-marks verbs the start of Command suffix (usually none)
-marks verbs the start of Future prefix
-marks verbs the start of Conditional prefix
-marks verbs the start of Past prefix
-marks hidden h that only appears in certain circumstances
-marks the te- part of te-verbs
-marks the te- part of ni-verbs
+marker of the start of the root stem
+marker of the beginning of the personal prefix
 
 
-The word forms in UNDEFINED language start from the lexeme roots of basic
+type of personal pronouns used (red, blue purple)
+
+Morphophonology
+To represent phonologic variations in word forms we use the following
+symbols in the lexicon files:
+
+## Flag diacritics
+We have manually optimised the structure of our lexicon using following
+flag diacritics to restrict morhpological combinatorics - only allow compounds
+with verbs if the verb is further derived into a noun again:
+
+
+The word forms in Mohawk language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
 
-
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
-
-
-
-first attempt to model simplest form of mohawk verbs:
-personal prefix + root
-https://giellalt.uit.no/lang/common/MorphologicalTags.html
-extra tages are listed below
-
- # Multichar_Symbols definitions
-I-> X
-you-> X
-he -> X
-she/smb/they -> X
-it -> X
-you and I -> X
-smb and I -> X
-you two -> X
-two males or mixed -> X
-two females -> X
-you all and I -> X
-they all and I -> X
-you all
-they all (male or mixed) -> X
-they all (female) -> X
-X -> I
- X -> you
-X -> he 
-X -> she/smb/they 
-X -> it 
-X -> you and I
-X -> smb and I 
-X -> you two 
-X -> two males or mixed 
-X -> two females
-X -> you all and I 
-X -> they all and I 
-X -> you all
-X -> they all (male or mixed) 
-X -> they all (female) 
-Active voice, Red verbs
-Passive voice, Blue verbs
-Transitive verbs, Purple verbs
-
-
- boundary of the root morpheme (arrow point to the start); 
-personal prefix boundary (arrow point to the start)
-
-
-The word forms in UNDEFINED language start from the lexeme roots of basic
-word classes, or optionally from prefixes:
-
-Verb inflection
-The Mohawk language verbs inflect in persons.
-
-
-red prefixes f
-blue prefixes
-purple prefixes
-
-
-
-put a neutral patient for all active verbs
-
-
-put a tag boundary marker to improve readability
-
-
-
-
-
-
-put a tag boundary marker to improve readability
-
-
-
-Proper noun inflection
+* * *
+<small>This (part of) documentation was generated from [../src/fst/root.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/root.lexc)</small>Proper noun inflection
 The Mohawk language proper nouns inflect in the same cases as regular
 nouns, but with a colon (':') as separator.
 
 
 
-Verbal suffixes
-
-
-
-special Lexicon for Red verbs taking on Blue prefixes in PerfectiveAspect
-
-
-
-
-
-
-
-
-
-
-
-
-
-Verbal prefixes
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/propernouns.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/propernouns.lexc)</small>Verbal prefixes
 
 
 this is a verb with the dualistic te-prefix
@@ -794,19 +701,66 @@ Punctual Past for te-verbs: wa + te + pron + verb
 
 
 
-Verb inflection
-The UNDEFINED language verbs inflect in persons.
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/kawe-verb-pref.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/kawe-verb-pref.lexc)</small>Verbal suffixes
 
 
 
-Adjective inflection
-The Mohawk language adjectives compare.
+special Lexicon for Red verbs taking on Blue prefixes in PerfectiveAspect
 
 
 
-Entry to the lexicons responsible for forming Mohawk verbs
 
-Verb inflection
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/kawe-verb-suff.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/kawe-verb-suff.lexc)</small>Verb inflection
+
+
+red prefixes f
+blue prefixes
+purple prefixes
+
+
+
+
+
+
+put a neutral patient for all active verbs
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/affixes-verbs-moh.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/affixes-verbs-moh.lexc)</small>Noun inflection
+The Mohawk language nouns inflect in cases.
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/nouns.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/nouns.lexc)</small>
+# Symbol affixes
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/symbols.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/symbols.lexc)</small>Verb inflection
 
 
 red prefixes 
@@ -849,12 +803,18 @@ put a neutral patient for all active verbs
 
 
 
-Noun inflection
-The Mohawk language nouns inflect in cases.
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/kawe-verb-pron-pref.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/kawe-verb-pron-pref.lexc)</small>Adjective inflection
+The Mohawk language adjectives compare.
 
 
 
-Verb inflection
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/adjectives.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/adjectives.lexc)</small>Entry to the lexicons responsible for forming Mohawk verbs
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/kawe-verbs.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/kawe-verbs.lexc)</small>Verb inflection
+The Mohawk language verbs inflect in persons.
 
 
 red prefixes f
@@ -863,52 +823,103 @@ purple prefixes
 
 
 
-
-
-
 put a neutral patient for all active verbs
 
 
+put a tag boundary marker to improve readability
 
 
 
 
 
 
+put a tag boundary marker to improve readability
 
 
 
-
-# Symbol affixes
-
-
-
-
-
-=================================== !
-The Mohawk morphophonological/twolc rules file !
-=================================== !
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/verbs.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/verbs.lexc)</small>Verb inflection
+The UNDEFINED language verbs inflect in persons.
 
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/verbs.lexc.original.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/verbs.lexc.original.lexc)</small>
+INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
 
 
 
+first attempt to model simplest form of mohawk verbs:
+personal prefix + root
+https://giellalt.uit.no/lang/common/MorphologicalTags.html
+extra tages are listed below
+
+ # Multichar_Symbols definitions
+I-> X
+you-> X
+he -> X
+she/smb/they -> X
+it -> X
+you and I -> X
+smb and I -> X
+you two -> X
+two males or mixed -> X
+two females -> X
+you all and I -> X
+they all and I -> X
+you all
+they all (male or mixed) -> X
+they all (female) -> X
+X -> I
+X -> you
+X -> he 
+X -> she/smb/they 
+X -> it 
+X -> you and I
+X -> smb and I 
+X -> you two 
+X -> two males or mixed 
+X -> two females
+X -> you all and I 
+X -> they all and I 
+X -> you all
+X -> they all (male or mixed) 
+X -> they all (female) 
+Active voice, Red verbs
+Passive voice, Blue verbs
+Transitive verbs, Purple verbs
 
 
-* *primus%>s*
-* *primus00*
+boundary of the root morpheme (arrow point to the start); 
+personal prefix boundary (arrow point to the start)
 
 
-* examples:*
+The word forms in UNDEFINED language start from the lexeme roots of basic
+word classes, or optionally from prefixes:
 
-* examples:*
+* * *
+<small>This (part of) documentation was generated from [../src/fst/moh-root.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/moh-root.lexc)</small>Pronouns
+Pronouns in the Mohawk language are references to things.
 
 
-* examples:*
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/pronouns.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/pronouns.lexc)</small>Prefixes
+Prefixes in the Mohawk language are bound to beginning of other words.
 
-* examples:*
-Verbs
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/prefixes.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/prefixes.lexc)</small>Nouns
+Nouns in the Mohawk language are things.
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/nouns.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/nouns.lexc)</small>Adjectives
+Adjectives in the Mohawk language describe things.
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/adjectives.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/adjectives.lexc)</small>Verbs
 Verbs in Mohawk language are actions.
 
 -----------------------VERBS ---------------------------------------
@@ -937,30 +948,19 @@ lazy (page 131)
 to make smth, Brian's list
 to enjoy doing smth Brian's page 14
 
-Verbs
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/verbs.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/verbs.lexc)</small>Verbs
 Verbs in UNDEFINED language are actions.
 
 
-Prefixes
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/verbs.lexc.original.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/verbs.lexc.original.lexc)</small>Prefixes
 Prefixes in UNDEFINED language are bound to beginning of other words.
 
 
 
-Pronouns
-Pronouns in the Mohawk language are references to things.
-
-
-Numerals
-Numerals in the Mohawk language are numbers.
-
-
-Verbs
-Verbs in Mohawk language are actions.
------------------------VERBS ---------------------------------------
-
-
-
-Verbs
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/prefixes.lexc.original.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/prefixes.lexc.original.lexc)</small>Verbs
 Verbs in Mohawk language are actions.
 
 Red verbs are essentially non-transitive verbs used in Active Voice
@@ -1000,20 +1000,13 @@ to enjoy doing smth Brian's page 14
 
 
 
-Adjectives
-Adjectives in the Mohawk language describe things.
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/stems-verbs-moh.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/stems-verbs-moh.lexc)</small>Numerals
+Numerals in the Mohawk language are numbers.
 
 
-Prefixes
-Prefixes in the Mohawk language are bound to beginning of other words.
-
-
-
-Nouns
-Nouns in the Mohawk language are things.
-
-
-Verbs
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/numerals.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/numerals.lexc)</small>Verbs
 Verbs in Mohawk language are actions.
 -----------------------VERBS ---------------------------------------
 
@@ -1047,20 +1040,24 @@ rohrok, to watch smb, p. 19
 
 to work, p. 10
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/kawe-verb-stems.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/kawe-verb-stems.lexc)</small>Verbs
+Verbs in Mohawk language are actions.
+-----------------------VERBS ---------------------------------------
 
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
 
 
- # Definitions for Multichar_Symbols
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/stems-gen.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/stems-gen.lexc)</small>INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
+
+
 
 first attempt to model simplest form of mohawk verbs:
 personal prefix + root
-
-we will start with only I, you and he 
-
 https://giellalt.uit.no/lang/common/MorphologicalTags.html
 extra tages are listed below
 
+ # Multichar_Symbols definitions
 I-> X
 you-> X
 he -> X
@@ -1077,7 +1074,7 @@ you all
 they all (male or mixed) -> X
 they all (female) -> X
 X -> I
- X -> you
+X -> you
 X -> he 
 X -> she/smb/they 
 X -> it 
@@ -1091,29 +1088,59 @@ X -> they all and I
 X -> you all
 X -> they all (male or mixed) 
 X -> they all (female) 
- * +Symbol = independent symbols in the text stream, like £, €, ©
+Active voice, Red verbs
+Passive voice, Blue verbs
+Transitive verbs, Purple verbs
+dualistic prefix integral to some verbs
+a special pseudo-type to allow red verbs take blue prefixes in Perfective aspect
+disallow red prefixes in Perfective aspect
+The following are verb conjugation classes, one through 9, plus Exceptions class
 
 
-marker of the start of the root stem
-marker of the beginning of the personal prefix
+
+start of personal prefix boundary  
+start of the root morpheme  
+marks verbs the start of Habitual suffix
+marks verbs the start of Perfective suffix
+marks verbs the start of Habitual suffix
+marks verbs the start of Command suffix (usually none)
+marks verbs the start of Future prefix
+marks verbs the start of Conditional prefix
+marks verbs the start of Past prefix
+marks hidden h that only appears in certain circumstances
+marks the te- part of te-verbs
+marks the te- part of ni-verbs
 
 
-type of personal pronouns used (red, blue purple)
-
-Morphophonology
-To represent phonologic variations in word forms we use the following
-symbols in the lexicon files:
-
-## Flag diacritics
-We have manually optimised the structure of our lexicon using following
-flag diacritics to restrict morhpological combinatorics - only allow compounds
-with verbs if the verb is further derived into a noun again:
-
-
-The word forms in Mohawk language start from the lexeme roots of basic
+The word forms in UNDEFINED language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/kawe-root.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/kawe-root.lexc)</small>=================================== !
+The Mohawk morphophonological/twolc rules file !
+=================================== !
 
+
+
+
+
+
+
+
+* *primus%>s*
+* *primus00*
+
+
+* examples:*
+
+* examples:*
+
+
+* examples:*
+
+* examples:*
+* * *
+<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/phonology.twolc)</small>
 
 
 
@@ -1167,7 +1194,8 @@ word classes, or optionally from prefixes:
 % sárggis% :%-   Root ; 
 % násti% :%*     Root ; 
 
-
+* * *
+<small>This (part of) documentation was generated from [../src/transcriptions/transcriptor-numbers-digit2text.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/transcriptions/transcriptor-numbers-digit2text.lexc)</small>
 
 
 We describe here how abbreviations are in Mohawk are read out, e.g.
@@ -1183,8 +1211,9 @@ For example:
  * esim.:esimerkiksi # ; 
 
 
-
-      [ L A N G U A G E ]  G R A M M A R   C H E C K E R
+* * *
+<small>This (part of) documentation was generated from [../src/transcriptions/transcriptor-abbrevs2text.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/transcriptions/transcriptor-abbrevs2text.lexc)</small>
+[ L A N G U A G E ]  G R A M M A R   C H E C K E R
 
 
 
@@ -1594,3 +1623,5 @@ expression **WORD - premodifiers**.
 
 
 
+* * *
+<small>This (part of) documentation was generated from [../tools/grammarcheckers/grammarchecker.cg3](http://github.com/giellalt/lang-moh/blob/main/../tools/grammarcheckers/grammarchecker.cg3)</small>

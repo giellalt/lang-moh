@@ -28,7 +28,7 @@ you all
 they all (male or mixed) -> X
 they all (female) -> X
 X -> I
- X -> you
+X -> you
 X -> he 
 X -> she/smb/they 
 X -> it 
@@ -64,3 +64,5 @@ with verbs if the verb is further derived into a noun again:
 The word forms in Mohawk language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/root.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/root.lexc)</small>

@@ -32,3 +32,5 @@ rohrok, to watch smb, p. 19
 
 to work, p. 10
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/kawe-verb-stems.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/kawe-verb-stems.lexc)</small>

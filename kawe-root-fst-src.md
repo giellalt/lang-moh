@@ -24,7 +24,7 @@ you all
 they all (male or mixed) -> X
 they all (female) -> X
 X -> I
- X -> you
+X -> you
 X -> he 
 X -> she/smb/they 
 X -> it 
@@ -49,7 +49,7 @@ The following are verb conjugation classes, one through 9, plus Exceptions class
 
 
 start of personal prefix boundary  
- start of the root morpheme  
+start of the root morpheme  
 marks verbs the start of Habitual suffix
 marks verbs the start of Perfective suffix
 marks verbs the start of Habitual suffix
@@ -65,3 +65,5 @@ marks the te- part of ni-verbs
 The word forms in UNDEFINED language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/kawe-root.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/kawe-root.lexc)</small>
