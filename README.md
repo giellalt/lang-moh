@@ -3,7 +3,7 @@ The Mohawk morphology and tools
 
 [![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-moh)](https://github.com/giellalt/lang-moh/issues)
 [![Build Status](https://github.com/giellalt/lang-moh/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-moh/actions)
-[![License](https://img.shields.io/github/license/giellalt/lang-moh)](https://raw.githubusercontent.com/giellalt/lang-moh/main/LICENSE)
+[![License](https://img.shields.io/github/license/giellalt/lang-moh)](https://github.com/giellalt/lang-moh/blob/main/LICENSE)
 
 This repository contains finite state source files for the Mohawk language,
 for building morphological analysers, proofing tools
