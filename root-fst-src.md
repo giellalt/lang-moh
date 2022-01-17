@@ -2,7 +2,7 @@
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
 
 
- # Definitions for Multichar_Symbols
+# Definitions for Multichar_Symbols@CODE@
 
 first attempt to model simplest form of mohawk verbs:
 personal prefix + root
@@ -42,7 +42,7 @@ X -> they all and I
 X -> you all
 X -> they all (male or mixed) 
 X -> they all (female) 
- * +Symbol = independent symbols in the text stream, like £, €, ©
+* +Symbol© = independent symbols in the text stream, like £, €, ©
 
 
 marker of the start of the root stem
