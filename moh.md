@@ -610,7 +610,7 @@ These were the set types.
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
 
 
-# Definitions for Multichar_Symbols@CODE@
+# Definitions for Multichar_Symbols
 
 first attempt to model simplest form of mohawk verbs:
 personal prefix + root
@@ -650,7 +650,7 @@ X -> they all and I
 X -> you all
 X -> they all (male or mixed) 
 X -> they all (female) 
-* +Symbol© = independent symbols in the text stream, like £, €, ©
+* +Symbol = independent symbols in the text stream, like £, €, ©
 
 
 marker of the start of the root stem
@@ -878,7 +878,7 @@ personal prefix + root
 https://giellalt.uit.no/lang/common/MorphologicalTags.html
 extra tages are listed below
 
-# Multichar_Symbolsdefinitions definitions
+# Multichar_Symbols definitions
 I-> X
 you-> X
 he -> X
@@ -931,7 +931,7 @@ personal prefix + root
 https://giellalt.uit.no/lang/common/MorphologicalTags.html
 extra tages are listed below
 
-# Multichar_Symbolsdefinitions definitions
+# Multichar_Symbols definitions
 I-> X
 you-> X
 he -> X
@@ -1148,12 +1148,12 @@ for text-to-speech systems.
 
 For example:
 
- * s.:syntynyt # ;  
- * os.:omaa% sukua # ;  
- * v.:vuosi # ;  
- * v.:vuonna # ;  
- * esim.:esimerkki # ; 
- * esim.:esimerkiksi # ; 
+* s.:syntynyt # ;  
+* os.:omaa% sukua # ;  
+* v.:vuosi # ;  
+* v.:vuonna # ;  
+* esim.:esimerkki # ; 
+* esim.:esimerkiksi # ; 
 
 
 * * *

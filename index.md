@@ -5,11 +5,13 @@
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-moh)](https://github.com/giellalt/lang-moh/issues)
 [![Build status](https://github.com/giellalt/lang-moh/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-moh/actions)
 
-This page documents the work on the **Mohawk language model**. 
+This page documents the work on the **Mohawk language model**.
+
+Not much has been done to it yet.
 
 # Project documentation
 
-* Add links to project specific documentation here as needed. Keep the documentation in the `docs/` directory.
+* [Alberta Language Technology Lab](http://altlab.artsrn.ualberta.ca/)
 
 # In-source documentation
 

@@ -7,7 +7,7 @@ personal prefix + root
 https://giellalt.uit.no/lang/common/MorphologicalTags.html
 extra tages are listed below
 
-# Multichar_Symbolsdefinitions definitions
+# Multichar_Symbols definitions
 I-> X
 you-> X
 he -> X
