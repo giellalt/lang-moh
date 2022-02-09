@@ -1,7 +1,5 @@
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
 
-
-
 first attempt to model simplest form of mohawk verbs:
 personal prefix + root
 https://giellalt.uit.no/lang/common/MorphologicalTags.html
@@ -46,8 +44,6 @@ a special pseudo-type to allow red verbs take blue prefixes in Perfective aspect
 disallow red prefixes in Perfective aspect
 The following are verb conjugation classes, one through 9, plus Exceptions class
 
-
-
 start of personal prefix boundary  
 start of the root morpheme  
 marks verbs the start of Habitual suffix
@@ -61,9 +57,12 @@ marks hidden h that only appears in certain circumstances
 marks the te- part of te-verbs
 marks the te- part of ni-verbs
 
-
 The word forms in UNDEFINED language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/kawe-root.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/kawe-root.lexc)</small>
+
+<small>This (part of) documentation was generated from [src/fst/kawe-root.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/kawe-root.lexc)</small>
+
+---
+

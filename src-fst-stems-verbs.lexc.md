@@ -3,11 +3,6 @@ Verbs in Mohawk language are actions.
 
 -----------------------VERBS ---------------------------------------
 
-
-
-
-
-
 --------------some example c-stem verbs (verb stems starting with a constant)
 to like
 to love
@@ -15,7 +10,6 @@ to love
 -------------verb stems starting with an "A"
 to be hungry (page 131)
 to be lucky (page 131)
-
 
 -------------verb stems starting with an "I"
 to be  poor (page 132)
@@ -28,4 +22,8 @@ to make smth, Brian's list
 to enjoy doing smth Brian's page 14
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/stems/verbs.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/stems/verbs.lexc)</small>
+
+<small>This (part of) documentation was generated from [src/fst/stems/verbs.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/verbs.lexc)</small>
+
+---
+

@@ -1,26 +1,14 @@
 Verb inflection
 
-
 red prefixes f
 blue prefixes
 purple prefixes
 
-
-
-
-
-
 put a neutral patient for all active verbs
 
-
-
-
-
-
-
-
-
-
-
 * * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/affixes-verbs-moh.lexc](http://github.com/giellalt/lang-moh/blob/main/../src/fst/affixes/affixes-verbs-moh.lexc)</small>
+
+<small>This (part of) documentation was generated from [src/fst/affixes/affixes-verbs-moh.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/affixes-verbs-moh.lexc)</small>
+
+---
+
