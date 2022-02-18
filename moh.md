@@ -170,29 +170,196 @@ These were the set types.
 ## HNOUN MAPPING
 
 * * *
-
-<small>This (part of) documentation was generated from [src/cg3/functions.cg3](https://github.com/giellalt/lang-moh/blob/main/src/cg3/functions.cg3)</small>
-
----
-
-=================================== !
-The Mohawk morphophonological/twolc rules file !
-=================================== !
-
-* *primus%>s*
-* *primus00*
-
-* examples:*
-
-* examples:*
-
-* examples:*
-
-* examples:*
+<small>This (part of) documentation was generated from [src/cg3/functions.cg3](https://github.com/giellalt/lang-moh/blob/main/src/cg3/functions.cg3)</small>Adjective inflection
+The Mohawk language adjectives compare.
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/phonology.twolc](https://github.com/giellalt/lang-moh/blob/main/src/fst/phonology.twolc)</small>
+<small>This (part of) documentation was generated from [src/fst/affixes/adjectives.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/adjectives.lexc)</small>
+
+---
+
+Verb inflection
+
+red prefixes f
+blue prefixes
+purple prefixes
+
+put a neutral patient for all active verbs
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/affixes-verbs-moh.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/affixes-verbs-moh.lexc)</small>
+
+---
+
+Verbal prefixes
+
+this is a verb with the dualistic te-prefix
+this is a verb with the quantitative ni-prefix
+
+Punctual Past for te-verbs: wa + te + pron + verb
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/kawe-verb-pref.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/kawe-verb-pref.lexc)</small>
+
+---
+
+Verb inflection
+
+red prefixes 
+red turn blue prefixes in Perfective aspect
+blue prefixes
+purple prefixes
+
+put a neutral patient for all active verbs
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/kawe-verb-pron-pref.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/kawe-verb-pron-pref.lexc)</small>
+
+---
+
+Verbal suffixes
+
+special Lexicon for Red verbs taking on Blue prefixes in PerfectiveAspect
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/kawe-verb-suff.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/kawe-verb-suff.lexc)</small>
+
+---
+
+Entry to the lexicons responsible for forming Mohawk verbs
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/kawe-verbs.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/kawe-verbs.lexc)</small>
+
+---
+
+Noun inflection
+The Mohawk language nouns inflect in cases.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/nouns.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/nouns.lexc)</small>
+
+---
+
+Proper noun inflection
+The Mohawk language proper nouns inflect in the same cases as regular
+nouns, but with a colon (':') as separator.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/propernouns.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/propernouns.lexc)</small>
+
+---
+
+
+# Symbol affixes
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/symbols.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/symbols.lexc)</small>
+
+---
+
+Verb inflection
+The Mohawk language verbs inflect in persons.
+
+red prefixes f
+blue prefixes
+purple prefixes
+
+put a neutral patient for all active verbs
+
+put a tag boundary marker to improve readability
+
+put a tag boundary marker to improve readability
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/verbs.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/verbs.lexc)</small>
+
+---
+
+Verb inflection
+The UNDEFINED language verbs inflect in persons.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/affixes/verbs.lexc.original.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/verbs.lexc.original.lexc)</small>
+
+---
+
+INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
+
+first attempt to model simplest form of mohawk verbs:
+personal prefix + root
+https://giellalt.uit.no/lang/common/MorphologicalTags.html
+extra tages are listed below
+
+# Multichar_Symbols definitions
+I-> X
+you-> X
+he -> X
+she/smb/they -> X
+it -> X
+you and I -> X
+smb and I -> X
+you two -> X
+two males or mixed -> X
+two females -> X
+you all and I -> X
+they all and I -> X
+you all
+they all (male or mixed) -> X
+they all (female) -> X
+X -> I
+X -> you
+X -> he 
+X -> she/smb/they 
+X -> it 
+X -> you and I
+X -> smb and I 
+X -> you two 
+X -> two males or mixed 
+X -> two females
+X -> you all and I 
+X -> they all and I 
+X -> you all
+X -> they all (male or mixed) 
+X -> they all (female) 
+Active voice, Red verbs
+Passive voice, Blue verbs
+Transitive verbs, Purple verbs
+dualistic prefix integral to some verbs
+a special pseudo-type to allow red verbs take blue prefixes in Perfective aspect
+disallow red prefixes in Perfective aspect
+The following are verb conjugation classes, one through 9, plus Exceptions class
+
+start of personal prefix boundary  
+start of the root morpheme  
+marks verbs the start of Habitual suffix
+marks verbs the start of Perfective suffix
+marks verbs the start of Habitual suffix
+marks verbs the start of Command suffix (usually none)
+marks verbs the start of Future prefix
+marks verbs the start of Conditional prefix
+marks verbs the start of Past prefix
+marks hidden h that only appears in certain circumstances
+marks the te- part of te-verbs
+marks the te- part of ni-verbs
+
+The word forms in UNDEFINED language start from the lexeme roots of basic
+word classes, or optionally from prefixes:
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/kawe-root.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/kawe-root.lexc)</small>
 
 ---
 
@@ -251,293 +418,24 @@ word classes, or optionally from prefixes:
 
 ---
 
-Nouns
-Nouns in the Mohawk language are things.
+=================================== !
+The Mohawk morphophonological/twolc rules file !
+=================================== !
+
+* *primus%>s*
+* *primus00*
+
+* examples:*
+
+* examples:*
+
+* examples:*
+
+* examples:*
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/nouns.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/nouns.lexc)</small>
-
----
-
-Verbs
-Verbs in Mohawk language are actions.
-
-Red verbs are essentially non-transitive verbs used in Active Voice
-Blue verbs are essentially non-transitive verbs used in Passive Voice
-Purple verbs are transitive verbs
-
------------------------VERBS ---------------------------------------
-
---------------some example c-stem verbs (verb stems starting with a constant)
-to like
-to love
-to like
-to love
-
--------------verb stems starting with an "A"
-to be hungry (page 131)
-to be lucky (page 131)
-
--------------verb stems starting with an "I"
-to be  poor (page 132)
-to be sleeping
--------------verb stems starting with an "E" or "EN"
-to like the taste of something (page 131)
-lazy (page 131)
---------------verb stems starting with an "O" or "ON"
-to make smth, Brian's list
-to enjoy doing smth Brian's page 14
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/stems-verbs-moh.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/stems-verbs-moh.lexc)</small>
-
----
-
-Pronouns
-Pronouns in the Mohawk language are references to things.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/pronouns.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/pronouns.lexc)</small>
-
----
-
-Numerals
-Numerals in the Mohawk language are numbers.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/numerals.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/numerals.lexc)</small>
-
----
-
-Adjectives
-Adjectives in the Mohawk language describe things.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/adjectives.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/adjectives.lexc)</small>
-
----
-
-Prefixes
-Prefixes in the Mohawk language are bound to beginning of other words.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/prefixes.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/prefixes.lexc)</small>
-
----
-
-Prefixes
-Prefixes in UNDEFINED language are bound to beginning of other words.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/prefixes.lexc.original.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/prefixes.lexc.original.lexc)</small>
-
----
-
-Verbs
-Verbs in Mohawk language are actions.
------------------------VERBS ---------------------------------------
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/stems-gen.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/stems-gen.lexc)</small>
-
----
-
-Verbs
-Verbs in Mohawk language are actions.
-
------------------------VERBS ---------------------------------------
-
---------------some example c-stem verbs (verb stems starting with a constant)
-to like
-to love
-
--------------verb stems starting with an "A"
-to be hungry (page 131)
-to be lucky (page 131)
-
--------------verb stems starting with an "I"
-to be  poor (page 132)
-to be sleeping
--------------verb stems starting with an "E" or "EN"
-to like the taste of something (page 131)
-lazy (page 131)
---------------verb stems starting with an "O" or "ON"
-to make smth, Brian's list
-to enjoy doing smth Brian's page 14
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/verbs.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/verbs.lexc)</small>
-
----
-
-Verbs
-Verbs in Mohawk language are actions.
------------------------VERBS ---------------------------------------
-
-to hear smth, p. 11
-
-to raise, grow, p 1
-
-to sleep, p. 12
-
-to pile, to stack smth
-
-to see smb, p. 18
-
-to cook, p 1
-
-to make smth, p. 5
-
-rohrok, to watch smb, p. 19
-
-to work, p. 10
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/kawe-verb-stems.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/kawe-verb-stems.lexc)</small>
-
----
-
-Verbs
-Verbs in UNDEFINED language are actions.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/verbs.lexc.original.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/verbs.lexc.original.lexc)</small>
-
----
-
-Verb inflection
-
-red prefixes f
-blue prefixes
-purple prefixes
-
-put a neutral patient for all active verbs
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/affixes-verbs-moh.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/affixes-verbs-moh.lexc)</small>
-
----
-
-Noun inflection
-The Mohawk language nouns inflect in cases.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/nouns.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/nouns.lexc)</small>
-
----
-
-Entry to the lexicons responsible for forming Mohawk verbs
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/kawe-verbs.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/kawe-verbs.lexc)</small>
-
----
-
-Proper noun inflection
-The Mohawk language proper nouns inflect in the same cases as regular
-nouns, but with a colon (':') as separator.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/propernouns.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/propernouns.lexc)</small>
-
----
-
-Adjective inflection
-The Mohawk language adjectives compare.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/adjectives.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/adjectives.lexc)</small>
-
----
-
-Verbal prefixes
-
-this is a verb with the dualistic te-prefix
-this is a verb with the quantitative ni-prefix
-
-Punctual Past for te-verbs: wa + te + pron + verb
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/kawe-verb-pref.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/kawe-verb-pref.lexc)</small>
-
----
-
-Verb inflection
-The Mohawk language verbs inflect in persons.
-
-red prefixes f
-blue prefixes
-purple prefixes
-
-put a neutral patient for all active verbs
-
-put a tag boundary marker to improve readability
-
-put a tag boundary marker to improve readability
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/verbs.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/verbs.lexc)</small>
-
----
-
-Verb inflection
-
-red prefixes 
-red turn blue prefixes in Perfective aspect
-blue prefixes
-purple prefixes
-
-put a neutral patient for all active verbs
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/kawe-verb-pron-pref.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/kawe-verb-pron-pref.lexc)</small>
-
----
-
-
-# Symbol affixes
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/symbols.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/symbols.lexc)</small>
-
----
-
-Verb inflection
-The UNDEFINED language verbs inflect in persons.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/verbs.lexc.original.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/verbs.lexc.original.lexc)</small>
-
----
-
-Verbal suffixes
-
-special Lexicon for Red verbs taking on Blue prefixes in PerfectiveAspect
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/kawe-verb-suff.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/affixes/kawe-verb-suff.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/phonology.twolc](https://github.com/giellalt/lang-moh/blob/main/src/fst/phonology.twolc)</small>
 
 ---
 
@@ -609,71 +507,168 @@ word classes, or optionally from prefixes:
 
 ---
 
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Mohawk LANGUAGE.
-
-first attempt to model simplest form of mohawk verbs:
-personal prefix + root
-https://giellalt.uit.no/lang/common/MorphologicalTags.html
-extra tages are listed below
-
-# Multichar_Symbols definitions
-I-> X
-you-> X
-he -> X
-she/smb/they -> X
-it -> X
-you and I -> X
-smb and I -> X
-you two -> X
-two males or mixed -> X
-two females -> X
-you all and I -> X
-they all and I -> X
-you all
-they all (male or mixed) -> X
-they all (female) -> X
-X -> I
-X -> you
-X -> he 
-X -> she/smb/they 
-X -> it 
-X -> you and I
-X -> smb and I 
-X -> you two 
-X -> two males or mixed 
-X -> two females
-X -> you all and I 
-X -> they all and I 
-X -> you all
-X -> they all (male or mixed) 
-X -> they all (female) 
-Active voice, Red verbs
-Passive voice, Blue verbs
-Transitive verbs, Purple verbs
-dualistic prefix integral to some verbs
-a special pseudo-type to allow red verbs take blue prefixes in Perfective aspect
-disallow red prefixes in Perfective aspect
-The following are verb conjugation classes, one through 9, plus Exceptions class
-
-start of personal prefix boundary  
-start of the root morpheme  
-marks verbs the start of Habitual suffix
-marks verbs the start of Perfective suffix
-marks verbs the start of Habitual suffix
-marks verbs the start of Command suffix (usually none)
-marks verbs the start of Future prefix
-marks verbs the start of Conditional prefix
-marks verbs the start of Past prefix
-marks hidden h that only appears in certain circumstances
-marks the te- part of te-verbs
-marks the te- part of ni-verbs
-
-The word forms in UNDEFINED language start from the lexeme roots of basic
-word classes, or optionally from prefixes:
+Adjectives
+Adjectives in the Mohawk language describe things.
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/kawe-root.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/kawe-root.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/stems/adjectives.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/adjectives.lexc)</small>
+
+---
+
+Verbs
+Verbs in Mohawk language are actions.
+-----------------------VERBS ---------------------------------------
+
+to hear smth, p. 11
+
+to raise, grow, p 1
+
+to sleep, p. 12
+
+to pile, to stack smth
+
+to see smb, p. 18
+
+to cook, p 1
+
+to make smth, p. 5
+
+rohrok, to watch smb, p. 19
+
+to work, p. 10
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/kawe-verb-stems.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/kawe-verb-stems.lexc)</small>
+
+---
+
+Nouns
+Nouns in the Mohawk language are things.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/nouns.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/nouns.lexc)</small>
+
+---
+
+Numerals
+Numerals in the Mohawk language are numbers.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/numerals.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/numerals.lexc)</small>
+
+---
+
+Prefixes
+Prefixes in the Mohawk language are bound to beginning of other words.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/prefixes.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/prefixes.lexc)</small>
+
+---
+
+Prefixes
+Prefixes in UNDEFINED language are bound to beginning of other words.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/prefixes.lexc.original.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/prefixes.lexc.original.lexc)</small>
+
+---
+
+Pronouns
+Pronouns in the Mohawk language are references to things.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/pronouns.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/pronouns.lexc)</small>
+
+---
+
+Verbs
+Verbs in Mohawk language are actions.
+-----------------------VERBS ---------------------------------------
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/stems-gen.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/stems-gen.lexc)</small>
+
+---
+
+Verbs
+Verbs in Mohawk language are actions.
+
+Red verbs are essentially non-transitive verbs used in Active Voice
+Blue verbs are essentially non-transitive verbs used in Passive Voice
+Purple verbs are transitive verbs
+
+-----------------------VERBS ---------------------------------------
+
+--------------some example c-stem verbs (verb stems starting with a constant)
+to like
+to love
+to like
+to love
+
+-------------verb stems starting with an "A"
+to be hungry (page 131)
+to be lucky (page 131)
+
+-------------verb stems starting with an "I"
+to be  poor (page 132)
+to be sleeping
+-------------verb stems starting with an "E" or "EN"
+to like the taste of something (page 131)
+lazy (page 131)
+--------------verb stems starting with an "O" or "ON"
+to make smth, Brian's list
+to enjoy doing smth Brian's page 14
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/stems-verbs-moh.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/stems-verbs-moh.lexc)</small>
+
+---
+
+Verbs
+Verbs in Mohawk language are actions.
+
+-----------------------VERBS ---------------------------------------
+
+--------------some example c-stem verbs (verb stems starting with a constant)
+to like
+to love
+
+-------------verb stems starting with an "A"
+to be hungry (page 131)
+to be lucky (page 131)
+
+-------------verb stems starting with an "I"
+to be  poor (page 132)
+to be sleeping
+-------------verb stems starting with an "E" or "EN"
+to like the taste of something (page 131)
+lazy (page 131)
+--------------verb stems starting with an "O" or "ON"
+to make smth, Brian's list
+to enjoy doing smth Brian's page 14
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/verbs.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/verbs.lexc)</small>
+
+---
+
+Verbs
+Verbs in UNDEFINED language are actions.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/verbs.lexc.original.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/stems/verbs.lexc.original.lexc)</small>
 
 ---
 
@@ -846,20 +841,6 @@ retracted tongue root			_q
 
 
 
-% komma% :,      Root ;
-% tjuohkkis% :%. Root ;
-% kolon% :%:     Root ;
-% sárggis% :%-   Root ; 
-% násti% :%*     Root ; 
-
-* * *
-
-<small>This (part of) documentation was generated from [src/transcriptions/transcriptor-numbers-digit2text.lexc](https://github.com/giellalt/lang-moh/blob/main/src/transcriptions/transcriptor-numbers-digit2text.lexc)</small>
-
----
-
-
-
 We describe here how abbreviations are in Mohawk are read out, e.g.
 for text-to-speech systems.
 
@@ -875,6 +856,20 @@ For example:
 * * *
 
 <small>This (part of) documentation was generated from [src/transcriptions/transcriptor-abbrevs2text.lexc](https://github.com/giellalt/lang-moh/blob/main/src/transcriptions/transcriptor-abbrevs2text.lexc)</small>
+
+---
+
+
+
+% komma% :,      Root ;
+% tjuohkkis% :%. Root ;
+% kolon% :%:     Root ;
+% sárggis% :%-   Root ; 
+% násti% :%*     Root ; 
+
+* * *
+
+<small>This (part of) documentation was generated from [src/transcriptions/transcriptor-numbers-digit2text.lexc](https://github.com/giellalt/lang-moh/blob/main/src/transcriptions/transcriptor-numbers-digit2text.lexc)</small>
 
 ---
 
@@ -916,7 +911,6 @@ CLB
 LEFT
 RIGHT
 WEB
-QMARK
 PPUNCT
 PUNCT
 
@@ -1030,9 +1024,6 @@ Sem/Txt
 
 HUMAN
 
-HAB-ACTOR
-HAB-ACTOR-NOT-HUMAN
-
 PROP-ATTR
 PROP-SUR
 
@@ -1121,8 +1112,6 @@ INITIAL
 ### Sets for word or not
 
 WORD
-REAL-WORD
-REAL-WORD-NOT-ABBR
 NOT-COMMA
 
 ### Case sets
@@ -1181,75 +1170,7 @@ expression **WORD - premodifiers**.
 ### Grammarchecker sets
 
 * * *
-
-<small>This (part of) documentation was generated from [tools/grammarcheckers/grammarchecker.cg3](https://github.com/giellalt/lang-moh/blob/main/tools/grammarcheckers/grammarchecker.cg3)</small>
-
----
-
-# Grammar checker tokenisation for moh
-
-Requires a recent version of HFST (3.10.0 / git revision>=3aecdbc)
-Then just:
-```
-$ make
-$ echo "ja, ja" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
-```
-
-More usage examples:
-```
-$ echo "Juos gorreválggain lea (dárbbašlaš) deavdit gáibádusa boasttu olmmoš, man mielde lahtuid." | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
-$ echo "(gáfe) 'ja' ja 3. ja? ц jaja ukjend \"ukjend\"" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
-$ echo "márffibiillagáffe" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
-```
-
-Pmatch documentation:
-<https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstPmatch>
-
-Characters which have analyses in the lexicon, but can appear without spaces
-before/after, that is, with no context conditions, and adjacent to words:
-* Punct contains ASCII punctuation marks
-* The symbol after m-dash is soft-hyphen `U+00AD`
-* The symbol following {•} is byte-order-mark / zero-width no-break space
-`U+FEFF`.
-
-Whitespace contains ASCII white space and
-the List contains some unicode white space characters
-* En Quad U+2000 to Zero-Width Joiner U+200d'
-* Narrow No-Break Space U+202F
-* Medium Mathematical Space U+205F
-* Word joiner U+2060
-
-Apart from what's in our morphology, there are
-1) unknown word-like forms, and
-2) unmatched strings
-We want to give 1) a match, but let 2) be treated specially by hfst-tokenise -a
-* select extended latin symbols
-* select symbols
-* various symbols from Private area (probably Microsoft),
-so far:
-* U+F0B7 for "x in box"
-
-TODO: Could use something like this, but built-in's don't include šžđčŋ:
-
-Simply give an empty reading when something is unknown:
-hfst-tokenise --giella-cg will treat such empty analyses as unknowns, and
-remove empty analyses from other readings. Empty readings are also
-legal in CG, they get a default baseform equal to the wordform, but
-no tag to check, so it's safer to let hfst-tokenise handle them.
-
-Finally we mark as a token any sequence making up a:
-* known word in context
-* unknown (OOV) token in context
-* sequence of word and punctuation
-* URL in context
-
-* * *
-
-<small>This (part of) documentation was generated from [tools/tokenisers/tokeniser-gramcheck-gt-desc.pmscript](https://github.com/giellalt/lang-moh/blob/main/tools/tokenisers/tokeniser-gramcheck-gt-desc.pmscript)</small>
-
----
-
-# Tokeniser for moh
+<small>This (part of) documentation was generated from [tools/grammarcheckers/grammarchecker.cg3](https://github.com/giellalt/lang-moh/blob/main/tools/grammarcheckers/grammarchecker.cg3)</small># Tokeniser for moh
 
 Usage:
 ```
@@ -1261,7 +1182,7 @@ $ echo "márffibiillagáffe" | hfst-tokenise --giella-cg tokeniser-disamb-gt-des
 ```
 
 Pmatch documentation:
-<https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstPmatch>
+<https://github.com/hfst/hfst/wiki/HfstPmatch>
 
 Characters which have analyses in the lexicon, but can appear without spaces
 before/after, that is, with no context conditions, and adjacent to words:
@@ -1309,6 +1230,69 @@ Finally we mark as a token any sequence making up a:
 * * *
 
 <small>This (part of) documentation was generated from [tools/tokenisers/tokeniser-disamb-gt-desc.pmscript](https://github.com/giellalt/lang-moh/blob/main/tools/tokenisers/tokeniser-disamb-gt-desc.pmscript)</small>
+
+---
+
+# Grammar checker tokenisation for moh
+
+Requires a recent version of HFST (3.10.0 / git revision>=3aecdbc)
+Then just:
+```
+$ make
+$ echo "ja, ja" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
+```
+
+More usage examples:
+```
+$ echo "Juos gorreválggain lea (dárbbašlaš) deavdit gáibádusa boasttu olmmoš, man mielde lahtuid." | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
+$ echo "(gáfe) 'ja' ja 3. ja? ц jaja ukjend \"ukjend\"" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
+$ echo "márffibiillagáffe" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
+```
+
+Pmatch documentation:
+<https://github.com/hfst/hfst/wiki/HfstPmatch>
+
+Characters which have analyses in the lexicon, but can appear without spaces
+before/after, that is, with no context conditions, and adjacent to words:
+* Punct contains ASCII punctuation marks
+* The symbol after m-dash is soft-hyphen `U+00AD`
+* The symbol following {•} is byte-order-mark / zero-width no-break space
+`U+FEFF`.
+
+Whitespace contains ASCII white space and
+the List contains some unicode white space characters
+* En Quad U+2000 to Zero-Width Joiner U+200d'
+* Narrow No-Break Space U+202F
+* Medium Mathematical Space U+205F
+* Word joiner U+2060
+
+Apart from what's in our morphology, there are
+1) unknown word-like forms, and
+2) unmatched strings
+We want to give 1) a match, but let 2) be treated specially by hfst-tokenise -a
+* select extended latin symbols
+* select symbols
+* various symbols from Private area (probably Microsoft),
+so far:
+* U+F0B7 for "x in box"
+
+TODO: Could use something like this, but built-in's don't include šžđčŋ:
+
+Simply give an empty reading when something is unknown:
+hfst-tokenise --giella-cg will treat such empty analyses as unknowns, and
+remove empty analyses from other readings. Empty readings are also
+legal in CG, they get a default baseform equal to the wordform, but
+no tag to check, so it's safer to let hfst-tokenise handle them.
+
+Finally we mark as a token any sequence making up a:
+* known word in context
+* unknown (OOV) token in context
+* sequence of word and punctuation
+* URL in context
+
+* * *
+
+<small>This (part of) documentation was generated from [tools/tokenisers/tokeniser-gramcheck-gt-desc.pmscript](https://github.com/giellalt/lang-moh/blob/main/tools/tokenisers/tokeniser-gramcheck-gt-desc.pmscript)</small>
 
 ---
 
