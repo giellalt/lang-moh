@@ -2,7 +2,7 @@ The Mohawk morphology and tools
 ==========================================
 
 [![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-moh)](https://github.com/giellalt/lang-moh/issues)
-[![Build Status](https://github.com/giellalt/lang-moh/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-moh/actions)
+[![Build Status](https://divvun-tc.thetc.se/api/github/v1/repository/giellalt/lang-moh/main/badge.svg)](https://github.com/giellalt/lang-moh/actions)
 [![License](https://img.shields.io/github/license/giellalt/lang-moh)](https://github.com/giellalt/lang-moh/blob/main/LICENSE)
 
 This repository contains finite state source files for the Mohawk language,
