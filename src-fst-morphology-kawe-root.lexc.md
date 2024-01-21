@@ -62,7 +62,7 @@ word classes, or optionally from prefixes:
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/kawe-root.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/kawe-root.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/morphology/kawe-root.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/kawe-root.lexc)</small>
 
 ---
 
