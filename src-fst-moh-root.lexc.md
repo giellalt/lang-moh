@@ -50,6 +50,3 @@ word classes, or optionally from prefixes:
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/moh-root.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/moh-root.lexc)</small>
-
----
-

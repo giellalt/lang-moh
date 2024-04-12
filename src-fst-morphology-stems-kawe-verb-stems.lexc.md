@@ -23,6 +23,3 @@ to work, p. 10
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/stems/kawe-verb-stems.lexc](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/kawe-verb-stems.lexc)</small>
-
----
-

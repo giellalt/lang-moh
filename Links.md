@@ -5,10 +5,32 @@
         * [moh-root.lexc](src-fst-moh-root.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/moh-root.lexc))
         * `morphology/`
             * `affixes/`
+                * [adjectives.lexc](src-fst-morphology-affixes-adjectives.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/adjectives.lexc))
+                * [affixes-verbs-moh.lexc](src-fst-morphology-affixes-affixes-verbs-moh.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/affixes-verbs-moh.lexc))
+                * [kawe-verb-pref.lexc](src-fst-morphology-affixes-kawe-verb-pref.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/kawe-verb-pref.lexc))
+                * [kawe-verb-pron-pref.lexc](src-fst-morphology-affixes-kawe-verb-pron-pref.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/kawe-verb-pron-pref.lexc))
+                * [kawe-verb-suff.lexc](src-fst-morphology-affixes-kawe-verb-suff.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/kawe-verb-suff.lexc))
+                * [kawe-verbs.lexc](src-fst-morphology-affixes-kawe-verbs.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/kawe-verbs.lexc))
+                * [nouns.lexc](src-fst-morphology-affixes-nouns.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/nouns.lexc))
+                * [propernouns.lexc](src-fst-morphology-affixes-propernouns.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/propernouns.lexc))
+                * [symbols.lexc](src-fst-morphology-affixes-symbols.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/symbols.lexc))
+                * [verbs.lexc](src-fst-morphology-affixes-verbs.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/verbs.lexc))
+                * [verbs.lexc.original.lexc](src-fst-morphology-affixes-verbs.lexc.original.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/affixes/verbs.lexc.original.lexc))
             * [kawe-root.lexc](src-fst-morphology-kawe-root.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/kawe-root.lexc))
             * [phonology.twolc](src-fst-morphology-phonology.twolc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/phonology.twolc))
             * [root.lexc](src-fst-morphology-root.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/root.lexc))
             * `stems/`
+                * [adjectives.lexc](src-fst-morphology-stems-adjectives.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/adjectives.lexc))
+                * [kawe-verb-stems.lexc](src-fst-morphology-stems-kawe-verb-stems.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/kawe-verb-stems.lexc))
+                * [nouns.lexc](src-fst-morphology-stems-nouns.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/nouns.lexc))
+                * [numerals.lexc](src-fst-morphology-stems-numerals.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/numerals.lexc))
+                * [prefixes.lexc](src-fst-morphology-stems-prefixes.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/prefixes.lexc))
+                * [prefixes.lexc.original.lexc](src-fst-morphology-stems-prefixes.lexc.original.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/prefixes.lexc.original.lexc))
+                * [pronouns.lexc](src-fst-morphology-stems-pronouns.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/pronouns.lexc))
+                * [stems-gen.lexc](src-fst-morphology-stems-stems-gen.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/stems-gen.lexc))
+                * [stems-verbs-moh.lexc](src-fst-morphology-stems-stems-verbs-moh.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/stems-verbs-moh.lexc))
+                * [verbs.lexc](src-fst-morphology-stems-verbs.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/verbs.lexc))
+                * [verbs.lexc.original.lexc](src-fst-morphology-stems-verbs.lexc.original.lexc.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/morphology/stems/verbs.lexc.original.lexc))
         * `phonetics/`
             * [txt2ipa.xfscript](src-fst-phonetics-txt2ipa.xfscript.html) ([src](https://github.com/giellalt/lang-moh/blob/main/src/fst/phonetics/txt2ipa.xfscript))
         * `transcriptions/`
@@ -17,7 +39,6 @@
 * `tools/`
     * `grammarcheckers/`
         * [grammarchecker.cg3](tools-grammarcheckers-grammarchecker.cg3.html) ([src](https://github.com/giellalt/lang-moh/blob/main/tools/grammarcheckers/grammarchecker.cg3))
-            * `/`
     * `tokenisers/`
         * [tokeniser-disamb-gt-desc.pmscript](tools-tokenisers-tokeniser-disamb-gt-desc.pmscript.html) ([src](https://github.com/giellalt/lang-moh/blob/main/tools/tokenisers/tokeniser-disamb-gt-desc.pmscript))
         * [tokeniser-gramcheck-gt-desc.pmscript](tools-tokenisers-tokeniser-gramcheck-gt-desc.pmscript.html) ([src](https://github.com/giellalt/lang-moh/blob/main/tools/tokenisers/tokeniser-gramcheck-gt-desc.pmscript))
