@@ -16,7 +16,7 @@ TESTS=tag_test.sh
 GENERATION_TESTS_IN=generate-verb-lemmas.sh.in
 
 
-GENERATION_TESTS=$(basename $(GENERATION_TESTS_IN))
+GENERATION_TESTS=generate-verb-lemmas.sh
 
 if WANT_GENERATION
 TESTS+=$(GENERATION_TESTS)
