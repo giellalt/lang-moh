@@ -4,7 +4,8 @@
 ![Lemma count](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgiellalt%2Flang-moh%2Fgh-pages%2Flemmacount.json)
 [![License](https://img.shields.io/github/license/giellalt/lang-moh)](https://github.com/giellalt/lang-moh/blob/main/LICENSE)
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-moh)](https://github.com/giellalt/lang-moh/issues)
-[![Build Status](https://divvun-tc.giellalt.org/api/github/v1/repository/giellalt/lang-moh/main/badge.svg)](https://github.com/giellalt/lang-moh/actions)
+[![Build Status](https://builds.giellalt.org/api/badge/lang-moh?label=CI)](https://builds.giellalt.org/pipelines/lang-moh/builds/latest)
+[![Glottolog](https://img.shields.io/badge/Glottolog-green)](https://glottolog.org/resource/languoid/id/moha1258)
 
 This page documents the work on the **Mohawk language model**.
 
