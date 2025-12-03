@@ -27,7 +27,7 @@ version = "0.1.1"
 name = "Mohawk"
 version = "0.1.0"
 
-[package.tts-text-proc]
+[package.tts-textproc]
 name = "Mohawk"
 version = "0.1.0"
 
