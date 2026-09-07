@@ -10,10 +10,6 @@
         "lexcfile": "@abs_srcdir@/../stems/adjectives.lexc",
         "lemmatags": ["+A+Sg+Nom"]
     },
-    "propernouns": {
-        "lexcfile": "@abs_srcdir@/../stems/propernouns.lexc",
-        "lemmatags": ["+N+Prop+Sg+Nom"]
-    },
     "verbs": {
         "lexcfile": "@abs_srcdir@/../stems/verbs.lexc",
         "lemmatags": ["+V+Inf"]
